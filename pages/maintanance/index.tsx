@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import './style.scss'
+import './style.css'
 
 // Image from https://www.pexels.com/search/network%20switch/
 class Maintenance extends React.Component {
@@ -11,7 +11,6 @@ class Maintenance extends React.Component {
                     src="/static/underconstruction.jpg"
                     fill 
                     alt="Background Image" 
-                    objectFit="cover"
                     className="background-image"
                 />
                 <div className="container">
