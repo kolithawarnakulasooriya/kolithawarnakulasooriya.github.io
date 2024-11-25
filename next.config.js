@@ -5,8 +5,9 @@ const nextConfig = {
     return [
       {
         source: '/',
-        destination: '/maintanance',
+        destination: 'https://kolithawarnakulasooriya.github.io/maintanance',
         permanent: true,
+        basePath: false,
       },
     ]
   },
