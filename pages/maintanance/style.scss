@@ -1,0 +1,22 @@
+.background-image {
+    opacity: 0.5
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+
+    .container-text {
+        font-size: 90px;
+        font-family: monospace;
+        color: #fff;
+        font-weight: 800;
+        background: black;
+        border-radius: 17px;
+        opacity: 1;
+        padding: 30px;
+        margin: 40px;
+    }
+}
