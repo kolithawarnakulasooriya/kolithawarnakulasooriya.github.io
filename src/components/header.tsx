@@ -1,6 +1,6 @@
 'use client';
 
-import { Flex, SmartLink, Heading } from '@/once-ui/components';
+import { Flex, SmartLink, Heading, Button } from '@/once-ui/components';
 import React from 'react';
 
 interface HeaderProps {}
@@ -20,7 +20,9 @@ const Header: React.FC<HeaderProps> = ({}) => {
             justifyContent='space-between'
             background="neutral-medium">
             <Flex>
-                <Heading as='h1'>Kolitha Warnakulasooriya</Heading>
+                <a href='/'  style={{textDecoration: 'none'}}>
+                    <Heading as='h1'>Kolitha Warnakulasooriya</Heading>
+                </a>
             </Flex>
             <Flex
                 fillWidth

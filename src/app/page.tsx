@@ -55,7 +55,7 @@ export default function Home() {
 				justifyContent='center'
 				paddingBottom='128'
 			>
-				<InfoBox text='I am a' fontSize={30} />
+				<InfoBox text='I am a,' fontSize={30} />
 				<Flex
 					direction='column'
 					justifyContent='flex-start'
