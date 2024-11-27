@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
                     paddingX="l"
                     alignItems="center">
                     <SmartLink
-                        href="">
+                        href="/me">
                         Who Am I
                     </SmartLink>
                     <SmartLink
