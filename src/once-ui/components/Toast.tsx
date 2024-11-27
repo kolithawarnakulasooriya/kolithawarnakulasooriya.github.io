@@ -12,8 +12,8 @@ interface ToastProps {
     onClose?: () => void;
     action?: React.ReactNode;
     children: React.ReactNode;
-    href?: String
-    hrefText?: String
+    href?: string | undefined
+    hrefText?: string |  undefined
 }
 
 const iconMap = {

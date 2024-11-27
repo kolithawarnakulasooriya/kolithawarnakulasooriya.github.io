@@ -12,8 +12,8 @@ interface ToasterProps {
         variant: 'success' | 'danger'; 
         message: string; 
         action?: React.ReactNode;
-        href: String | null;
-        hrefText: String | null;
+        href: string | undefined;
+        hrefText: string | undefined;
         icon?:boolean;
     }[];
     removeToast: (id: string) => void;

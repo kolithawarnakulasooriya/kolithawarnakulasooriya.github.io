@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react';
 
 import { Flex, Avatar, Toaster } from '@/once-ui/components';
 import Link from 'next/link';
+import { InfoBox } from '@/components/infobox';
 
 export default function Home() {
 
@@ -48,8 +49,22 @@ export default function Home() {
 					src="/images/avatar.jpg"
 				/>
 			</Flex>
-			<Flex>
-
+			<Flex
+				direction='column'
+				fillHeight
+				justifyContent='center'
+				paddingBottom='128'
+			>
+				<InfoBox text='I am a' fontSize={30} />
+				<Flex
+					direction='column'
+					justifyContent='flex-start'
+					paddingLeft='32'
+				>
+					<InfoBox text='Software Engineer' fontSize={40} />
+					<InfoBox text='Full-Stack Software Developer' fontSize={40} />
+					<InfoBox text='Robotics & AI Researcher' fontSize={40} />
+				</Flex>
 			</Flex>
 		</Flex>
 	);
