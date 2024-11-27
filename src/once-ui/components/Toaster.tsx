@@ -2,7 +2,6 @@
 
 import React from 'react';
 import { createPortal } from 'react-dom';
-
 import { Flex, Toast } from '.';
 import styles from './Toaster.module.scss';
 

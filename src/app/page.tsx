@@ -12,12 +12,12 @@ export default function Home() {
 
 	useEffect(() => {
 		const data = {
-			id: '11',
+			id: Date.now().valueOf(),
 			message: 'Haven\'t you found my resume yet?',
 			variant: 'success',
 			href: '/files/resume.pdf',
 			hrefText: "Download!",
-			icon: false
+			icon: false,
 		}
 		setTimeout(() => {
 			setdata(Object.assign([], [data]))
@@ -32,7 +32,9 @@ export default function Home() {
 		>
 			<Toaster
 				toasts={data}
-				removeToast={() => { }}
+				removeToast={() => {
+					setdata([])
+				}}
 			/>
 			<Flex
 				fillHeight
