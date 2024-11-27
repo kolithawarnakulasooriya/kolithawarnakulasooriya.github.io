@@ -1,17 +1,38 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
-import { Text, Flex, Avatar, Button, RevealFx, LetterFx } from '@/once-ui/components';
+import { Flex, Avatar, Toaster } from '@/once-ui/components';
 import Link from 'next/link';
 
 export default function Home() {
+
+	const [data, setdata] = useState([])
+
+	useEffect(() => {
+		const data = {
+			id: '11',
+			message: 'Haven\'t you found my resume yet?',
+			variant: 'success',
+			href: '/files/resume.pdf',
+			hrefText: "Download!",
+			icon: false
+		}
+		setTimeout(() => {
+			setdata(Object.assign([], [data]))
+		}, 1000);
+	}, [])
+
 	return (
 		<Flex
 			position="relative"
 			fillWidth
 			fillHeight
 		>
+			<Toaster
+				toasts={data}
+				removeToast={() => { }}
+			/>
 			<Flex
 				fillHeight
 				alignItems='center'
@@ -28,65 +49,7 @@ export default function Home() {
 				/>
 			</Flex>
 			<Flex>
-				<RevealFx
-					speed="medium"
-					delay={0}
-					translateY={0}
-				>
-					<span
-						style={{
-							fontFamily: 'var(--font-family-code)'
-						}}
-					>
-						<LetterFx
-							speed="medium"
-							trigger="instant"
-							charset={[
-								'X',
-								'@',
-								'$',
-								'a',
-								'H',
-								'z',
-								'o',
-								'0',
-								'y',
-								'#',
-								'?',
-								'*',
-								'0',
-								'1',
-								'+'
-							]}
-						>
-							Spice up your landing page with special effects
-						</LetterFx>
-					</span>
-				</RevealFx>
-				<RevealFx
-					speed="medium"
-					delay={1}
-					translateY={0}
-				>
-					<Flex
-						direction="column"
-						padding="24"
-						gap="8"
-					>
-						<Text variant="heading-strong-m">
-							Special effects in v0.3.1
-						</Text>
-						<Text
-							onBackground="neutral-medium"
-							marginBottom="16"
-						>
-							Great news. Been waiting for this!
-						</Text>
-						<Button size="s">
-							Awesome!
-						</Button>
-					</Flex>
-				</RevealFx>
+
 			</Flex>
 		</Flex>
 	);

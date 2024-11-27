@@ -4,7 +4,6 @@
 
 import { Button, Flex, IconButton, Text } from '@/once-ui/components';
 import React from 'react';
-import Link from 'next/link';
 
 interface FooterProps { }
 

@@ -11,7 +11,10 @@ interface ToasterProps {
         id: string; 
         variant: 'success' | 'danger'; 
         message: string; 
-        action?: React.ReactNode 
+        action?: React.ReactNode;
+        href: String | null;
+        hrefText: String | null;
+        icon?:boolean;
     }[];
     removeToast: (id: string) => void;
 }
@@ -42,7 +45,11 @@ const Toaster: React.FC<ToasterProps> = ({
                         className={styles.toastAnimation}
                         variant={toast.variant}
                         onClose={() => removeToast(toast.id)}
-                        action={toast.action}>
+                        action={toast.action}
+                        href={toast.href}
+                        hrefText={toast.hrefText}
+                        icon={toast.icon}
+                        >
                         {toast.message}
                     </Toast>
                 </Flex>

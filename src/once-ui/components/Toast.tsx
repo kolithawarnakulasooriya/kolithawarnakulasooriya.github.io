@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useEffect, useState, forwardRef } from 'react';
-import { IconButton, Icon, Flex, Text } from '.';
+import { IconButton, Icon, Flex, Text, SmartLink } from '.';
 import classNames from 'classnames';
 import styles from './Toast.module.scss';
 
@@ -12,6 +12,8 @@ interface ToastProps {
     onClose?: () => void;
     action?: React.ReactNode;
     children: React.ReactNode;
+    href?: String
+    hrefText?: String
 }
 
 const iconMap = {
@@ -24,8 +26,10 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>(({
     className,
     icon = true,
     onClose,
-    action, 
-    children
+    action,
+    children,
+    href,
+    hrefText
 }, ref) => {
     const [visible, setVisible] = useState(true);
 
@@ -64,7 +68,7 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>(({
                     <Icon
                         size="l"
                         onBackground={`${variant}-medium`}
-                        name={iconMap[variant]}/>
+                        name={iconMap[variant]} />
                 )}
                 <Text
                     variant="body-default-s"
@@ -72,6 +76,12 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>(({
                     as="div">
                     {children}
                 </Text>
+                {
+                    href && (
+                        <SmartLink href={href}>{`${hrefText}`}
+                        </SmartLink>
+                    )
+                }
                 {action && (
                     <div>
                         {action}
@@ -84,7 +94,7 @@ const Toast = forwardRef<HTMLDivElement, ToastProps>(({
                         size="m"
                         tooltip="Hide"
                         tooltipPosition="top"
-                        onClick={() => setVisible(false)}/>
+                        onClick={() => setVisible(false)} />
                 )}
             </Flex>
         </Flex>
