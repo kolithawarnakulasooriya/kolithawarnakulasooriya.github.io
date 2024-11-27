@@ -3,6 +3,11 @@
     box-sizing: border-box;
 }
 
+.window3q {
+    max-height: 70%;
+    overflow-y: auto;
+}
+
 ul {
     margin: 0;
     padding: 0 0 0 var(--static-space-12);

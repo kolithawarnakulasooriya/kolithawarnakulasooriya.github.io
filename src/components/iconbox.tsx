@@ -58,9 +58,10 @@ const IconBox: React.FC<IconBoxProps> = ({
                 border: 'solid 1px',
                 borderColor: 'var(--static-white-medium)',
                 borderRadius: 10,
-                padding: 10,
+                padding: 3,
                 cursor: 'auto',
-                margin: 5
+                margin: 5,
+                backgroundColor: '#FFF'
             }}
         />
         {tooltip && isTooltipVisible && ( <div style={{ position:'absolute' }}> 
