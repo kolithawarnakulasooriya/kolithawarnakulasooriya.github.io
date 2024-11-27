@@ -2,7 +2,7 @@
 
 'use client';
 
-import { Button, Flex, IconButton } from '@/once-ui/components';
+import { Button, Flex, IconButton, Text } from '@/once-ui/components';
 import React from 'react';
 import Link from 'next/link';
 
@@ -72,13 +72,29 @@ const Footer: React.FC<FooterProps> = ({ }) => {
                 </Flex>
                 <Flex
                     justifyContent="center"
+                    alignItems='center'
+                    align='center'
+                >
+                    <Text
+                        style={{
+                            "font-size": "12px",
+                            "margin-bottom": "-50px",
+                            "margin-left": "-45px",
+                            "letter-spacing": "0.05rem"
+                        }}
+                    >
+                        Powered by Next.Js & once ui
+                    </Text>
+                </Flex>
+                <Flex
+                    justifyContent="center"
                     gap="12">
-                        <Button variant="tertiary" href='mailto:kolitha.warnakulasooriya@outlook.com'>
-                            Email Me
-                        </Button>
+                    <Button variant="tertiary" href='mailto:kolitha.warnakulasooriya@outlook.com'>
+                        Email Me
+                    </Button>
                 </Flex>
             </Flex>
-        </Flex>
+        </Flex >
     );
 };
 
