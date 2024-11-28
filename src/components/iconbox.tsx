@@ -2,7 +2,6 @@
 import React, { useState, useEffect } from "react"
 import Image from "next/image";
 import { Tooltip } from "@/once-ui/components";
-import styles from './iconbox.module.scss'
 
 interface IconBoxProps {
     src: string

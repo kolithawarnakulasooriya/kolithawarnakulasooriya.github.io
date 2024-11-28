@@ -1,7 +1,6 @@
 import React from "react";
-import { Flex, Grid, Text, Accordion, Scroller } from "@/once-ui/components";
+import { Flex, Grid, Text, Accordion } from "@/once-ui/components";
 import { Configs } from '@/app/config';
-import Image, { ImageProps } from 'next/image';
 import { IconBox } from "@/components/iconbox";
 interface MeProps { }
 

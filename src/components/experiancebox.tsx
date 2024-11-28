@@ -1,10 +1,10 @@
 'use client';
 import { Flex, Avatar, Heading, Text, Accordion } from "@/once-ui/components"
 import React from "react"
-import classNames from 'classnames';
 import styles from './experiancebox.module.scss';
 
 interface ExperianceBoxProps {
+    key?:number
     src: string
     heading: string
     company: string
@@ -14,6 +14,7 @@ interface ExperianceBoxProps {
 }
 
 const ExperianceBox: React.FC<ExperianceBoxProps> = ({
+    key,
     src,
     heading,
     company,
@@ -22,7 +23,7 @@ const ExperianceBox: React.FC<ExperianceBoxProps> = ({
     items=[]
 }) => {
     return (
-        <Flex fillWidth direction="column" paddingBottom="20">
+        <Flex key={key} fillWidth direction="column" paddingBottom="20">
             <Flex fillWidth>
                 <Flex fillHeight paddingTop="8">
                     <Avatar src={src} size="l"></Avatar>
