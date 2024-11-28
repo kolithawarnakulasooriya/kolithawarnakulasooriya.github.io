@@ -14,15 +14,121 @@ export interface EducationItem {
     duration: string
     src: string
 }
+
+export interface SkillObject{
+    src: string
+}
+export interface SkillCategory {
+    titile: string
+    isOpen: boolean
+    items: Array<SkillObject>
+}
+
+export interface PublicationObject {
+    href: string,
+    title: string,
+    authors: string,
+    publisher: string
+}
 export interface ConfigProps {
     summary: string,
     name: string,
+    skills: Array<SkillCategory>
     experiance: Array<ExperianceItem>
     education: Array<EducationItem>
+    publications: Array<PublicationObject>
 }
+
+
 export const Configs: ConfigProps = {
     summary: "A professional software engineer and developer with 5+ years of experience in full-stack application development. A researcher with 3+ years of experience in general artificial intelligence in robotic applications. Professionally collaborated with other development teams to integrate business logic and optimize the components to enhance the customer experience. Demonstrated strong leadership within an agile framework through punctual delivery and deployments, maintaining professional communication with higher management and other teams, and proficiently delegating sprint tasks.",
     name: "Kolitha Warnakulasooriya",
+    skills: [
+        {
+            titile: "Languages",
+            isOpen: true,
+            items: [
+                { src: '/icons/java.png' },
+                { src: '/icons/js.png' },
+                { src: '/icons/typescript.png' },
+                { src: '/icons/python.png' },
+                { src: '/icons/sql.png' },
+                { src: '/icons/c-.png' },
+                { src: '/icons/c-sharp.png' },
+                { src: '/icons/html.png' },
+                { src: '/icons/css.png' },
+            ]
+        },
+        {
+            titile: "Technologies and Frameworks",
+            isOpen: true,
+            items: [
+                { src: '/icons/react.png' },
+                { src: '/icons/react-native.png' },
+                { src: '/icons/recoiljs.png' },
+                { src: '/icons/redux.png' },
+                { src: '/icons/expo.png' },
+                { src: '/icons/express.png' },
+                { src: '/icons/flask.png' },
+                { src: '/icons/ROS.png' },
+                { src: '/icons/springboot.png' },
+                { src: '/icons/aws.png' },
+                { src: '/icons/azure.png' },
+            ]
+        },
+        {
+            titile: "Project Management and Communication",
+            isOpen: true,
+            items: [
+                { src: '/icons/jira.png' },
+                { src: '/icons/confluence.png' },
+                { src: '/icons/outlook.png' },
+                { src: '/icons/teams.png' },
+                { src: '/icons/slack.png' },
+                { src: '/icons/discord.png' }
+            ]
+        },
+        {
+            titile: "Editors, IDE, and Tools",
+            isOpen: true,
+            items: [
+                { src: '/icons/jet.png' },
+                { src: '/icons/vscode.png' },
+                { src: '/icons/visual-studio.png' },
+                { src: '/icons/xcode.png' },
+                { src: '/icons/dbever.png' },
+                { src: '/icons/drawio.png' },
+                { src: '/icons/figma.png' }
+            ]
+        },
+        {
+            titile: "Databases & Data Tools",
+            isOpen: true,
+            items: [
+                { src: '/icons/mysql.png' },
+                { src: '/icons/mssql.png' },
+                { src: '/icons/postgres.png' },
+                { src: '/icons/mongo.png' },
+                { src: '/icons/dynamodb.png' },
+                { src: '/icons/radis.png' },
+                { src: '/icons/spark.png' }
+            ]
+        },
+        {
+            titile: "Other",
+            isOpen: true,
+            items: [
+                { src: '/icons/torch.png' },
+                { src: '/icons/sonarqube.svg' },
+                { src: '/icons/datadog.avif' },
+                { src: '/icons/dynatrace.svg' },
+                { src: '/icons/optimizely.png' },
+                { src: '/icons/google.svg' },
+                { src: '/icons/copilot.png' }
+            ]
+        }
+
+    ],
     experiance: [
         {
             src: "/images/usa.png",
@@ -115,6 +221,74 @@ export const Configs: ConfigProps = {
             subtitle: "3.55 Second Upper Devision, Dean List (Senior Year)",
             institute: "University of Moratuwa",
             duration: "2018 Jul",
+        }
+    ],
+    publications: [
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/10543316", 
+            title: "Attacks, Detection, and Prevention on Commercial Drones: A Review", 
+            authors: "Kolitha Warnakulasooriya, Aviv Segev", 
+            publisher: "2024 International Conference on Image Processing and Robotics (ICIPRoB)"
+        },
+        {
+            href: "https://www.researchgate.net/profile/Kolitha-Warnakulasooriya/publication/370211288_Priority_Basis_Task_Allocation_for_Drone_Swarms/links/65409960ff8d8f507cda0590/Priority-Basis-Task-Allocation-for-Drone-Swarms.pdf", 
+            title: "Priority Basis Task Allocation for Drone Swarms", 
+            authors: "Kolitha Warnakulasooriya, Ryan G Benton, Aviv Segev", 
+            publisher: "AAAI Association for the Advancement of Artificial Intelligence 2023-WoMapf"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/8519997", 
+            title: "Low Cost and IoT Based Greenhouse with Climate Monitoring and Controlling System for Tropical Countries", 
+            authors: "Yasas Pansilu Jayasuriya; Chanuka Sandaru Elvitigala; Kolitha Wamakulasooriya; BH Sudantha", 
+            publisher: "2018 International Conference on System Science and Engineering (ICSSE)"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/8520238", 
+            title: "Generic IoT framework for environmental sensing researches: Portable IoT enabled weather station", 
+            authors: "K Warnakulasooriya, YP Jayasuriya, BH Sudantha", 
+            publisher: "2018 International Conference on System Science and Engineering (ICSSE), 1-5"
+        },
+        {
+            href: "https://d1wqtxts1xzle7.cloudfront.net/99503435/download-libre.pdf?1678128036=&response-content-disposition=inline%3B+filename%3DOpen_Source_Implementation_of_an_Integra.pdf&Expires=1732817540&Signature=RqBW6gv4QlOIp7w9qWafiBHpUAvIRS-0A2ct9ePTAao2d13~-E1FHVLs2QeT280MZ9wAIgVdJHjbambgHDI-OiuvMAkjq8dYhK-Nk5hu-iPsEzeIZec0q0~qNI48rgFlG~f0IfR3-w7uTLWRpDhPwbluaCyq-g6U9a2sJgdX0hG0mNVZ4sg~LiXH7XsXKe3VYG-IJk67kAUHxtXjbf8kjJptCX4ioF3BgcWSTpgJxXrD8rc5ebGV2616ReZTBzQrgQHzImO7j6uFmUGONPJEKNr5WQr4MJ39rTfsjuL~1ubcPBx1mDDr1lzuefDHuBwhVv1LJ-dNOvMyeaMPe-KfCA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA", 
+            title: "Open-source implementation of an integrated low-cost environmental monitoring system (EMS) for developing countries", 
+            authors: "BH Sudantha, KMHK Warnakulasooriya, YP Jayasuriya, GR Ratnayaka, PKS Mahanama, EJ Warusavitharana, SN Weerasinghe", 
+            publisher: "Bhumi, The Planning Research Journal"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/8520044", 
+            title: "IoT Empowered Gesture Recognition System for Life Style Enhancement of Differently Abled People", 
+            authors: "Kolitha Warnakulasooriya, Chinthaka Premachandra, BH Sudantha, Sagara Sumathipala", 
+            publisher: "2018 International Conference on System Science and Engineering (ICSSE)"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/9367340", 
+            title: "Sensory Evaluation of Foods using Modern AI Techniques and Brain Wave Analysis", 
+            authors: "KMHK Warnakulasooriya, JDSACS Bandara, BH Sudantha", 
+            publisher: "2020 International Conference on Image Processing and Robotics (ICIP)"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/8736147", 
+            title: "A color mask and trained image set for the creation of new technique for indoor robotic navigation", 
+            authors: "KMHK Warnakulasooriya, BH Sudantha, C Premachandra", 
+            publisher: "2018 3rd International Conference on Information Technology Research (ICITR)"
+        },
+        {
+            href: "https://ieeexplore.ieee.org/abstract/document/8023304", 
+            title: "Adaptive navigation and motion planning for a mobile track robot", 
+            authors: "BH Sudantha, KASN Sumathipala, Chinthaka Premachandra, KMHK Warnakulasooriya, CS Elvitigala, YP Jayasuriya", 
+            publisher: "2017 Joint 17th World Congress of International Fuzzy Systems Association and 9th International Conference on Soft Computing and Intelligent Systems (IFSA-SCIS)"
+        },
+        {
+            href: "https://scholar.google.com/citations?view_op=view_citation&hl=en&user=9m-0uFYAAAAJ&citation_for_view=9m-0uFYAAAAJ:Y0pCki6q_DkC", 
+            title: "4onse–4 times open and non-conventional technology for sensing the environment: an integrated low-cost environmental monitoring system (ems) for developing countries", 
+            authors: "GR Ratnayake, PKS Mahanama, EJ Warusavitharana, SN Weerasinghe, KMHK Warnakulasooriya, BH Sudantha, YP Jayasuriya", 
+            publisher: "Information Technology Research Unit, Faculty of Information Technology, University of Moratuwa, Sri Lanka"
+        },
+        {
+            href: "https://www.researchgate.net/profile/Kolitha-Warnakulasooriya/publication/324792598_A_Novel_Approach_of_Color_Detection_Technique_for_the_Enhancement_of_Robotic_Navigation/links/5ae288380f7e9b28594a2c1a/A-Novel-Approach-of-Color-Detection-Technique-for-the-Enhancement-of-Robotic-Navigation.pdf", 
+            title: "A Novel Approach of Color Detection Technique for the Enhancement of Robotic Navigation", 
+            authors: "KMHK Warnakulasooriya, BH Sudantha, KASN Sumathipala", 
+            publisher: "Faculty of Information Technology, University of Moratuwa, Katubedda, Sri Lanka"
         }
     ]
 }

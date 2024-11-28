@@ -2,11 +2,12 @@
 import React, { useState, useEffect } from "react"
 import Image from "next/image";
 import { Tooltip } from "@/once-ui/components";
+import styles from "./iconbox.module.scss"
 
 interface IconBoxProps {
     src: string
     size?: 'xs' | 's' | 'm' | 'l' | 'xl';
-    tooltip: string;
+    tooltip?: string;
 }
 
 const sizeMapping: Record<'xs' | 's' | 'm' | 'l' | 'xl', number> = {
@@ -45,27 +46,28 @@ const IconBox: React.FC<IconBoxProps> = ({
 
     return (
         <div
-        {...commonProps}
-        
+            {...commonProps}
+
         >
+            {tooltip && isTooltipVisible && (<div style={{position: 'absolute'}} className={styles.top}>
+                <Tooltip label={tooltip} />
+            </div>)}
             <Image
-            src={src}
-            alt=""
-            width={sizeMapping[size]}
-            height={sizeMapping[size]}
-            style={{
-                border: 'solid 1px',
-                borderColor: 'var(--static-white-medium)',
-                borderRadius: 10,
-                padding: 3,
-                cursor: 'auto',
-                margin: 5,
-                backgroundColor: '#FFF'
-            }}
-        />
-        {tooltip && isTooltipVisible && ( <div style={{ position:'absolute' }}> 
-            <Tooltip label={tooltip} />
-        </div>)}
+                src={src}
+                alt=""
+                width={sizeMapping[size]}
+                height={sizeMapping[size]}
+                style={{
+                    border: 'solid 1px',
+                    borderColor: 'var(--static-white-medium)',
+                    borderRadius: 10,
+                    padding: 3,
+                    cursor: 'auto',
+                    margin: 5,
+                    backgroundColor: '#FFF'
+                }}
+            />
+
         </div>
     )
 }

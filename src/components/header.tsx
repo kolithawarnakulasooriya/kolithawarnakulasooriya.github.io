@@ -43,8 +43,8 @@ const Header: React.FC<HeaderProps> = ({}) => {
                         Resume
                     </SmartLink>
                     <SmartLink
-                        href="">
-                        Portfolio
+                        href="/publications">
+                        Publications
                     </SmartLink>
                 </Flex>
             </Flex>
