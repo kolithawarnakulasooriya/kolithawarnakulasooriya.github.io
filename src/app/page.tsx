@@ -1,25 +1,8 @@
-"use client";
-import React, { useEffect, useState } from 'react';
-import { Flex, Avatar, Toaster } from '@/once-ui/components';
+import React from 'react';
+import { Flex, Avatar } from '@/once-ui/components';
 import { InfoBox } from '@/components/infobox';
 
 export default function Home() {
-
-	const [data, setdata] = useState([])
-
-	useEffect(() => {
-		const data = {
-			id: Date.now().valueOf(),
-			message: 'Haven\'t you found my resume yet?',
-			variant: 'success',
-			href: '/files/resume.pdf',
-			hrefText: "Download!",
-			icon: false,
-		}
-		setTimeout(() => {
-			setdata(Object.assign([], [data]))
-		}, 1000);
-	}, [])
 
 	return (
 		<Flex
@@ -27,12 +10,6 @@ export default function Home() {
 			fillWidth
 			fillHeight
 		>
-			<Toaster
-				toasts={data}
-				removeToast={() => {
-					setdata([])
-				}}
-			/>
 			<Flex
 				fillHeight
 				alignItems='center'
