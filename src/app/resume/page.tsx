@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Grid, Text, Badge, Icon, Heading, Button } from "@/once-ui/components";
+import { Flex, Grid, Heading, Button } from "@/once-ui/components";
 import { ExperianceBox } from "@/components/experiancebox";
 import { Configs, ExperianceItem, EducationItem } from '@/app/config';
 interface ResumeProps { }
@@ -23,7 +23,8 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
                         Employement Experiance
                     </Heading>
                     {
-                        Configs.experiance.map((data: ExperianceItem) => (<ExperianceBox 
+                        Configs.experiance.map((data: ExperianceItem, index) => (<ExperianceBox
+                            key={index}
                             src={data.src}
                             heading={data.title}
                             company={data.company}
@@ -42,7 +43,8 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
                         Education
                     </Heading>
                     {
-                        Configs.education.map((data: EducationItem) => (<ExperianceBox 
+                        Configs.education.map((data: EducationItem, index) => (<ExperianceBox 
+                            key={index}
                             src={data.src}
                             heading={data.title}
                             company={data.institute}

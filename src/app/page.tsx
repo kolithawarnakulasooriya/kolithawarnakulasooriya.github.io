@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 
 import { Flex, Avatar, Toaster } from '@/once-ui/components';
-import Link from 'next/link';
 import { InfoBox } from '@/components/infobox';
 
 export default function Home() {
