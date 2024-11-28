@@ -8,11 +8,9 @@ import { Metadata } from "next";
 import { baseURL, style, meta, og, schema, social } from "@/once-ui/resources/config"
 
 import { Background, Flex } from '@/once-ui/components'
-import { Header } from "@/components/header";
 
 import { Inter } from 'next/font/google'
 import { Roboto_Mono } from 'next/font/google';
-import { Footer } from "@/components/footer";
 
 const primary = Inter({
 	variable: '--font-primary',
@@ -113,9 +111,7 @@ export default function RootLayout({
 					mask="cursor"
 					/>
 				<Flex flex={1} direction="column">
-					<Header/>
 					{children}
-					<Footer/>
 				</Flex>
 			</Flex>
 		</Flex>
