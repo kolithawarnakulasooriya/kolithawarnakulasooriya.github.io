@@ -8,6 +8,9 @@ interface Toast {
     variant: 'success' | 'danger';
     message: string;
     action?: ReactNode;
+    href: string,
+    hrefText: string,
+    icon: boolean,
 }
 
 interface ToastContextProps {
