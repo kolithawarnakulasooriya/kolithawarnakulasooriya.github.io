@@ -1,7 +1,5 @@
 "use client";
-
 import React, { useEffect, useState } from 'react';
-
 import { Flex, Avatar, Toaster } from '@/once-ui/components';
 import { InfoBox } from '@/components/infobox';
 
