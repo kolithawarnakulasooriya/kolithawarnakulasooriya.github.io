@@ -50,7 +50,7 @@ const Me: React.FC<MeProps> = ({ }) => {
                                     justifyContent="center"
                                 >
                                     {
-                                        skillcategory.items.map((skill: SkillObject, index1) => (<IconBox src={skill.src} size="m" />))
+                                        skillcategory.items.map((skill: SkillObject, index1) => (<IconBox key={index1} src={skill.src} size="m" />))
                                     }
                                 </Flex>
                             </Accordion>

@@ -115,6 +115,18 @@ export const Configs: ConfigProps = {
             ]
         },
         {
+            titile: "Continuous Integration & Delivery",
+            isOpen: true,
+            items: [
+                { src: '/icons/docker-96.png' },
+                { src: '/icons/jenkins.png' },
+                { src: '/icons/git.png' },
+                { src: '/icons/github.png' },
+                { src: '/icons/argo.png' },
+                { src: '/icons/github-actions.png' }
+            ]
+        },
+        {
             titile: "Other",
             isOpen: true,
             items: [
@@ -124,7 +136,8 @@ export const Configs: ConfigProps = {
                 { src: '/icons/dynatrace.svg' },
                 { src: '/icons/optimizely.png' },
                 { src: '/icons/google.svg' },
-                { src: '/icons/copilot.png' }
+                { src: '/icons/copilot.png' },
+                { src: '/icons/postman.png' }
             ]
         }
 
