@@ -15,3 +15,17 @@
         border: none;
     }
 }
+
+.without {
+    border: none
+}
+
+.accordionwithout {
+    cursor: pointer;
+    transition: var(--transition-micro-medium);
+    background: var(--static-transparent);
+
+    &:hover {
+        background: none;
+    }
+}

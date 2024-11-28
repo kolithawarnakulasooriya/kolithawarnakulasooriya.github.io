@@ -11,6 +11,7 @@ interface AccordionProps {
     style?: React.CSSProperties;
     className?: string;
     open?: boolean;
+    withoutHeader?: boolean;
 }
 
 const Accordion: React.FC<AccordionProps> = forwardRef(({
@@ -18,7 +19,8 @@ const Accordion: React.FC<AccordionProps> = forwardRef(({
     children,
     style,
     className,
-    open = false
+    open = false,
+    withoutHeader = false
 }, ref) => {
     const [isOpen, setIsOpen] = useState(open);
     const [maxHeight, setMaxHeight] = useState('0px');
@@ -98,10 +100,10 @@ const Accordion: React.FC<AccordionProps> = forwardRef(({
             fillWidth
             direction="column"
             style={style}
-            className={classNames(styles.border, className)}>
+            className={classNames(withoutHeader ? styles.without : styles.border, className)}>
             <Flex 
                 tabIndex={0}
-                className={styles.accordion}
+                className={withoutHeader ? styles.accordionwithout : styles.accordion}
                 paddingY="16"
                 paddingLeft="m" paddingRight="m"
                 alignItems="center" justifyContent="space-between"
@@ -116,7 +118,7 @@ const Accordion: React.FC<AccordionProps> = forwardRef(({
                 <Icon
                     name="chevronDown"
                     size="m"
-                    style={{ display: 'flex', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'var(--transition-micro-medium)' }} />
+                    style={{ display: withoutHeader ? 'none': 'flex', transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'var(--transition-micro-medium)' }} />
             </Flex>
             <Flex
                 id="accordion-content"

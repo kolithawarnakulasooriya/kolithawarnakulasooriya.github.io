@@ -31,6 +31,8 @@ import {
 	FaOrcid
 } from "react-icons/fa6";
 
+import { MdOutlineWork } from "react-icons/md";
+
 export const iconLibrary: Record<string, IconType> = {
 	chevronUp: HiChevronUp,
     chevronDown: HiChevronDown,
@@ -56,5 +58,6 @@ export const iconLibrary: Record<string, IconType> = {
 	googlescholar: FaGoogleScholar,
 	medium:FaMedium,
 	researchgate: FaResearchgate,
-	orcid:FaOrcid
+	orcid:FaOrcid,
+	work: MdOutlineWork
 };

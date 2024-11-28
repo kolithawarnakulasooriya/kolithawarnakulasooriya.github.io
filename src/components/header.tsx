@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
                         Who Am I
                     </SmartLink>
                     <SmartLink
-                        href="">
+                        href="/resume">
                         Resume
                     </SmartLink>
                     <SmartLink
