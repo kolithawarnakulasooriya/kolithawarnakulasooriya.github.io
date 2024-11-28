@@ -76,10 +76,10 @@ const Footer: React.FC<FooterProps> = ({ }) => {
                 >
                     <Text
                         style={{
-                            "font-size": "12px",
-                            "margin-bottom": "-50px",
-                            "margin-left": "-45px",
-                            "letter-spacing": "0.05rem"
+                            fontSize: 12,
+                            marginBottom: -50,
+                            marginLeft: -45,
+                            letterSpacing: '0.05rem'
                         }}
                     >
                         Powered by Next.Js & once ui
