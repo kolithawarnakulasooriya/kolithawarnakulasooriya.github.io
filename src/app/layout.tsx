@@ -2,10 +2,8 @@ import "@/once-ui/styles/index.scss";
 import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
-import { headers } from "next/headers";
-import { Metadata } from "next";
 
-import { baseURL, style, meta, og, schema, social } from "@/once-ui/resources/config"
+import { baseURL, style, schema, social } from "@/once-ui/resources/config"
 
 import { Background, Flex } from '@/once-ui/components'
 import { Header } from "@/components/header";
@@ -38,35 +36,6 @@ const secondary: FontConfig | undefined = undefined;
 const tertiary: FontConfig | undefined = undefined;
 /*
 */
-
-export async function generateMetadata(): Promise<Metadata> {
-	const host = (await headers()).get("host");
-	const metadataBase = host ? new URL(`https://${host}`) : undefined;
-
-	return {
-		title: meta.title,
-		description: meta.description,
-		openGraph: {
-			title: og.title,
-			description: og.description,
-			url: 'https://' + baseURL,
-			type: og.type as
-				| "website"
-				| "article"
-				| "book"
-				| "profile"
-				| "music.song"
-				| "music.album"
-				| "music.playlist"
-				| "music.radio_station"
-				| "video.movie"
-				| "video.episode"
-				| "video.tv_show"
-				| "video.other",
-		},
-		metadataBase,
-	};
-}
 
 const schemaData = {
 	"@context": "https://schema.org",
