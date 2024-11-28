@@ -14,15 +14,111 @@ export interface EducationItem {
     duration: string
     src: string
 }
+
+export interface SkillObject{
+    src: string
+}
+export interface SkillCategory {
+    titile: string
+    isOpen: boolean
+    items: Array<SkillObject>
+}
 export interface ConfigProps {
     summary: string,
     name: string,
+    skills: Array<SkillCategory>
     experiance: Array<ExperianceItem>
     education: Array<EducationItem>
 }
 export const Configs: ConfigProps = {
     summary: "A professional software engineer and developer with 5+ years of experience in full-stack application development. A researcher with 3+ years of experience in general artificial intelligence in robotic applications. Professionally collaborated with other development teams to integrate business logic and optimize the components to enhance the customer experience. Demonstrated strong leadership within an agile framework through punctual delivery and deployments, maintaining professional communication with higher management and other teams, and proficiently delegating sprint tasks.",
     name: "Kolitha Warnakulasooriya",
+    skills: [
+        {
+            titile: "Languages",
+            isOpen: true,
+            items: [
+                { src: '/icons/java.png' },
+                { src: '/icons/js.png' },
+                { src: '/icons/typescript.png' },
+                { src: '/icons/python.png' },
+                { src: '/icons/sql.png' },
+                { src: '/icons/c-.png' },
+                { src: '/icons/c-sharp.png' },
+                { src: '/icons/html.png' },
+                { src: '/icons/css.png' },
+            ]
+        },
+        {
+            titile: "Technologies and Frameworks",
+            isOpen: true,
+            items: [
+                { src: '/icons/react.png' },
+                { src: '/icons/react-native.png' },
+                { src: '/icons/recoiljs.png' },
+                { src: '/icons/redux.png' },
+                { src: '/icons/expo.png' },
+                { src: '/icons/express.png' },
+                { src: '/icons/flask.png' },
+                { src: '/icons/ROS.png' },
+                { src: '/icons/springboot.png' },
+                { src: '/icons/aws.png' },
+                { src: '/icons/azure.png' },
+            ]
+        },
+        {
+            titile: "Project Management and Communication",
+            isOpen: true,
+            items: [
+                { src: '/icons/jira.png' },
+                { src: '/icons/confluence.png' },
+                { src: '/icons/outlook.png' },
+                { src: '/icons/teams.png' },
+                { src: '/icons/slack.png' },
+                { src: '/icons/discord.png' }
+            ]
+        },
+        {
+            titile: "Editors, IDE, and Tools",
+            isOpen: true,
+            items: [
+                { src: '/icons/jet.png' },
+                { src: '/icons/vscode.png' },
+                { src: '/icons/visual-studio.png' },
+                { src: '/icons/xcode.png' },
+                { src: '/icons/dbever.png' },
+                { src: '/icons/drawio.png' },
+                { src: '/icons/figma.png' }
+            ]
+        },
+        {
+            titile: "Databases & Data Tools",
+            isOpen: true,
+            items: [
+                { src: '/icons/mysql.png' },
+                { src: '/icons/mssql.png' },
+                { src: '/icons/postgres.png' },
+                { src: '/icons/mongo.png' },
+                { src: '/icons/dynamodb.png' },
+                { src: '/icons/radis.png' },
+                { src: '/icons/spark.png' }
+            ]
+        },
+        {
+            titile: "Other",
+            isOpen: true,
+            items: [
+                { src: '/icons/torch.png' },
+                { src: '/icons/sonarqube.svg' },
+                { src: '/icons/datadog.avif' },
+                { src: '/icons/dynatrace.svg' },
+                { src: '/icons/optimizely.png' },
+                { src: '/icons/google.svg' },
+                { src: '/icons/copilot.png' }
+            ]
+        }
+
+    ],
     experiance: [
         {
             src: "/images/usa.png",
