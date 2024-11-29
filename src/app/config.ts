@@ -228,7 +228,7 @@ export const Configs: ConfigProps = {
             ]
         },
         {
-            src: "/images/99x.png",
+            src: "/images/4onse.jpg",
             title: "Volunteer Research Assistant",
             company: "University of Moratuwa, Colombo, Sri Lanka",
             duration: "Dec 2016 - Jul 2017",
