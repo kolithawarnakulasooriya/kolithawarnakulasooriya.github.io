@@ -42,7 +42,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
                         height={160}
                         style={{
                             width: "-webkit - fill - available",
-                            "object-fit": "scale-down"
+                            objectFit: "scale-down"
                         }}
 
                     />
