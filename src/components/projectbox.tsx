@@ -20,7 +20,7 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
     title
 }) => {
     return (
-        <Flex key={key} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={17}>
+        <Flex key={key} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={20}>
                 <RevealFx
                     speed="medium"
                     delay={0}
@@ -30,9 +30,9 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
                         direction="column"
                         justifyContent="center"
                         alignItems="center"
-                        maxWidth={15}
+                        maxWidth={17}
                     >
-                        <Heading as="h2">
+                        <Heading as="h2" marginBottom="12">
                             {title}
                         </Heading>
                         <Image
@@ -40,12 +40,13 @@ const ProjectBox: React.FC<ProjectBoxProps> = ({
                             alt=""
                             width={160}
                             height={160}
-                            objectFit="contain"
+                            
                         />
                         <Link href={src}>
                             <Text style={{
                                 textAlign:'center',
-                                fontSize: 14
+                                fontSize: 14,
+                                marginTop: 12
                             }}>
                                 {heading}
                             </Text>

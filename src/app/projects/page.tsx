@@ -8,12 +8,12 @@ interface ProjectProps { }
 const Projects: React.FC<ProjectProps> = ({ }) => {
 
     return (
-        <Flex fillHeight className="window3q" direction="column" overflowY="auto">
+        <Flex fillHeight className="window3q" direction="column" overflowY="auto" alignItems="center">
             {Configs.projects.map((row, i)=>(
                 <Flex key={i}>
                     {
                         row.map((data: ProjectObject, j)=><ProjectBox
-                            key={i*j}
+                            key={i+j}
                             src={data.src}
                             heading={data.heading}
                             image={data.image}

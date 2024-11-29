@@ -165,7 +165,7 @@ export const Configs: ConfigProps = {
         },
         {
             src: "/images/techila.png",
-            title: "Software Developer",
+            title: "Lead Software Developer",
             company: "Techila Software",
             duration: "Jul 2018 – Present",
             subtitle: "Self-Employed",
@@ -222,6 +222,15 @@ export const Configs: ConfigProps = {
             src: "/images/99x.png",
             title: "Associate Software Engineer",
             company: "99X Technology, Colombo, Sri Lanka",
+            duration: "Dec 2016 - Jul 2017",
+            items: [
+                "Modified, implemented, tested, and deployed  ASP.net booking web application "
+            ]
+        },
+        {
+            src: "/images/99x.png",
+            title: "Volunteer Research Assistant",
+            company: "University of Moratuwa, Colombo, Sri Lanka",
             duration: "Dec 2016 - Jul 2017",
             items: [
                 "Modified, implemented, tested, and deployed  ASP.net booking web application "
@@ -319,6 +328,52 @@ export const Configs: ConfigProps = {
                 title: 'Swarm X',
                 heading: 'SwarmX is the java based natural inspired optimization library.',
                 image: '/images/swarmx.png',
+            },
+            {
+                src: "https://github.com/kwar0715/mockableExpress",
+                title: "MockableExpress",
+                heading: "An open source inmemory mock api management tool",
+                image: "/images/me.png"
+            },
+            {
+                src: "https://shop.sysco.com/",
+                title: "Sysco Shop",
+                heading: "The CRM tool for the Sysco customers, Associated with SyscoLabs Technologies",
+                image: "/images/syscoshop.png"
+            }
+        ],
+        [
+            {
+                src: "https://minearc.com/serviceapp/",
+                title: "MineArc Service App",
+                heading: "Service Application for MineArc Systems Customers, Associated with Techila Softwares",
+                image: "/images/minearc.jpeg"
+            },
+            {
+                src: "https://4onse.org/",
+                title: "4ONSE",
+                heading: "Developing non-conventional, sustainable and effective climate monitoring system",
+                image: "/images/4onse.jpg"
+            },
+            {
+                src: "https://github.com/kolithawarnakulasooriya/IMS.Mythica",
+                title: "LIS Middleware",
+                heading: "Developed a cooperative communication middleware between Hitachi 911, 912 and LIS systems",
+                image: "/images/defproject.png"
+            }
+        ],
+        [
+            {
+                src: "https://github.com/kolithawarnakulasooriya/IMS.Mythica",
+                title: "LIS Middleware",
+                heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
+                image: "/images/defproject.png"
+            },
+            {
+                src: "https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/",
+                title: "Virtual Expo",
+                heading: "Virtual Exhibition is giving a marvelous experience rather than traditional exhibition experiance",
+                image: "/images/defproject.png"
             }
         ]
     ]
