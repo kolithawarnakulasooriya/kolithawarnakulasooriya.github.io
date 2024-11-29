@@ -1,7 +1,6 @@
 import React from "react";
-import { Flex, Grid, Text, Accordion } from "@/once-ui/components";
+import { Flex} from "@/once-ui/components";
 import { Configs, PublicationObject } from '@/app/config';
-import { IconBox } from "@/components/iconbox";
 import { PublicationBox } from "@/components/publicationbox";
 
 interface PublicationsProps { }

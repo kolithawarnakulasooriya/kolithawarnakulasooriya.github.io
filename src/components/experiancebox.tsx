@@ -61,7 +61,7 @@ const ExperianceBox: React.FC<ExperianceBoxProps> = ({
             }}>
                 <Flex className={styles.listbox}>
                     <ul>
-                        {items.map((element, index) => (<li key={index}>{element}</li>))}
+                        {items.map((element, index) => (<li style={{lineHeight: 1.5}} key={index}>{element}</li>))}
                     </ul>
                 </Flex>
             </Accordion>
