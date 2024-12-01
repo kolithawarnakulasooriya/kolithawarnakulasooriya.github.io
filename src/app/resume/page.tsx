@@ -1,6 +1,7 @@
 
 import React from "react";
 import { Flex, Grid, Heading, Button } from "@/once-ui/components";
+import Image from "next/image";
 import { ExperianceBox } from "@/components/experiancebox";
 import { Configs, ExperianceItem, EducationItem } from '@/app/config';
 interface ResumeProps { }
@@ -56,6 +57,12 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
                 </Flex>
             </Grid>
             
+            <Flex alignItems="center" fillWidth justifyContent="center">
+                <Image src="/images/usa-flag.png" alt="usa" width={55} height={40} style={{margin: 10}}/>
+                <Image src="/images/srilanka.png" alt="srilanka" width={55} height={40}  style={{margin: 10}}/>
+                <Image src="/images/australia.png" alt="australia" width={55} height={40}  style={{margin: 10}}/>
+                <Image src="/images/norway.png" alt="norway" width={55} height={40}  style={{margin: 10}}/>
+            </Flex>
 
             <Flex fillWidth justifyContent="center">
                 <Button href="/files/resume.pdf">
