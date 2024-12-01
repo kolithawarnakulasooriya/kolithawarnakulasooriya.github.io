@@ -45,6 +45,7 @@ export interface ConfigProps {
     education: Array<EducationItem>
     publications: Array<PublicationObject>
     projects: Array<Array<ProjectObject>>
+    gallery: Array<Array<string>>
 }
 
 
@@ -382,6 +383,24 @@ export const Configs: ConfigProps = {
                 heading: "Virtual Exhibition is giving a marvelous experience rather than traditional exhibition experiance",
                 image: "/images/defproject.png"
             }
+        ]
+    ],
+    gallery: [
+        [
+            "p1.jpeg",
+            "DSC_0101.jpg",
+            "p5.jpeg",
+            "p7.jpeg",
+        ],
+        [
+            "p2.jpeg",
+            "sci112.jpg",
+            "vexpo.jpg",
+            "graduation.jpg",
+        ],
+        [
+            "cc2.jpg",
+            "t112.jpg"
         ]
     ]
 }
