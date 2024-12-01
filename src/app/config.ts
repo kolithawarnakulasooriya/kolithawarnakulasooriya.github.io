@@ -45,6 +45,7 @@ export interface ConfigProps {
     education: Array<EducationItem>
     publications: Array<PublicationObject>
     projects: Array<Array<ProjectObject>>
+    gallery: Array<Array<string>>
 }
 
 
@@ -220,7 +221,7 @@ export const Configs: ConfigProps = {
         },
         {
             src: "/images/99x.png",
-            title: "Associate Software Engineer",
+            title: "Associate Software Engineer (Intern)",
             company: "99X Technology, Colombo, Sri Lanka",
             duration: "Dec 2016 - Jul 2017",
             items: [
@@ -330,10 +331,10 @@ export const Configs: ConfigProps = {
                 image: '/images/swarmx.png',
             },
             {
-                src: "https://github.com/kwar0715/mockableExpress",
-                title: "MockableExpress",
-                heading: "An open source inmemory mock api management tool",
-                image: "/images/me.png"
+                src: '',
+                title: 'Multi-Het UAV Library',
+                heading: 'ROS framework for adaptable control of heterogenious UAS',
+                image: '/images/drone.png',
             },
             {
                 src: "https://shop.sysco.com/",
@@ -343,6 +344,13 @@ export const Configs: ConfigProps = {
             }
         ],
         [
+
+            {
+                src: "https://github.com/kwar0715/mockableExpress",
+                title: "MockableExpress",
+                heading: "An open source inmemory mock api management tool",
+                image: "/images/me.png"
+            },
             {
                 src: "https://minearc.com/serviceapp/",
                 title: "MineArc Service App",
@@ -354,17 +362,17 @@ export const Configs: ConfigProps = {
                 title: "4ONSE",
                 heading: "Developing non-conventional, sustainable and effective climate monitoring system",
                 image: "/images/4onse.jpg"
-            },
-            {
-                src: "https://github.com/kolithawarnakulasooriya/IMS.Mythica",
-                title: "LIS Middleware",
-                heading: "Developed a cooperative communication middleware between Hitachi 911, 912 and LIS systems",
-                image: "/images/defproject.png"
             }
         ],
         [
             {
-                src: "https://github.com/kolithawarnakulasooriya/IMS.Mythica",
+                src: "",
+                title: "LIS Middleware",
+                heading: "Developed a cooperative communication middleware between Hitachi 911, 912 and LIS systems",
+                image: "/images/defproject.png"
+            },
+            {
+                src: "",
                 title: "LIS Middleware",
                 heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
                 image: "/images/defproject.png"
@@ -375,6 +383,24 @@ export const Configs: ConfigProps = {
                 heading: "Virtual Exhibition is giving a marvelous experience rather than traditional exhibition experiance",
                 image: "/images/defproject.png"
             }
+        ]
+    ],
+    gallery: [
+        [
+            "p1.jpeg",
+            "DSC_0101.jpg",
+            "p5.jpeg",
+            "p7.jpeg",
+        ],
+        [
+            "p2.jpeg",
+            "sci112.jpg",
+            "vexpo.jpg",
+            "graduation.jpg",
+        ],
+        [
+            "cc2.jpg",
+            "t112.jpg"
         ]
     ]
 }
