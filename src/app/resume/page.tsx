@@ -57,17 +57,18 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
                 </Flex>
             </Grid>
             
-            <Flex alignItems="center" fillWidth justifyContent="center">
-                <Image src="/images/usa-flag.png" alt="usa" width={55} height={40} style={{margin: 10}}/>
-                <Image src="/images/srilanka.png" alt="srilanka" width={55} height={40}  style={{margin: 10}}/>
-                <Image src="/images/australia.png" alt="australia" width={55} height={40}  style={{margin: 10}}/>
-                <Image src="/images/norway.png" alt="norway" width={55} height={40}  style={{margin: 10}}/>
-            </Flex>
+            
 
             <Flex fillWidth justifyContent="center">
                 <Button href="/files/resume.pdf">
                     Download My Resume Here!
                 </Button>
+            </Flex>
+            <Flex alignItems="center" fillWidth justifyContent="center">
+                <Image src="/images/usa-flag.png" alt="usa" width={55} height={40} style={{margin: 10}}/>
+                <Image src="/images/srilanka.png" alt="srilanka" width={55} height={40}  style={{margin: 10}}/>
+                <Image src="/images/australia.png" alt="australia" width={55} height={40}  style={{margin: 10}}/>
+                <Image src="/images/norway.png" alt="norway" width={55} height={40}  style={{margin: 10}}/>
             </Flex>
         </Flex>
     )
