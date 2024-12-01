@@ -388,19 +388,19 @@ export const Configs: ConfigProps = {
     gallery: [
         [
             "p1.jpeg",
-            "DSC_0101.jpeg",
+            "t112.jpeg",
             "p5.jpeg",
             "p7.jpeg",
         ],
         [
             "p2.jpeg",
             "sci112.jpeg",
-            "vexpo.jpeg",
+            "cc2.jpeg",
             "graduation.jpeg",
         ],
         [
-            "cc2.jpeg",
-            "t112.jpeg"
+            "vexpo.jpeg"
+            
         ]
     ]
 }
