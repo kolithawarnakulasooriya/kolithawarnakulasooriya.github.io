@@ -256,6 +256,12 @@ export const Configs: ConfigProps = {
     ],
     publications: [
         {
+            href: "https://doi.org/10.1007/s12065-024-00997-6",
+            title: "Comparative analysis of accuracy and computational complexity across 21 swarm intelligence algorithms",
+            authors: "Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "Evolutionary Intelligence"
+        },
+        {
             href: "https://ieeexplore.ieee.org/abstract/document/10543316",
             title: "Attacks, Detection, and Prevention on Commercial Drones: A Review",
             authors: "Kolitha Warnakulasooriya, Aviv Segev",
