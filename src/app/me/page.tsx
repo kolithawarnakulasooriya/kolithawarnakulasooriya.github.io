@@ -19,14 +19,7 @@ const Me: React.FC<MeProps> = ({ }) => {
                     columns="repeat(1, 2)"
                     fillWidth
                 >
-                    <Text
-                        variant="body-default-s"
-                        align="left"
-                        size="s"
-                        onBackground="neutral-strong"
-                    >
-                        {Configs.name} is a,
-                    </Text>
+                    
                     <Text
                         variant="body-default-s"
                         align="justify"
