@@ -48,6 +48,14 @@ const Footer: React.FC<FooterProps> = ({ }) => {
                         href='https://medium.com/@warnakulasooriyakolitha'
                         icon="medium"
                         size="l"
+                        tooltip="Medium"
+                        tooltipPosition="top"
+                        variant="tertiary"
+                    />
+                     <IconButton
+                        href='https://github.com/kolithawarnakulasooriya'
+                        icon="github"
+                        size="l"
                         tooltip="Github"
                         tooltipPosition="top"
                         variant="tertiary"

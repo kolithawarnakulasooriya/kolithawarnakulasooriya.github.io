@@ -405,8 +405,14 @@ export const Configs: ConfigProps = {
             "graduation.jpeg",
         ],
         [
-            "vexpo.jpeg"
-            
+            "vexpo.jpeg",
+            "p11.JPG",
+            "p22.JPG",
+            "p33.JPG",
+        ],
+        [
+            "p44.jpg",
+            "p55.JPG"
         ]
     ]
 }
