@@ -408,11 +408,11 @@ export const Configs: ConfigProps = {
             "vexpo.jpeg",
             "p11.JPG",
             "p22.JPG",
-            "p33.JPG",
+            "p33.jpg",
         ],
         [
             "p44.jpg",
-            "p55.JPG"
+            "p55.jpg"
         ]
     ]
 }
