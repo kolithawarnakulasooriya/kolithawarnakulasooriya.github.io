@@ -166,10 +166,10 @@ export const Configs: ConfigProps = {
         },
         {
             src: "/images/techila.png",
-            title: "Lead Software Developer",
+            title: "Freelanced Software Developer (Front-End)",
             company: "Techila Software",
-            duration: "Jul 2018 – Present",
-            subtitle: "Self-Employed",
+            duration: "Jul 2022 – Present",
+            subtitle: "Freelance",
             items: [
                 "Led frontend team to develop and maintain three multi-tenant web applications and two hybrid mobile applications"
             ]
