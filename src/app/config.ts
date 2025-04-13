@@ -40,6 +40,7 @@ export interface ProjectObject {
 export interface ConfigProps {
     summary: string,
     name: string,
+    resume: string,
     skills: Array<SkillCategory>
     experiance: Array<ExperianceItem>
     education: Array<EducationItem>
@@ -52,6 +53,7 @@ export interface ConfigProps {
 export const Configs: ConfigProps = {
     summary: "As a professional software engineer and doctoral candidate in artificial intelligence, I am driven by the intersection of advanced algorithms, machine learning, deep learning, and collective intelligence. Over the past 3+ years, I have mastered my technical skills in cutting-edge frameworks such as Pytorch in artificial intelligence technologies. I have developed cutting-edge solutions to complex challenges, from designing intelligent aerial robotic systems to implementing scalable software architectures that enable innovation. My doctoral research focused on solving the distributed leader selection problem in large-scale heterogeneous multi-UAV systems based on the collective behavior of biological entities, which proactively support the aerial robotics industry. This led to six first-authored articles published in AAAI and Evolutionary Intelligence and an open-source framework in swarm intelligence for Java developers. Outside, I have enjoyed my time with the SAE team by developing the Formula 1 automotive for the SAE formula competitions.As a Software Engineer with 3.5+ years of experience, I am passionate about designing and delivering robust, scalable, and innovative software solutions that empower businesses to thrive in a fast-paced, tech-driven world. My expertise spans React and React Native, Javascript, and Typescript frameworks with Node JS and Java Springboot back-end from 3-tier to microservices architectures. Further, my technical skills include SQL NoSQL, memory, time series databases, and AWS and Azure cloud services. As an excellent team player and manager, I championed agile development practices to improve team efficiency, product quality, and timely deliverables. Outside of techs, I am an intense knowledge seeker in techs and finance, spirituality, nature, and science. Socrates once said, \"The only true wisdom is knowing you know nothing\". Besides that, I am a tennis player and mostly workout every day. I like long-distance driving, enjoying the company of friends, and being pleasant to everybody.",
     name: "Kolitha Warnakulasooriya",
+    resume: '/files/Resume-General-Full-Stack.pdf',
     skills: [
         {
             titile: "Languages",
