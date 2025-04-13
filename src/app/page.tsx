@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { Flex, Avatar, Toaster } from '@/once-ui/components';
 import { InfoBox } from '@/components/infobox';
+import { Configs } from './config';
 
 export default function Home() {
 
@@ -12,7 +13,7 @@ export default function Home() {
 			id: Date.now().valueOf(),
 			message: 'Haven\'t you found my resume yet?',
 			variant: 'success',
-			href: '/files/resume.pdf',
+			href: Configs.resume,
 			hrefText: "Download!",
 			icon: false,
 		}

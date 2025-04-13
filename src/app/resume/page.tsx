@@ -60,7 +60,7 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
             
 
             <Flex fillWidth justifyContent="center">
-                <Button href="/files/resume.pdf">
+                <Button href={Configs.resume}>
                     Download My Resume Here!
                 </Button>
             </Flex>
