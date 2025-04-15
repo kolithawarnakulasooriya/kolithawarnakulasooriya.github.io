@@ -13,7 +13,7 @@ const Projects: React.FC<ProjectProps> = ({ }) => {
                 <Flex key={i}>
                     {
                         row.map((data: string, j)=>  
-                         <Flex key={i+j} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={20}>
+                         <Flex key={i+j} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={25}>
 
                         <RevealFx
                             speed="medium"
@@ -24,13 +24,13 @@ const Projects: React.FC<ProjectProps> = ({ }) => {
                                 direction="column"
                                 justifyContent="center"
                                 alignItems="center"
-                                maxWidth={17}
+                                maxWidth={50}
                             >
                                 <Image
                                     src={`/gallery/${data}`}
                                     alt=""
-                                    width={420}
-                                    height={220}
+                                    width={1020}
+                                    height={320}
                                     style={{
                                         width: "-webkit - fill - available",
                                         objectFit: "scale-down",

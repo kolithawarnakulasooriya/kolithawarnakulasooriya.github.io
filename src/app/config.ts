@@ -46,7 +46,8 @@ export interface ConfigProps {
     education: Array<EducationItem>
     publications: Array<PublicationObject>
     projects: Array<Array<ProjectObject>>
-    gallery: Array<Array<string>>
+    gallery: Array<Array<string>>,
+    blog: Array<string>
 }
 
 
@@ -243,7 +244,7 @@ export const Configs: ConfigProps = {
     education: [
         {
             src: "/images/usa.png",
-            title: "Ph.D. in Computing",
+            title: "PhD in Computing",
             subtitle: "Cooperative Intelligence in Robotics",
             institute: "School of Computing, University of South Alabama, United States",
             duration: "2025 May",
@@ -395,26 +396,33 @@ export const Configs: ConfigProps = {
     ],
     gallery: [
         [
+            "p44.jpg",
+            "p55.jpg",
             "p1.jpeg",
-            "t112.jpeg",
-            "p5.jpeg",
+        ],
+        [
+            "c1.jpg",
+            "p33.jpg",
             "p7.jpeg",
         ],
         [
             "p2.jpeg",
-            "sci112.jpeg",
-            "cc2.jpeg",
-            "graduation.jpeg",
+            "t112.jpeg",
+            "p5.jpeg",
         ],
         [
             "vexpo.jpeg",
-            "p11.JPG",
-            "p22.JPG",
-            "p33.jpg",
+            "sci112.jpeg",
+            "cc2.jpeg"
         ],
         [
-            "p44.jpg",
-            "p55.jpg"
+            "graduation.jpeg",
+            "p11.JPG",
+            "p22.JPG",
         ]
+    ],
+    "blog": [
+            "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
+            
     ]
 }
