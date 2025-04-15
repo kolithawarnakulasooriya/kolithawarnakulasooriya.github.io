@@ -12,7 +12,7 @@ const Projects: React.FC<Blog> = ({ }) => {
             {
                 Configs.blog.map((row, i)=>
                     <Flex key={i} style={{marginBottom: 20}}>
-                        <iframe src={`${row}`} height="1000" width="1000" frameborder="0" allowfullscreen="" title="Embedded post"></iframe>
+                        <iframe src={`${row}`} height="1000" width="1000" title="Embedded post"></iframe>
                     </Flex>
                 )
             }
