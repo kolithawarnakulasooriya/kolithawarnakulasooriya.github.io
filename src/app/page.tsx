@@ -63,7 +63,7 @@ export default function Home() {
 				>
 					<InfoBox text='Curious Scientist' fontSize={40} />
 					<InfoBox text='Motivated Researcher' fontSize={40} />
-					<InfoBox text='Result Driven Software Engineer' fontSize={40} />
+					<InfoBox text='Results Driven Software Engineer' fontSize={40} />
 					<InfoBox text='AI & Robotics Lover' fontSize={40} />
 				</Flex>
 			</Flex>
