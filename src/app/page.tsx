@@ -61,9 +61,10 @@ export default function Home() {
 					justifyContent='flex-start'
 					paddingLeft='32'
 				>
-					<InfoBox text='Software Engineer' fontSize={40} />
-					<InfoBox text='Full-Stack Software Developer' fontSize={40} />
-					<InfoBox text='Robotics & AI Researcher' fontSize={40} />
+					<InfoBox text='Curious Scientist' fontSize={40} />
+					<InfoBox text='Motivated Researcher' fontSize={40} />
+					<InfoBox text='Result Driven Software Engineer' fontSize={40} />
+					<InfoBox text='AI & Robotics Lover' fontSize={40} />
 				</Flex>
 			</Flex>
 		</Flex>
