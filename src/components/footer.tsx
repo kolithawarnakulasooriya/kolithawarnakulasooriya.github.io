@@ -69,7 +69,7 @@ const Footer: React.FC<FooterProps> = ({ }) => {
                         variant="tertiary"
                     />
                     <IconButton
-                        href='https://orcid.org/my-orcid?orcid=0000-0002-4619-7027'
+                        href='https://orcid.org/0000-0002-4619-7027'
                         icon="orcid"
                         size="l"
                         tooltip="ORCID"
