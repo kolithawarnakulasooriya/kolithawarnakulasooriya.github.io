@@ -73,6 +73,14 @@ export default function RootLayout({
 					dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
 				/>
 				<meta name="google-site-verification" content="IqZCUyLl-_LBpJpigQ52Uji9R7P6Z-ABkO-T6mlOzmI" />
+				<meta name="title" content="https://kolithawarnakulasooriya.github.io/">
+				<meta name="description" content="Kolitha warnakulasooriya, PhD, s personal web site">
+				<meta name="keywords" content="kolitha warnakulasooriya,kolitha@warnakulasooriya.outlook.com,kolitha,warnakulasooriya,multi-robot systems,swarm intelligence,drone systems,UAV,artificial intelligence,intelligence robotics">
+				<meta name="robots" content="index, follow">
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+				<meta name="language" content="English">
+				<meta name="author" content="Kolitha Warnakulasooriya">
+
 			</head>
 			<Flex
 				as="body"
