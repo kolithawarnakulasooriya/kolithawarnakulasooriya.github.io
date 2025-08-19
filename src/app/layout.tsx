@@ -52,10 +52,10 @@ export default function RootLayout({
 	children,
 }: Readonly<{
 	children: React.ReactNode;
-}>) {
+}>) 
+{
 	return (
-		<Flex
-			as="html" lang="en"
+		<Flex as="html" lang="en"
 			fillHeight background="page"
 			data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
 			data-border={style.border} data-theme={style.theme}
@@ -82,9 +82,7 @@ export default function RootLayout({
 				<meta name="author" content="Kolitha Warnakulasooriya">
 
 			</head>
-			<Flex
-				as="body"
-				fillWidth fillHeight margin="0" padding="0">
+			<Flex as="body" fillWidth fillHeight margin="0" padding="0">
 				<Background
 					style={{ zIndex: '-1' }}
 					position="fixed"
