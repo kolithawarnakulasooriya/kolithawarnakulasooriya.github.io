@@ -55,6 +55,7 @@ export default function RootLayout({
 }>) 
 {
 	return (
+		<>
 		<Flex as="html" lang="en"
 			fillHeight background="page"
 			data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
@@ -95,5 +96,6 @@ export default function RootLayout({
 				</Flex>
 			</Flex>
 		</Flex>
+		</>
 	);
 }
