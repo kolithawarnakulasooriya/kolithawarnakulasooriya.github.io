@@ -157,9 +157,19 @@ export const Configs: ConfigProps = {
     experiance: [
         {
             src: "/images/usa.png",
+            title: "Assistant Professor",
+            company: "College of Engineering, University of South Alabama, United States",
+            duration: "Aug 2025 – Present",
+            items: [
+                "Conducting research related to intelligent UAV systems, safety measurements from a UAV threat, and teaching related to computer engineering subjects. Collaborating with research teams from other faculties.",
+                "Teaching, Digital Computer Architecture, Digital Logic Design, Introduction to Robotics, Microprocessor System Interfacing.",
+            ]
+        },
+        {
+            src: "/images/usa.png",
             title: "Graduate Research Assistant",
             company: "School of Computing, University of South Alabama, United States",
-            duration: "Jan 2022 – Present",
+            duration: "Jan 2022 – May 2025",
             items: [
                 "Pursue research to introduce a dynamic leader election algorithm for an autonomous aerial vehicle system based on cognitive intelligence.",
                 "Published three research articles in top-ranked artificial intelligence conferences and journals (AAAI-2023, ICIPRoB, Evolutionary Intelligence)",
