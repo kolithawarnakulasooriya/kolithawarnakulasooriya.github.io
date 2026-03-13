@@ -157,7 +157,7 @@ export const Configs: ConfigProps = {
     experiance: [
         {
             src: "/images/usa.png",
-            title: "Assistant Professor",
+            title: "Visiting Assistant Professor",
             company: "College of Engineering, University of South Alabama, United States",
             duration: "Aug 2025 – Present",
             items: [
@@ -175,16 +175,6 @@ export const Configs: ConfigProps = {
                 "Published three research articles in top-ranked artificial intelligence conferences and journals (AAAI-2023, ICIPRoB, Evolutionary Intelligence)",
                 "Engaged as a lead researcher in Drone Systems and AI Laboratory by leading and administrating three core UAV-related research and developed a ROS-based adaptable Python flight framework to operate heterogeneous commercial UAVs such as Tello, Anafi, and Bebop, which can handle a maximum of 15 agents in the cluster."
 
-            ]
-        },
-        {
-            src: "/images/techila.png",
-            title: "Freelanced Software Developer (Front-End)",
-            company: "Techila Software",
-            duration: "Jul 2022 – Present",
-            subtitle: "Freelance",
-            items: [
-                "Led frontend team to develop and maintain three multi-tenant web applications and two hybrid mobile applications"
             ]
         },
         {
