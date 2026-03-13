@@ -435,7 +435,7 @@ export const Configs: ConfigProps = {
     ],
     "blog": [
             "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
-            "https://youtu.be/43GgyUBhTDU",
+            "https://www.youtube.com/embed/43GgyUBhTDU?si=dG2Z-QBSYrQIiDmu&amp;controls=0",
             
     ]
 }
