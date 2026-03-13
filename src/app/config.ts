@@ -259,10 +259,22 @@ export const Configs: ConfigProps = {
     ],
     publications: [
         {
-            href: "https://doi.org/10.1007/s12065-024-00997-6",
+            href: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-1996",
+            title: "Cooperative Optimized Leader Selection in Large UAV Swarms by Maximizing the Average Controllability in a Hierarchical Control Structure",
+            authors: "Kolitha Warnakulasooriya, Hakki Erhan Sevil, Aviv Segev",
+            publisher: "AIAA Scitech"
+        },
+        {
+            href: "10.1109/BigData62323.2024.10824996",
             title: "Comparative analysis of accuracy and computational complexity across 21 swarm intelligence algorithms",
-            authors: "Kolitha Warnakulasooriya, Aviv Segev",
-            publisher: "Evolutionary Intelligence"
+            authors: "William Starling, Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "IEEE International Conference on Big Data (BigData)"
+        },
+        {
+            href: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-1996",
+            title: "Exploring an Embodied Conversation Agent to Act as an Empathetic Doctor for use in Telehealth",
+            authors: "Kolitha Warnakulasooriya, Hakki Erhan Sevil, Aviv Segev",
+            publisher: "AIAA Scitech"
         },
         {
             href: "https://ieeexplore.ieee.org/abstract/document/10543316",
@@ -423,6 +435,7 @@ export const Configs: ConfigProps = {
     ],
     "blog": [
             "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
+            "https://youtu.be/43GgyUBhTDU",
             
     ]
 }
