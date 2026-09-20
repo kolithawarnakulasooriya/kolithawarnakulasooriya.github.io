@@ -346,6 +346,18 @@ export const Configs: ConfigProps = {
     projects: [
         [
             {
+                src: 'https://raven-os-ai-os.github.io/Web/',
+                title: 'Ravan OS',
+                heading: 'Raven OS is a community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
+                image: 'https://github.com/Raven-OS-AI-OS/Raven-OS/blob/main/assets/branding/raven-logo.png',
+            },
+            {
+                src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
+                title: 'Codex AutoComplete VSCode Plugin',
+                heading: 'Complete VS Code extension that generates inline code suggestions as ghost text. It signs in with your ChatGPT account through the Codex OAuth PKCE flow by default, with OpenAI API-key authentication available as a fallback.',
+                image: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete/blob/main/autocomplete-codex-thumbnail.png',
+            },
+            {
                 src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
                 title: 'Swarm X',
                 heading: 'SwarmX is the java based natural inspired optimization library.',
