@@ -41,13 +41,14 @@ export interface ConfigProps {
     summary: string,
     name: string,
     resume: string,
-    skills: Array<SkillCategory>
-    experiance: Array<ExperianceItem>
-    education: Array<EducationItem>
-    publications: Array<PublicationObject>
-    projects: Array<Array<ProjectObject>>
+    skills: Array<SkillCategory>,
+    experiance: Array<ExperianceItem>,
+    education: Array<EducationItem>,
+    publications: Array<PublicationObject>,
+    projects: Array<Array<ProjectObject>>,
     gallery: Array<Array<string>>,
-    blog: Array<string>
+    blog: Array<string>,
+    research: string
 }
 
 
@@ -451,7 +452,5 @@ export const Configs: ConfigProps = {
             "https://raven-os-ai-os.github.io/Web/",
             "https://storage.googleapis.com/research_web_page/index.html"
     ],
-    research: {
-        "url": "https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
-    }
+    research: "https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
 }
