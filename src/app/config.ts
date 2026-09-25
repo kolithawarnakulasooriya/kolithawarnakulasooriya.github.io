@@ -449,5 +449,6 @@ export const Configs: ConfigProps = {
             "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
             "https://www.youtube.com/embed/43GgyUBhTDU?si=dG2Z-QBSYrQIiDmu&amp;controls=0",
             "https://raven-os-ai-os.github.io/Web/",
+            "https://storage.googleapis.com/research_web_page/index.html"
     ]
 }
