@@ -450,5 +450,8 @@ export const Configs: ConfigProps = {
             "https://www.youtube.com/embed/43GgyUBhTDU?si=dG2Z-QBSYrQIiDmu&amp;controls=0",
             "https://raven-os-ai-os.github.io/Web/",
             "https://storage.googleapis.com/research_web_page/index.html"
-    ]
+    ],
+    "research":{
+        "url": "https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
+    }
 }
