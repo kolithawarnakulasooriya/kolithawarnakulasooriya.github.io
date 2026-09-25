@@ -8,7 +8,7 @@ interface Blog { }
 const ResearchPage: React.FC<Blog> = ({ }) => {
 
     return (
-        <iframe src={`${Configs.research.url}`} height="1000" width="1000" title="Research"></iframe>
+        <iframe src={`${Configs.research}`} height="1000" width="1000" title="Research"></iframe>
     )
 }
 
