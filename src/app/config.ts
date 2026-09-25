@@ -349,13 +349,13 @@ export const Configs: ConfigProps = {
                 src: 'https://raven-os-ai-os.github.io/Web/',
                 title: 'Ravan OS',
                 heading: 'Raven OS is a community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
-                image: 'https://github.com/Raven-OS-AI-OS/Raven-OS/blob/main/assets/branding/raven-logo.png',
+                image: '/images/raven-logo.png',
             },
             {
                 src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
                 title: 'Codex AutoComplete VSCode Plugin',
                 heading: 'Complete VS Code extension that generates inline code suggestions as ghost text. It signs in with your ChatGPT account through the Codex OAuth PKCE flow by default, with OpenAI API-key authentication available as a fallback.',
-                image: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete/blob/main/autocomplete-codex-thumbnail.png',
+                image: '/images/autocomplete-codex-thumbnail.png',
             },
             {
                 src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
@@ -395,9 +395,7 @@ export const Configs: ConfigProps = {
                 title: "4ONSE",
                 heading: "Developing non-conventional, sustainable and effective climate monitoring system",
                 image: "/images/4onse.jpg"
-            }
-        ],
-        [
+            },
             {
                 src: "",
                 title: "LIS Middleware",
@@ -409,7 +407,9 @@ export const Configs: ConfigProps = {
                 title: "LIS Middleware",
                 heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
                 image: "/images/defproject.png"
-            },
+            }
+        ],
+        [
             {
                 src: "https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/",
                 title: "Virtual Expo",
