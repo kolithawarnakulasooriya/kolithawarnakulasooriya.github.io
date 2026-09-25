@@ -58,6 +58,10 @@ const Header: React.FC<HeaderProps> = ({}) => {
                         href="/blog">
                         Blog
                     </SmartLink>
+                    <SmartLink
+                        href="/research">
+                        Research
+                    </SmartLink>
                 </Flex>
             </Flex>
         </Flex>
