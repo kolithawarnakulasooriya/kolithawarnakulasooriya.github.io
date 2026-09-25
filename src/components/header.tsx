@@ -59,7 +59,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
                         Blog
                     </SmartLink>
                     <SmartLink
-                        href="/research">
+                        href="https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
+                        target="_blank" 
+                      rel="noopener noreferrer"
+                      suffixIcon="arrowRight"
+                    >
                         Research
                     </SmartLink>
                 </Flex>
