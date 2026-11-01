@@ -1,0 +1,16 @@
+.biography {
+    max-width: 65ch;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+    overflow-wrap: anywhere;
+
+    p + p { margin-top: var(--static-space-24); }
+}
+.skills { margin-top: var(--static-space-40); }
+.skillList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--static-space-16);
+    min-width: 0;
+}

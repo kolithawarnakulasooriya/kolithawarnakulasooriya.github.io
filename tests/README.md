@@ -1,6 +1,7 @@
-# C32 regression checks
+# Website regression checks
 
-Use Node 20 and the existing Yarn lockfile. No application dependencies were added.
+Use Node 20 and Yarn. Install application dependencies only when needed with
+`yarn install --frozen-lockfile`; do not regenerate either lockfile.
 
 ```sh
 yarn lint
@@ -11,24 +12,36 @@ node tests/content.test.cjs
 python3 -m http.server 8000 --directory out
 ```
 
-In another terminal, with Python Playwright installed and Chrome available:
+In another terminal, using a Python environment with Playwright and Chrome:
 
 ```sh
-python3 tests/browser-checks.py --url http://127.0.0.1:8000 --output /tmp/c32-browser
+python3 tests/browser-checks.py --url http://127.0.0.1:8000 --output /tmp/site-browser
+python3 tests/interaction-checks.py --url http://127.0.0.1:8000 --output /tmp/site-interactions
 ```
 
-The content check requires directory-index exports and checks all eight pages.
-The browser check covers five required widths, short landscape, doubled root text
-size, semantic/accessibility-tree heading names, Research destinations, icons,
-external-link attributes and desktop keyboard access. It records normal/reduced
-motion screenshots without asserting that the existing animation respects reduced
-motion. `--baseline` records the existing site without C32 assertions.
+The main browser script defaults to installed Chrome. Use `--channel chromium`
+with an installed Playwright Chromium instead. `--baseline` records the original
+site without acceptance assertions. `--axe /absolute/path/to/axe.min.js` enables
+axe-core checks on desktop/mobile across all routes; this tooling does not need to
+become an application dependency.
 
-Overflow, image failures and page errors are recorded separately in `results.json`;
-they are not silently treated as passing C32 assertions. Screenshots are viewport
-captures, not claims that all below-fold content is visible or usable. These checks
-do not provide actual screen-reader, physical touch or browser-zoom coverage.
+- **Content:** eight directory-index exports, document titles, ordered headings,
+  landmarks, navigation, valid destinations, Research cues, selected stories and labels.
+- **Browser:** five widths, short landscape, doubled text, no page overflow/clipped
+  controls, footer flow, native accordion keyboard behavior, mobile menu/Escape,
+  active links, focus return, motion preferences and cursor-background behavior.
+- **Interactions:** cancellable scramble timers after SPA unmount/preference change,
+  keyboard order/focus, conservative gradient contrast, actual local asset responses,
+  exact CV bytes and single-tap CV request, browser-emulated touch navigation, action
+  target sizes and an attempted browser zoom shortcut.
 
-The browser defaults to installed Chrome; `--channel chromium` selects Playwright
-Chromium when installed. An isolated export can be checked with
-`node tests/content.test.cjs /absolute/path/to/out` and the same static-server flow.
+Artifacts include JSON results and desktop/mobile screenshots. External iframe
+contents are outside local accessibility/overflow assertions; their titles and
+wrappers are checked. External destination evidence is in the separate review ledger.
+Physical touch and actual screen-reader coverage are recorded explicitly and cannot
+be inferred from touch emulation, axe or the accessibility tree. A zoom shortcut that
+does not change browser metrics is reported as unavailable, not as a passing zoom test.
+
+An isolated source snapshot can be built when another development server is writing
+`.next`; pass its output directory to the content test and static server. Verify the
+snapshot matches the checkout before treating its results as evidence.

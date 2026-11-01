@@ -5,7 +5,7 @@ import classNames from 'classnames';
 
 import { baseURL, style, schema, social } from "@/once-ui/resources/config"
 
-import { Background, Flex } from '@/once-ui/components'
+import { Background } from '@/once-ui/components'
 import { Header } from "@/components/header";
 
 import { Inter } from 'next/font/google'
@@ -48,6 +48,13 @@ const schemaData = {
 	"sameAs": Object.values(social).filter(Boolean)
 };
 
+export const metadata = {
+	title: {
+		default: 'Kolitha Warnakulasooriya',
+		template: '%s | Kolitha Warnakulasooriya',
+	},
+};
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -56,15 +63,14 @@ export default function RootLayout({
 {
 	return (
 		<>
-		<Flex as="html" lang="en"
-			fillHeight background="page"
+		<html lang="en"
 			data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
 			data-border={style.border} data-theme={style.theme}
 			data-solid={style.solid} data-solid-style={style.solidStyle}
 			data-surface={style.surface} data-transition={style.transition}
 			data-scaling={style.scaling}
 			className={classNames(
-				primary.variable, code.variable,
+				primary.variable, code.variable, 'site-document',
 				secondary ? secondary.variable : '',
 				tertiary ? tertiary.variable : ''
 			)}>
@@ -83,19 +89,21 @@ export default function RootLayout({
 				<meta name="author" content="Kolitha Warnakulasooriya"/>
 
 			</head>
-			<Flex as="body" fillWidth fillHeight margin="0" padding="0">
+			<body className="site-body">
 				<Background
 					style={{ zIndex: '-1' }}
 					position="fixed"
 					mask="cursor"
+					gradient={{ display: true, opacity: 0.15 }}
 					/>
-				<Flex flex={1} direction="column">
+				<div className="site-shell">
+					<a href="#main-content" className="skip-link">Skip to main content</a>
 					<Header/>
-					{children}
+					<main id="main-content" tabIndex={-1} className="site-main">{children}</main>
 					<Footer/>
-				</Flex>
-			</Flex>
-		</Flex>
+				</div>
+			</body>
+		</html>
 		</>
 	);
 }

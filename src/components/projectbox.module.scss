@@ -1,0 +1,27 @@
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+    gap: var(--static-space-24);
+}
+.card {
+    min-width: 0;
+    padding: var(--static-space-16);
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: var(--radius-l);
+    overflow-wrap: anywhere;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--static-space-16);
+    min-width: 0;
+    line-height: 1.6;
+    width: 100%;
+
+    > a { min-height: 44px; }
+}
+.image { width: 100%; height: auto; aspect-ratio: 350 / 160; object-fit: contain; }
+.status { font-size: 0.875rem; color: var(--neutral-on-background-medium); }
+.evidence { display: flex; flex-wrap: wrap; gap: var(--static-space-12); }
+.evidence a { min-height: 44px; }

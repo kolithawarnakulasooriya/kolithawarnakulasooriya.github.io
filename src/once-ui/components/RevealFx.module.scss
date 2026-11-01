@@ -15,3 +15,19 @@
 		filter: blur(0);
     }
 }
+/* Focused meaningful content must be visible even during its reveal delay. */
+.revealFx:focus-within {
+    mask-image: none;
+    filter: none;
+    transform: none !important;
+    transition: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .revealFx {
+        mask-image: none;
+        filter: none !important;
+        transform: none !important;
+        transition: none;
+    }
+}

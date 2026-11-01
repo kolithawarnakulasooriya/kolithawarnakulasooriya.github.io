@@ -22,24 +22,24 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 
 ### Responsive structure — website designer / software engineer
 
-- [ ] **C09 — Projects overflow.** Retain responsive grids and fluid images; verify no horizontal overflow at 320, 375, 768, 1024 and 1440px after theme restoration.
-- [ ] **C10 — Mobile navigation.** Retain accessible menu semantics, active-page state, keyboard access and Escape behavior while restoring the original header identity.
-- [ ] **C11 — Fluid hero.** Adapt the original portrait-and-animation composition to phones and enlarged text. Verify full name and actions fit without overlap.
-- [ ] **C12 — Margins and scrolling.** Retain normal document flow, consistent gutters and a footer following content. Recheck short landscape heights and remove unnecessary nested scrolling.
+- [x] **C09 — Projects overflow.** Verified responsive project grids and fluid images with no horizontal overflow across all required widths, short landscape and doubled text.
+- [x] **C10 — Mobile navigation.** Verified native mobile menu, active-page states, keyboard access, Escape/focus return and resize/navigation close behavior; original header identity retained.
+- [x] **C11 — Fluid hero.** Verified original portrait/identity composition on desktop, stacked mobile layout, full name and persistent CV/Research/Contact actions without clipping or overlap.
+- [x] **C12 — Margins and scrolling.** Verified normal document flow, consistent gutters, footer after content and removal of unnecessary nested page scrolling across all eight routes.
 
 ### Reading and presentation — website designer / software engineer
 
-- [ ] **C13 — Readability.** Keep the original fonts; use left-aligned biography paragraphs, comfortable line height and readable text width. Recheck long pages on desktop and phone.
-- [ ] **C14 — Colors and contrast.** Use the existing Once UI theme and tokens. Verify text, controls and focus contrast without introducing a new palette or hiding the background.
-- [ ] **C15 — Hierarchy.** Retain consistent headings and spacing within the original design. Verify one clear h1 per route and logical heading order.
-- [ ] **C16 — Selected work.** Present three evidence-backed research/engineering stories using authentic assets and precise roles, contributions and statuses. Keep presentation consistent with existing Once UI styling.
+- [x] **C13 — Readability.** Preserved fonts and existing factual copy; biography now has left-aligned paragraphs, bounded reading width and comfortable line height, verified on phone/desktop.
+- [x] **C14 — Colors and contrast.** Existing Once UI palette/tokens retained; approved subtle cursor gradient restored. Contrast, focus visibility and reduced-motion background behavior verified.
+- [x] **C15 — Hierarchy.** Retained C32 heading hierarchy, standardized spacing and added descriptive browser titles. All routes pass heading and accessibility checks.
+- [x] **C16 — Selected work.** Added three CV-supported stories on Projects only: heterogeneous UAV research, CODEX-Autocomplete and MockableExpress, with inspected assets, precise contributions, status limits and evidence links.
 
 ### Accessibility and interaction — website designer / software engineer
 
-- [ ] **C17 — Animation.** Preserve the recognizable ordinary-motion scramble. Recheck stable screen-reader text, reduced-motion behavior and timer cleanup in the restored hero.
-- [ ] **C18 — Skills and controls.** Retain readable skill names, meaningful grouping, accessible action names and visible keyboard focus.
-- [ ] **C19 — Destinations.** Partial: bare DOI/expiring link removed and unavailable actions made non-clickable. Verify remaining active destinations against their stated papers/projects when network access permits.
-- [ ] **C20 — Keyboard and touch.** Recheck navigation, menu, CV, contact, cards, skip link, landmarks and focus order after restoration. Record actual screen-reader/touch coverage; do not infer it from desktop automation.
+- [x] **C17 — Animation.** Ordinary scramble/identity preserved; stable screen-reader text, immediate reduced-motion text, reveal accessibility and timer cleanup verified. Five timer chains stop on SPA unmount and preference changes.
+- [x] **C18 — Skills and controls.** Added readable names to existing grouped skills; verified named native controls, visible focus and minimum 44px action targets.
+- [ ] **C19 — Destinations.** Partial: corrected two mismatched paper destinations and the expiring Bhumi URL using publisher evidence. Remaining access-restricted destinations stay explicitly unverified; see [destination ledger](docs/C09-C20-destinations.md).
+- [ ] **C20 — Keyboard and touch.** Partial: navigation/menu, CV/contact, cards, skip link, landmarks, focus order and browser-emulated touch verified. Actual screen-reader and physical-touch coverage remain pending; browser zoom shortcut had no effect. See [validation report](docs/C09-C20-validation.md).
 
 ### CV-supported additions — Senior HR reviewer
 

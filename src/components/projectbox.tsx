@@ -1,104 +1,27 @@
 'use client';
-import { Flex, RevealFx, Text, Heading, Badge } from "@/once-ui/components";
+import { RevealFx, Heading, SmartLink } from "@/once-ui/components";
 import Image from "next/image";
-import Link from "next/link";
-import React from "react"
+import styles from './projectbox.module.scss';
 
 interface ProjectBoxProps {
-    key?: number
-    src: string
-    heading: string
-    image: string
-    title: string
+    src: string;
+    heading: string;
+    image: string;
+    title: string;
 }
-
-const ProjectBox: React.FC<ProjectBoxProps> = ({
-    key,
-    src,
-    heading,
-    image,
-    title
-}) => {
-
-    const Discription = () => {
-        if (src == '') {
-            return (
-                <Text style={{
-                    textAlign: 'center',
-                    fontSize: 14,
-                    marginTop: 12
-                }}>
-                    {heading}
-                </Text>
-            )
-        } else {
-            return (<Link href={src}>
-                <Text style={{
-                    textAlign: 'center',
-                    fontSize: 14,
-                    marginTop: 12
-                }}>
-                    {heading}
-                </Text>
-            </Link>
-            )
-        }
-    }
-
+export function ProjectBox({ src, heading, image, title }: ProjectBoxProps) {
     return (
-        <Flex key={key} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={20}>
-
-            <RevealFx
-                speed="medium"
-                delay={0}
-                translateY={0}
-            >
-                <Flex
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    maxWidth={17}
-                >
-                    <Heading as="h2" marginBottom="12">
-                        {title}
-                    </Heading>
-                    <Image
-                        src={image}
-                        alt=""
-                        width={350}
-                        height={160}
-                        style={{
-                            width: "-webkit - fill - available",
-                            objectFit: "scale-down"
-                        }}
-
-                    />
-                    {
-                        Discription()
-                    }
-
-                </Flex>
-            </RevealFx >
-            {
-                src == '' && <div
-                    style={{
-                        marginTop: -20,
-                        marginLeft: -20,
-                        backgroundColor: '#FFF',
-                        maxHeight: 'fit-content',
-                        color: 'red',
-                        borderRadius: 15,
-                        padding: 4,
-                        fontWeight: 600
-                    }}
-                >
-                    Private
+        <article className={styles.card}>
+            <RevealFx speed="medium" delay={0} translateY={0}>
+                <div className={styles.content}>
+                    <Heading as="h3" variant="heading-strong-s">{title}</Heading>
+                    <Image className={styles.image} src={image} alt="" width={350} height={160} />
+                    <p>{heading}</p>
+                    {src ? <SmartLink href={src} target="_blank" rel="noopener noreferrer" suffixIcon="arrowUpRight"
+                        aria-label={`View ${title} (external site, opens in a new tab)`}>View project</SmartLink>
+                        : <span className={styles.status}>No public link supplied</span>}
                 </div>
-            }
-        </Flex >
-    )
+            </RevealFx>
+        </article>
+    );
 }
-
-ProjectBox.displayName = 'ProjectBox';
-
-export { ProjectBox };

@@ -1,78 +1,33 @@
+import React from 'react';
+import { Heading, Button } from '@/once-ui/components';
+import { ExperianceBox } from '@/components/experiancebox';
+import { Configs } from '@/app/config';
 
-import React from "react";
-import { Flex, Grid, Heading, Button } from "@/once-ui/components";
-import Image from "next/image";
-import { ExperianceBox } from "@/components/experiancebox";
-import { Configs, ExperianceItem, EducationItem } from '@/app/config';
-interface ResumeProps { }
+export const metadata = { title: 'Resume' };
 
-const Resume: React.FC<ResumeProps> = ({ }) => {
-
+export default function Resume() {
     return (
-        <Flex fillHeight className="window3q" direction="column">
-            <Heading as="h1" variant="heading-strong-l" paddingX="32" paddingTop="24" marginBottom="24">Resume</Heading>
-            <Grid
-                columns="repeat(2, 1fr)"
-                fillHeight
-                fillWidth
-                paddingTop="48"
-            >
-                <Flex fillHeight fillWidth direction="column" paddingLeft="32" paddingRight="32" paddingTop="12" overflowY="auto">
-                    <Heading as="h2" style={{
-                        borderBottom:"solid 1px",
-                        paddingBottom: 10,
-                        marginBottom: 24
-                    }}>
-                        Employement Experiance
-                    </Heading>
-                    {
-                        Configs.experiance.map((data: ExperianceItem, index) => (<ExperianceBox
-                            key={index}
-                            src={data.src}
-                            heading={data.title}
-                            company={data.company}
-                            subtext={data.subtitle}
-                            duration={data.duration}
-                            items={data.items}
-                        />))
-                    }
-                </Flex>
-                <Flex fillHeight fillWidth direction="column" paddingLeft="32" paddingRight="32" paddingTop="12" overflowY="auto">
-                    <Heading as="h2" style={{
-                        borderBottom:"solid 1px",
-                        paddingBottom: 10,
-                        marginBottom: 24
-                    }}>
-                        Education
-                    </Heading>
-                    {
-                        Configs.education.map((data: EducationItem, index) => (<ExperianceBox 
-                            key={index}
-                            src={data.src}
-                            heading={data.title}
-                            company={data.institute}
-                            subtext={data.subtitle}
-                            duration={data.duration}
-                        />))
-                    }
-                </Flex>
-            </Grid>
-            
-            
-
-            <Flex fillWidth justifyContent="center">
-                <Button href={Configs.resume}>
-                    Download My Resume Here!
-                </Button>
-            </Flex>
-            <Flex alignItems="center" fillWidth justifyContent="center">
-                <Image src="/images/usa-flag.png" alt="usa" width={55} height={40} style={{margin: 10}}/>
-                <Image src="/images/srilanka.png" alt="srilanka" width={55} height={40}  style={{margin: 10}}/>
-                <Image src="/images/australia.png" alt="australia" width={55} height={40}  style={{margin: 10}}/>
-                <Image src="/images/norway.png" alt="norway" width={55} height={40}  style={{margin: 10}}/>
-            </Flex>
-        </Flex>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Resume</Heading>
+            <div className="responsive-grid">
+                <section className="resume-section" aria-labelledby="employment-heading">
+                    <Heading as="h2" id="employment-heading" className="resume-section-title">Employment Experience</Heading>
+                    {Configs.experiance.map((data, index) => (
+                        <ExperianceBox key={index} src={data.src} heading={data.title} company={data.company}
+                            subtext={data.subtitle} duration={data.duration} items={data.items} />
+                    ))}
+                </section>
+                <section className="resume-section" aria-labelledby="education-heading">
+                    <Heading as="h2" id="education-heading" className="resume-section-title">Education</Heading>
+                    {Configs.education.map((data, index) => (
+                        <ExperianceBox key={index} src={data.src} heading={data.title} company={data.institute}
+                            subtext={data.subtitle} duration={data.duration} />
+                    ))}
+                </section>
+            </div>
+            <div className="resume-actions">
+                <Button href={Configs.resume}>Download Academic CV</Button>
+            </div>
+        </div>
+    );
 }
-
-export default Resume;

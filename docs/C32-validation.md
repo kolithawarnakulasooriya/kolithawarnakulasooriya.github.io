@@ -1,5 +1,7 @@
 # C32 validation — October 31, 2026
 
+This records the earlier C32 handoff. See [C09–C20 validation](C09-C20-validation.md) for subsequent improvements and current limitations.
+
 C32 is complete. Other checklist items remain unchecked. No deployment was performed.
 
 ## Implemented

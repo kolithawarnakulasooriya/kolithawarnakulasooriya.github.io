@@ -9,6 +9,7 @@ interface AvatarProps {
     size?: 'xs' | 's' | 'm' | 'l' | 'xl';
     value?: string;
     src?: string;
+    alt?: string;
     loading?: boolean;
     empty?: boolean;
     statusIndicator?: {
@@ -38,6 +39,7 @@ const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
     size = 'm',
     value,
     src,
+    alt = 'Avatar',
     loading,
     empty,
     statusIndicator,
@@ -79,7 +81,7 @@ const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
                     radius="full"
                     src={src}
                     fill
-                    alt="Avatar"
+                    alt={alt}
                     sizes={`${sizeMapping[size]}px`}
                     className={styles.image}/>
             );
@@ -105,6 +107,7 @@ const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
         <Flex
             ref={ref}
             role="img"
+            aria-label={src ? alt : value || 'Avatar'}
             position="relative"
             justifyContent="center" alignItems="center"
             radius="full" border="neutral-strong" borderStyle="solid-1" background="surface"

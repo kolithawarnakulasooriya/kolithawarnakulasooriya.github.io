@@ -16,6 +16,7 @@ export interface EducationItem {
 }
 
 export interface SkillObject {
+    name: string
     src: string
 }
 export interface SkillCategory {
@@ -37,6 +38,19 @@ export interface ProjectObject {
     heading: string,
     image: string
 }
+export interface SelectedWorkObject {
+    id: string
+    title: string
+    projectTitle: string
+    problem: string
+    role: string
+    contribution: string
+    status: string
+    image: string
+    imageAlt: string
+    href?: string
+    evidence: Array<{ label: string; href: string }>
+}
 export interface ConfigProps {
     summary: string,
     name: string,
@@ -46,6 +60,7 @@ export interface ConfigProps {
     education: Array<EducationItem>,
     publications: Array<PublicationObject>,
     projects: Array<Array<ProjectObject>>,
+    selectedWork: Array<SelectedWorkObject>,
     gallery: Array<Array<string>>,
     blog: Array<string>,
     research: string
@@ -61,96 +76,96 @@ export const Configs: ConfigProps = {
             titile: "Languages",
             isOpen: true,
             items: [
-                { src: '/icons/java.png' },
-                { src: '/icons/js.png' },
-                { src: '/icons/typescript.png' },
-                { src: '/icons/python.png' },
-                { src: '/icons/sql.png' },
-                { src: '/icons/c-.png' },
-                { src: '/icons/c-sharp.png' },
-                { src: '/icons/html.png' },
-                { src: '/icons/css.png' },
+                { name: 'Java', src: '/icons/java.png' },
+                { name: 'JavaScript', src: '/icons/js.png' },
+                { name: 'TypeScript', src: '/icons/typescript.png' },
+                { name: 'Python', src: '/icons/python.png' },
+                { name: 'SQL', src: '/icons/sql.png' },
+                { name: 'C++', src: '/icons/c-.png' },
+                { name: 'C#', src: '/icons/c-sharp.png' },
+                { name: 'HTML', src: '/icons/html.png' },
+                { name: 'CSS', src: '/icons/css.png' },
             ]
         },
         {
             titile: "Technologies and Frameworks",
             isOpen: true,
             items: [
-                { src: '/icons/react.png' },
-                { src: '/icons/react-native.png' },
-                { src: '/icons/recoiljs.png' },
-                { src: '/icons/redux.png' },
-                { src: '/icons/expo.png' },
-                { src: '/icons/express.png' },
-                { src: '/icons/flask.png' },
-                { src: '/icons/ROS.png' },
-                { src: '/icons/springboot.png' },
-                { src: '/icons/aws.png' },
-                { src: '/icons/azure.png' },
+                { name: 'React', src: '/icons/react.png' },
+                { name: 'React Native', src: '/icons/react-native.png' },
+                { name: 'Recoil', src: '/icons/recoiljs.png' },
+                { name: 'Redux', src: '/icons/redux.png' },
+                { name: 'Expo', src: '/icons/expo.png' },
+                { name: 'Express', src: '/icons/express.png' },
+                { name: 'Flask', src: '/icons/flask.png' },
+                { name: 'ROS', src: '/icons/ROS.png' },
+                { name: 'Spring Boot', src: '/icons/springboot.png' },
+                { name: 'AWS', src: '/icons/aws.png' },
+                { name: 'Azure', src: '/icons/azure.png' },
             ]
         },
         {
             titile: "Project Management and Communication",
             isOpen: true,
             items: [
-                { src: '/icons/jira.png' },
-                { src: '/icons/confluence.png' },
-                { src: '/icons/outlook.png' },
-                { src: '/icons/teams.png' },
-                { src: '/icons/slack.png' },
-                { src: '/icons/discord.png' }
+                { name: 'Jira', src: '/icons/jira.png' },
+                { name: 'Confluence', src: '/icons/confluence.png' },
+                { name: 'Outlook', src: '/icons/outlook.png' },
+                { name: 'Microsoft Teams', src: '/icons/teams.png' },
+                { name: 'Slack', src: '/icons/slack.png' },
+                { name: 'Discord', src: '/icons/discord.png' }
             ]
         },
         {
             titile: "Editors, IDE, and Tools",
             isOpen: true,
             items: [
-                { src: '/icons/jet.png' },
-                { src: '/icons/vscode.png' },
-                { src: '/icons/visual-studio.png' },
-                { src: '/icons/xcode.png' },
-                { src: '/icons/dbever.png' },
-                { src: '/icons/drawio.png' },
-                { src: '/icons/figma.png' }
+                { name: 'JetBrains', src: '/icons/jet.png' },
+                { name: 'Visual Studio Code', src: '/icons/vscode.png' },
+                { name: 'Visual Studio', src: '/icons/visual-studio.png' },
+                { name: 'Xcode', src: '/icons/xcode.png' },
+                { name: 'DBeaver', src: '/icons/dbever.png' },
+                { name: 'draw.io', src: '/icons/drawio.png' },
+                { name: 'Figma', src: '/icons/figma.png' }
             ]
         },
         {
             titile: "Databases & Data Tools",
             isOpen: true,
             items: [
-                { src: '/icons/mysql.png' },
-                { src: '/icons/mssql.png' },
-                { src: '/icons/postgres.png' },
-                { src: '/icons/mongo.png' },
-                { src: '/icons/dynamodb.png' },
-                { src: '/icons/radis.png' },
-                { src: '/icons/spark.png' }
+                { name: 'MySQL', src: '/icons/mysql.png' },
+                { name: 'Microsoft SQL Server', src: '/icons/mssql.png' },
+                { name: 'PostgreSQL', src: '/icons/postgres.png' },
+                { name: 'MongoDB', src: '/icons/mongo.png' },
+                { name: 'DynamoDB', src: '/icons/dynamodb.png' },
+                { name: 'Redis', src: '/icons/radis.png' },
+                { name: 'Apache Spark', src: '/icons/spark.png' }
             ]
         },
         {
             titile: "Continuous Integration & Delivery",
             isOpen: true,
             items: [
-                { src: '/icons/docker-96.png' },
-                { src: '/icons/jenkins.png' },
-                { src: '/icons/git.png' },
-                { src: '/icons/github.png' },
-                { src: '/icons/argo.png' },
-                { src: '/icons/github-actions.png' }
+                { name: 'Docker', src: '/icons/docker-96.png' },
+                { name: 'Jenkins', src: '/icons/jenkins.png' },
+                { name: 'Git', src: '/icons/git.png' },
+                { name: 'GitHub', src: '/icons/github.png' },
+                { name: 'Argo', src: '/icons/argo.png' },
+                { name: 'GitHub Actions', src: '/icons/github-actions.png' }
             ]
         },
         {
             titile: "Other",
             isOpen: true,
             items: [
-                { src: '/icons/torch.png' },
-                { src: '/icons/sonarqube.svg' },
-                { src: '/icons/datadog.avif' },
-                { src: '/icons/dynatrace.svg' },
-                { src: '/icons/optimizely.png' },
-                { src: '/icons/google.svg' },
-                { src: '/icons/copilot.png' },
-                { src: '/icons/postman.png' }
+                { name: 'PyTorch', src: '/icons/torch.png' },
+                { name: 'SonarQube', src: '/icons/sonarqube.svg' },
+                { name: 'Datadog', src: '/icons/datadog.avif' },
+                { name: 'Dynatrace', src: '/icons/dynatrace.svg' },
+                { name: 'Optimizely', src: '/icons/optimizely.png' },
+                { name: 'Google', src: '/icons/google.svg' },
+                { name: 'GitHub Copilot', src: '/icons/copilot.png' },
+                { name: 'Postman', src: '/icons/postman.png' }
             ]
         }
 
@@ -266,16 +281,16 @@ export const Configs: ConfigProps = {
             publisher: "AIAA Scitech"
         },
         {
-            href: "10.1109/BigData62323.2024.10824996",
+            href: "https://doi.org/10.1007/s12065-024-00997-6",
             title: "Comparative analysis of accuracy and computational complexity across 21 swarm intelligence algorithms",
-            authors: "William Starling, Kolitha Warnakulasooriya, Aviv Segev",
-            publisher: "IEEE International Conference on Big Data (BigData)"
+            authors: "Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "Evolutionary Intelligence"
         },
         {
-            href: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-1996",
+            href: "https://doi.org/10.1109/BigData62323.2024.10824996",
             title: "Exploring an Embodied Conversation Agent to Act as an Empathetic Doctor for use in Telehealth",
-            authors: "Kolitha Warnakulasooriya, Hakki Erhan Sevil, Aviv Segev",
-            publisher: "AIAA Scitech"
+            authors: "William Starling, Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "2024 IEEE International Conference on Big Data (BigData)"
         },
         {
             href: "https://ieeexplore.ieee.org/abstract/document/10543316",
@@ -302,7 +317,7 @@ export const Configs: ConfigProps = {
             publisher: "2018 International Conference on System Science and Engineering (ICSSE), 1-5"
         },
         {
-            href: "https://d1wqtxts1xzle7.cloudfront.net/99503435/download-libre.pdf?1678128036=&response-content-disposition=inline%3B+filename%3DOpen_Source_Implementation_of_an_Integra.pdf&Expires=1732817540&Signature=RqBW6gv4QlOIp7w9qWafiBHpUAvIRS-0A2ct9ePTAao2d13~-E1FHVLs2QeT280MZ9wAIgVdJHjbambgHDI-OiuvMAkjq8dYhK-Nk5hu-iPsEzeIZec0q0~qNI48rgFlG~f0IfR3-w7uTLWRpDhPwbluaCyq-g6U9a2sJgdX0hG0mNVZ4sg~LiXH7XsXKe3VYG-IJk67kAUHxtXjbf8kjJptCX4ioF3BgcWSTpgJxXrD8rc5ebGV2616ReZTBzQrgQHzImO7j6uFmUGONPJEKNr5WQr4MJ39rTfsjuL~1ubcPBx1mDDr1lzuefDHuBwhVv1LJ-dNOvMyeaMPe-KfCA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA",
+            href: "https://doi.org/10.4038/bhumi.v6i1.36",
             title: "Open-source implementation of an integrated low-cost environmental monitoring system (EMS) for developing countries",
             authors: "BH Sudantha, KMHK Warnakulasooriya, YP Jayasuriya, GR Ratnayaka, PKS Mahanama, EJ Warusavitharana, SN Weerasinghe",
             publisher: "Bhumi, The Planning Research Journal"
@@ -342,6 +357,52 @@ export const Configs: ConfigProps = {
             title: "A Novel Approach of Color Detection Technique for the Enhancement of Robotic Navigation",
             authors: "KMHK Warnakulasooriya, BH Sudantha, KASN Sumathipala",
             publisher: "Faculty of Information Technology, University of Moratuwa, Katubedda, Sri Lanka"
+        }
+    ],
+    selectedWork: [
+        {
+            id: 'heterogeneous-uav-framework',
+            title: 'Heterogeneous UAV Framework',
+            projectTitle: 'Multi-Het UAV Library',
+            problem: 'Coordinating autonomous UAVs with different capabilities requires shared control and communication.',
+            role: 'Research Assistant, University of South Alabama',
+            contribution: 'Engineered a distributed robotics framework integrating leader selection, formation control, sensor streams and multi-agent decision-making; validated the work through physical experiments.',
+            status: 'Research framework; public release status unconfirmed.',
+            image: '/images/drone.png',
+            imageAlt: 'Illustration of a yellow quadcopter viewed from the front.',
+            evidence: [{ label: 'Resume: Research Assistant experience (PDF, page 1)', href: '/files/Kolitha_AI_Engineer.pdf#page=1' }]
+        },
+        {
+            id: 'codex-autocomplete',
+            title: 'CODEX-Autocomplete',
+            projectTitle: 'Codex AutoComplete VSCode Plugin',
+            problem: 'Inline code completion needs context from the cursor and responsive handling of streamed suggestions.',
+            role: 'Extension developer',
+            contribution: 'Built a VS Code extension with cursor-aware completions, streaming responses, cancellation and authentication.',
+            status: 'Public community extension; repository available.',
+            image: '/images/autocomplete-codex-thumbnail.png',
+            imageAlt: 'Glowing blue text cursor and blue and purple completion lines on a dark background.',
+            href: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
+            evidence: [
+                { label: 'Resume: Selected AI / ML Projects (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
+                { label: 'Project repository', href: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete' }
+            ]
+        },
+        {
+            id: 'mockable-express',
+            title: 'MockableExpress',
+            projectTitle: 'MockableExpress',
+            problem: 'Developers need configurable mock services while building and testing applications.',
+            role: 'Software developer',
+            contribution: 'Developed an open-source in-memory mock API service to support testing and application development.',
+            status: 'Public open-source project; current maintenance status unconfirmed.',
+            image: '/images/me.png',
+            imageAlt: 'Mockable Express wordmark with large black M and pale purple E letters.',
+            href: 'https://github.com/kwar0715/mockableExpress',
+            evidence: [
+                { label: 'Resume: Software Engineer experience (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
+                { label: 'Project repository', href: 'https://github.com/kwar0715/mockableExpress' }
+            ]
         }
     ],
     projects: [

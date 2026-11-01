@@ -1,8 +1,7 @@
-.letterbox {
-    margin: 10px;
-}
-
 .boxcontainer {
-    margin-left: 5rem;
-    margin-top: 1rem;
+    margin-top: var(--static-space-16);
+    min-width: 0;
+    font-size: clamp(1.5rem, 2.8vw, var(--identity-size));
+    line-height: 1.35;
+    overflow-wrap: anywhere;
 }
