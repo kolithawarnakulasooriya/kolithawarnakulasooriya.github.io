@@ -1,23 +1,18 @@
-import React from "react";
-import { Flex, RevealFx } from "@/once-ui/components";
-import Image from "next/image";
-import { Configs } from '@/app/config';
+import { Heading } from '@/once-ui/components';
+import { routeMetadata } from '@/app/site';
+import { blogSources } from './sources';
+import { SourceCard } from './SourceCard';
+import styles from './page.module.scss';
 
-interface Blog { }
+export const metadata = routeMetadata('/blog');
 
-const Projects: React.FC<Blog> = ({ }) => {
-
+export default function Blog() {
     return (
-        <Flex fillHeight className="window3q1" direction="column" overflowY="auto" alignItems="center" style={{margin: 20}}>
-            {
-                Configs.blog.map((row, i)=>
-                    <Flex key={i} style={{marginBottom: 20}}>
-                        <iframe src={`${row}`} height="1000" width="1000" title="Embedded post"></iframe>
-                    </Flex>
-                )
-            }
-        </Flex>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Blog</Heading>
+            <div className={styles.grid}>
+                {blogSources.map(source => <SourceCard key={source.id} source={source} />)}
+            </div>
+        </div>
+    );
 }
-
-export default Projects;

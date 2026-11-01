@@ -1,27 +1,15 @@
-import React from "react";
-import { Flex} from "@/once-ui/components";
-import { Configs, PublicationObject } from '@/app/config';
-import { PublicationBox } from "@/components/publicationbox";
+import { routeMetadata } from '@/app/site';
+import { Heading } from '@/once-ui/components';
+import { publications } from './data';
+import { PublicationBox } from '@/components/publicationbox';
 
-interface PublicationsProps { }
+export const metadata = routeMetadata('/publications');
 
-const Publications: React.FC<PublicationsProps> = ({ }) => {
-
+export default function Publications() {
     return (
-        <Flex fillHeight className="window3q" direction="column" overflowY="auto">
-            {
-                Configs.publications.map((pub: PublicationObject, index)=>(
-                    <PublicationBox
-                        key={index}
-                        href={pub.href}
-                        title={pub.title}
-                        publisher={pub.publisher}
-                        authors={pub.authors}
-                    />
-                ))
-            }
-        </Flex>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Publications</Heading>
+            {publications.map(publication => <PublicationBox key={publication.id} {...publication} />)}
+        </div>
+    );
 }
-
-export default Publications;

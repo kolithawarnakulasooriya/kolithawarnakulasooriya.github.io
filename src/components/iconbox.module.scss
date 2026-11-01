@@ -1,5 +1,19 @@
-.top {
-	bottom: calc(100% + var(--static-space-2));
-	left: 50%;
-	transform: translateX(-50%);
+.skill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--static-space-8);
+    width: 7rem;
+    max-width: 100%;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    text-align: center;
+    overflow-wrap: anywhere;
+}
+.image {
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: var(--radius-m);
+    padding: var(--static-space-2);
+    background: var(--static-white);
+    object-fit: contain;
 }

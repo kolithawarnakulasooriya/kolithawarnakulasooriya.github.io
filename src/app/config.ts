@@ -16,6 +16,7 @@ export interface EducationItem {
 }
 
 export interface SkillObject {
+    name: string
     src: string
 }
 export interface SkillCategory {
@@ -32,125 +33,142 @@ export interface PublicationObject {
 }
 
 export interface ProjectObject {
-    src: string,
-    title: string,
-    heading: string,
+    id: string
+    src?: string
+    title: string
+    heading: string
     image: string
+    status: string
+}
+export interface SelectedWorkObject {
+    id: string
+    projectId: string
+    problem: string
+    role: string
+    contribution: string
+    imageAlt: string
+    evidence: Array<{ label: string; href: string }>
 }
 export interface ConfigProps {
-    summary: string,
+    biographyParagraphs: string[],
     name: string,
     resume: string,
     skills: Array<SkillCategory>,
     experiance: Array<ExperianceItem>,
     education: Array<EducationItem>,
     publications: Array<PublicationObject>,
-    projects: Array<Array<ProjectObject>>,
-    gallery: Array<Array<string>>,
-    blog: Array<string>,
+    projects: Array<ProjectObject>,
+    selectedWork: Array<SelectedWorkObject>,
     research: string
 }
 
 
+export const biographyParagraphs = [
+    'I completed my Ph.D. in Computing at the University of South Alabama in May 2025. I am a Visiting Assistant Professor at the University of South Alabama, an appointment I began in August 2025.',
+    'My research focuses on multi-agent UAV systems, including distributed leader selection, formation control, sensor streams and multi-agent decision-making. I developed a framework for heterogeneous UAVs and validated the work through physical experiments.',
+    'My software engineering experience includes web and mobile applications, RESTful and GraphQL APIs, and services built with React, React Native, Spring Boot and Node.js. My work has included testing, production monitoring and incident response, and mentoring engineers.',
+    'Outside work, I enjoy tennis, working out, long-distance driving, spending time with friends, and learning about science, nature and finance.',
+];
+
 export const Configs: ConfigProps = {
-    summary: "As a professional software engineer and doctoral candidate in artificial intelligence, I am driven by the intersection of advanced algorithms, machine learning, deep learning, and collective intelligence. Over the past 3+ years, I have mastered my technical skills in cutting-edge frameworks such as Pytorch in artificial intelligence technologies. I have developed cutting-edge solutions to complex challenges, from designing intelligent aerial robotic systems to implementing scalable software architectures that enable innovation. My doctoral research focused on solving the distributed leader selection problem in large-scale heterogeneous multi-UAV systems based on the collective behavior of biological entities, which proactively support the aerial robotics industry. This led to six first-authored articles published in AAAI and Evolutionary Intelligence and an open-source framework in swarm intelligence for Java developers. Outside, I have enjoyed my time with the SAE team by developing the Formula 1 automotive for the SAE formula competitions.As a Software Engineer with 3.5+ years of experience, I am passionate about designing and delivering robust, scalable, and innovative software solutions that empower businesses to thrive in a fast-paced, tech-driven world. My expertise spans React and React Native, Javascript, and Typescript frameworks with Node JS and Java Springboot back-end from 3-tier to microservices architectures. Further, my technical skills include SQL NoSQL, memory, time series databases, and AWS and Azure cloud services. As an excellent team player and manager, I championed agile development practices to improve team efficiency, product quality, and timely deliverables. Outside of techs, I am an intense knowledge seeker in techs and finance, spirituality, nature, and science. Socrates once said, \"The only true wisdom is knowing you know nothing\". Besides that, I am a tennis player and mostly workout every day. I like long-distance driving, enjoying the company of friends, and being pleasant to everybody.",
+    biographyParagraphs,
     name: "Kolitha Warnakulasooriya",
-    resume: '/files/Kolitha%20–%20Resume.pdf',
+    resume: '/files/Kolitha_AI_Engineer.pdf',
     skills: [
         {
             titile: "Languages",
             isOpen: true,
             items: [
-                { src: '/icons/java.png' },
-                { src: '/icons/js.png' },
-                { src: '/icons/typescript.png' },
-                { src: '/icons/python.png' },
-                { src: '/icons/sql.png' },
-                { src: '/icons/c-.png' },
-                { src: '/icons/c-sharp.png' },
-                { src: '/icons/html.png' },
-                { src: '/icons/css.png' },
+                { name: 'Java', src: '/icons/java.png' },
+                { name: 'JavaScript', src: '/icons/js.png' },
+                { name: 'TypeScript', src: '/icons/typescript.png' },
+                { name: 'Python', src: '/icons/python.png' },
+                { name: 'SQL', src: '/icons/sql.png' },
+                { name: 'C++', src: '/icons/c-.png' },
+                { name: 'C#', src: '/icons/c-sharp.png' },
+                { name: 'HTML', src: '/icons/html.png' },
+                { name: 'CSS', src: '/icons/css.png' },
             ]
         },
         {
             titile: "Technologies and Frameworks",
             isOpen: true,
             items: [
-                { src: '/icons/react.png' },
-                { src: '/icons/react-native.png' },
-                { src: '/icons/recoiljs.png' },
-                { src: '/icons/redux.png' },
-                { src: '/icons/expo.png' },
-                { src: '/icons/express.png' },
-                { src: '/icons/flask.png' },
-                { src: '/icons/ROS.png' },
-                { src: '/icons/springboot.png' },
-                { src: '/icons/aws.png' },
-                { src: '/icons/azure.png' },
+                { name: 'React', src: '/icons/react.png' },
+                { name: 'React Native', src: '/icons/react-native.png' },
+                { name: 'Recoil', src: '/icons/recoiljs.png' },
+                { name: 'Redux', src: '/icons/redux.png' },
+                { name: 'Expo', src: '/icons/expo.png' },
+                { name: 'Express', src: '/icons/express.png' },
+                { name: 'Flask', src: '/icons/flask.png' },
+                { name: 'ROS', src: '/icons/ROS.png' },
+                { name: 'Spring Boot', src: '/icons/springboot.png' },
+                { name: 'AWS', src: '/icons/aws.png' },
+                { name: 'Azure', src: '/icons/azure.png' },
             ]
         },
         {
             titile: "Project Management and Communication",
             isOpen: true,
             items: [
-                { src: '/icons/jira.png' },
-                { src: '/icons/confluence.png' },
-                { src: '/icons/outlook.png' },
-                { src: '/icons/teams.png' },
-                { src: '/icons/slack.png' },
-                { src: '/icons/discord.png' }
+                { name: 'Jira', src: '/icons/jira.png' },
+                { name: 'Confluence', src: '/icons/confluence.png' },
+                { name: 'Outlook', src: '/icons/outlook.png' },
+                { name: 'Microsoft Teams', src: '/icons/teams.png' },
+                { name: 'Slack', src: '/icons/slack.png' },
+                { name: 'Discord', src: '/icons/discord.png' }
             ]
         },
         {
             titile: "Editors, IDE, and Tools",
             isOpen: true,
             items: [
-                { src: '/icons/jet.png' },
-                { src: '/icons/vscode.png' },
-                { src: '/icons/visual-studio.png' },
-                { src: '/icons/xcode.png' },
-                { src: '/icons/dbever.png' },
-                { src: '/icons/drawio.png' },
-                { src: '/icons/figma.png' }
+                { name: 'JetBrains', src: '/icons/jet.png' },
+                { name: 'Visual Studio Code', src: '/icons/vscode.png' },
+                { name: 'Visual Studio', src: '/icons/visual-studio.png' },
+                { name: 'Xcode', src: '/icons/xcode.png' },
+                { name: 'DBeaver', src: '/icons/dbever.png' },
+                { name: 'draw.io', src: '/icons/drawio.png' },
+                { name: 'Figma', src: '/icons/figma.png' }
             ]
         },
         {
             titile: "Databases & Data Tools",
             isOpen: true,
             items: [
-                { src: '/icons/mysql.png' },
-                { src: '/icons/mssql.png' },
-                { src: '/icons/postgres.png' },
-                { src: '/icons/mongo.png' },
-                { src: '/icons/dynamodb.png' },
-                { src: '/icons/radis.png' },
-                { src: '/icons/spark.png' }
+                { name: 'MySQL', src: '/icons/mysql.png' },
+                { name: 'Microsoft SQL Server', src: '/icons/mssql.png' },
+                { name: 'PostgreSQL', src: '/icons/postgres.png' },
+                { name: 'MongoDB', src: '/icons/mongo.png' },
+                { name: 'DynamoDB', src: '/icons/dynamodb.png' },
+                { name: 'Redis', src: '/icons/radis.png' },
+                { name: 'Apache Spark', src: '/icons/spark.png' }
             ]
         },
         {
             titile: "Continuous Integration & Delivery",
             isOpen: true,
             items: [
-                { src: '/icons/docker-96.png' },
-                { src: '/icons/jenkins.png' },
-                { src: '/icons/git.png' },
-                { src: '/icons/github.png' },
-                { src: '/icons/argo.png' },
-                { src: '/icons/github-actions.png' }
+                { name: 'Docker', src: '/icons/docker-96.png' },
+                { name: 'Jenkins', src: '/icons/jenkins.png' },
+                { name: 'Git', src: '/icons/git.png' },
+                { name: 'GitHub', src: '/icons/github.png' },
+                { name: 'Argo', src: '/icons/argo.png' },
+                { name: 'GitHub Actions', src: '/icons/github-actions.png' }
             ]
         },
         {
             titile: "Other",
             isOpen: true,
             items: [
-                { src: '/icons/torch.png' },
-                { src: '/icons/sonarqube.svg' },
-                { src: '/icons/datadog.avif' },
-                { src: '/icons/dynatrace.svg' },
-                { src: '/icons/optimizely.png' },
-                { src: '/icons/google.svg' },
-                { src: '/icons/copilot.png' },
-                { src: '/icons/postman.png' }
+                { name: 'PyTorch', src: '/icons/torch.png' },
+                { name: 'SonarQube', src: '/icons/sonarqube.svg' },
+                { name: 'Datadog', src: '/icons/datadog.avif' },
+                { name: 'Dynatrace', src: '/icons/dynatrace.svg' },
+                { name: 'Optimizely', src: '/icons/optimizely.png' },
+                { name: 'Google', src: '/icons/google.svg' },
+                { name: 'GitHub Copilot', src: '/icons/copilot.png' },
+                { name: 'Postman', src: '/icons/postman.png' }
             ]
         }
 
@@ -162,100 +180,96 @@ export const Configs: ConfigProps = {
             company: "College of Engineering, University of South Alabama, United States",
             duration: "Aug 2025 – Present",
             items: [
-                "Conducting research related to intelligent UAV systems, safety measurements from a UAV threat, and teaching related to computer engineering subjects. Collaborating with research teams from other faculties.",
-                "Teaching, Digital Computer Architecture, Digital Logic Design, Introduction to Robotics, Microprocessor System Interfacing.",
+                "Conduct research on intelligent UAV systems, autonomous systems and robotic perception, and collaborate with researchers across faculties.",
+                "Teach Digital Computer Architecture, Digital Logic Design, Introduction to Robotics, and Microprocessor System Interfacing.",
             ]
         },
         {
             src: "/images/usa.png",
-            title: "Graduate Research Assistant",
+            title: "Research Assistant",
             company: "School of Computing, University of South Alabama, United States",
             duration: "Jan 2022 – May 2025",
             items: [
-                "Pursue research to introduce a dynamic leader election algorithm for an autonomous aerial vehicle system based on cognitive intelligence.",
-                "Published three research articles in top-ranked artificial intelligence conferences and journals (AAAI-2023, ICIPRoB, Evolutionary Intelligence)",
-                "Engaged as a lead researcher in Drone Systems and AI Laboratory by leading and administrating three core UAV-related research and developed a ROS-based adaptable Python flight framework to operate heterogeneous commercial UAVs such as Tello, Anafi, and Bebop, which can handle a maximum of 15 agents in the cluster."
-
+                "Developed a distributed robotics framework for heterogeneous UAVs, integrating leader selection, formation control, real-time sensor streams, communications and multi-agent decision-making.",
+                "Validated research through simulation, algorithm implementation, physical experiments and field testing.",
+                "Built reproducible experimentation and analysis workflows using Python, MLflow and ZenML.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
-            title: "Lead Software Engineer",
+            title: "Lead Engineer (Associate)",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
-            duration: "Aug 2021 – Jan 2022",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
+            duration: "Aug 2021 – Dec 2021",
             items: [
-                "Appointed as an assistant engineering manager to one of the core development teams of the Sysco Shop e-commerce platform",
-                "Worked in an agile/scrum environment, planned sprints, conducted daily standups, and retrospective meetings, and kept meeting minutes",
-                "Overlooked team progress in SDLC, feature development process, component testing process, deployment process, feature delivery process, and documentation",
-                "Represented the team to the higher management and inter-development team meetings, demonstrated the sprint progress, and status of the feature development process"
+                "Led system design, sprint planning, code reviews and engineering-quality practices.",
+                "Coordinated feature development, testing, deployment and documentation with cross-functional teams.",
+                "Represented the team in management and cross-team meetings, and communicated sprint progress.",
+                "Contributed to production incident diagnosis, troubleshooting and recovery with other engineering teams.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
             title: "Senior Software Engineer",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
             duration: "Dec 2019 – Aug 2021",
             items: [
-                "Promoted as a senior software engineer to one of the Sysco Shop e-commerce platform and Sysco Delivery mobile application",
-                "Utilized software engineering expertise to design and develop Sysco Shop e-commerce web application and Sysco Delivery mobile application",
-                "Managed, maintained, and overlooked the overall front-end software components, BFF, relevant microservices, and databases in production and nonproduction environments that are responsible to the team",
-                "Proficiently troubleshoot simple and complex issues and contributed as an on-call representative for production incidents and zero production incidents were reported related to the responsible components",
-                "Enhanced the application component features by accurate development plans, using best software engineering practices, ensuring the testability and the quality of the functionality through unit tests, component tests, integration tests, regression tests, E2E testing, and sea trials, fixing bugs, and improving overall performance and efficiency",
-                "Enhanced and assured system reliability by actively monitoring the overall system using Dynatrace and Datadog platforms",
-                "Provided guidance and mentorships for junior engineers, provided technical, and cultural support to new engineers in the onboarding process to the organization"
-
+                "Designed and developed the Sysco Shop web application and Sysco Delivery mobile application.",
+                "Developed and maintained front-end components, BFF services, microservices and databases in production and non-production environments.",
+                "Investigated production issues and participated in on-call incident response.",
+                "Improved testability and software quality through unit, component, integration, regression and end-to-end testing.",
+                "Monitored application behavior using Dynatrace and Datadog.",
+                "Mentored junior engineers and supported onboarding.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
             title: "Software Engineer",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
             duration: "Jul 2018 – Nov 2019",
             items: [
-                "Utilized software engineering procedures to develop new features for the Sysco Shop web application and Sysco Delivery mobile application",
-                "Implemented readable, well-crafted, maintainable new React and React-Native components with proper state management using Redux and Recoil frameworks according to test driven development.",
-                "Implemented RESTful and GraphQL APIs in microservice-based architecture using Spring boot and Node Express frameworks ",
-                "Ensured the testability of all the software components using unit testing, component testing, integration testing, E2E testing, and sea trials",
-                "Collaboratively introduced a machine learning approach to enhance the customer experience of the application and developed a high-performance mockup API generator, which removes expenditure for third-party mock services"
-
+                "Developed features for the Sysco Shop web application and Sysco Delivery mobile application.",
+                "Built React and React Native components with Redux and Recoil state management using test-driven development.",
+                "Implemented RESTful and GraphQL APIs using Spring Boot and Express in a microservices architecture.",
+                "Tested software through unit, component, integration and end-to-end tests.",
+                "Developed an open-source in-memory mock API service for testing and application development.",
             ]
         },
         {
             src: "/images/99x.png",
             title: "Associate Software Engineer (Intern)",
             company: "99X Technology, Colombo, Sri Lanka",
-            duration: "Dec 2016 - Jul 2017",
+            duration: "Dec 2016 – Jul 2017",
             items: [
-                "Modified, implemented, tested, and deployed  ASP.net booking web application "
+                "Modified, implemented, tested and deployed an ASP.NET booking web application.",
             ]
         },
         {
             src: "/images/4onse.jpg",
-            title: "Volunteer Research Assistant",
-            company: "University of Moratuwa, Colombo, Sri Lanka",
-            duration: "Dec 2016 - Jul 2017",
+            title: "Research Assistant",
+            company: "4ONSE — University of Moratuwa / SUPSI",
+            duration: "Oct 2016 – Jan 2018",
             items: [
-                "Modified, implemented, tested, and deployed  ASP.net booking web application "
+                "Contributed to embedded systems research for environmental monitoring in the 4ONSE project.",
             ]
         }
     ],
     education: [
         {
             src: "/images/usa.png",
-            title: "PhD in Computing",
+            title: "Ph.D. in Computing",
             subtitle: "Cooperative Intelligence in Robotics",
             institute: "School of Computing, University of South Alabama, United States",
-            duration: "2025 May",
+            duration: "May 2025",
         },
         {
             src: "/images/uom.jpg",
-            title: "B.sc (hons) in Information Technology",
-            subtitle: "3.55 Second Upper Devision, Dean's List (Senior Year)",
+            title: "B.Sc. (Hons.) in Information Technology",
+            subtitle: "GPA 3.55; Second Class Upper Division; Dean's List (Senior Year)",
             institute: "University of Moratuwa",
-            duration: "2018 Jul",
+            duration: "July 2018",
         }
     ],
     publications: [
@@ -266,16 +280,16 @@ export const Configs: ConfigProps = {
             publisher: "AIAA Scitech"
         },
         {
-            href: "10.1109/BigData62323.2024.10824996",
+            href: "https://doi.org/10.1007/s12065-024-00997-6",
             title: "Comparative analysis of accuracy and computational complexity across 21 swarm intelligence algorithms",
-            authors: "William Starling, Kolitha Warnakulasooriya, Aviv Segev",
-            publisher: "IEEE International Conference on Big Data (BigData)"
+            authors: "Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "Evolutionary Intelligence"
         },
         {
-            href: "https://arc.aiaa.org/doi/abs/10.2514/6.2026-1996",
+            href: "https://doi.org/10.1109/BigData62323.2024.10824996",
             title: "Exploring an Embodied Conversation Agent to Act as an Empathetic Doctor for use in Telehealth",
-            authors: "Kolitha Warnakulasooriya, Hakki Erhan Sevil, Aviv Segev",
-            publisher: "AIAA Scitech"
+            authors: "William Starling, Kolitha Warnakulasooriya, Aviv Segev",
+            publisher: "2024 IEEE International Conference on Big Data (BigData)"
         },
         {
             href: "https://ieeexplore.ieee.org/abstract/document/10543316",
@@ -302,7 +316,7 @@ export const Configs: ConfigProps = {
             publisher: "2018 International Conference on System Science and Engineering (ICSSE), 1-5"
         },
         {
-            href: "https://d1wqtxts1xzle7.cloudfront.net/99503435/download-libre.pdf?1678128036=&response-content-disposition=inline%3B+filename%3DOpen_Source_Implementation_of_an_Integra.pdf&Expires=1732817540&Signature=RqBW6gv4QlOIp7w9qWafiBHpUAvIRS-0A2ct9ePTAao2d13~-E1FHVLs2QeT280MZ9wAIgVdJHjbambgHDI-OiuvMAkjq8dYhK-Nk5hu-iPsEzeIZec0q0~qNI48rgFlG~f0IfR3-w7uTLWRpDhPwbluaCyq-g6U9a2sJgdX0hG0mNVZ4sg~LiXH7XsXKe3VYG-IJk67kAUHxtXjbf8kjJptCX4ioF3BgcWSTpgJxXrD8rc5ebGV2616ReZTBzQrgQHzImO7j6uFmUGONPJEKNr5WQr4MJ39rTfsjuL~1ubcPBx1mDDr1lzuefDHuBwhVv1LJ-dNOvMyeaMPe-KfCA__&Key-Pair-Id=APKAJLOHF5GGSLRBV4ZA",
+            href: "https://doi.org/10.4038/bhumi.v6i1.36",
             title: "Open-source implementation of an integrated low-cost environmental monitoring system (EMS) for developing countries",
             authors: "BH Sudantha, KMHK Warnakulasooriya, YP Jayasuriya, GR Ratnayaka, PKS Mahanama, EJ Warusavitharana, SN Weerasinghe",
             publisher: "Bhumi, The Planning Research Journal"
@@ -344,113 +358,128 @@ export const Configs: ConfigProps = {
             publisher: "Faculty of Information Technology, University of Moratuwa, Katubedda, Sri Lanka"
         }
     ],
+    selectedWork: [
+        {
+            id: 'heterogeneous-uav-framework',
+            projectId: 'heterogeneous-uav-framework',
+            problem: 'Coordinating autonomous UAVs with different capabilities requires shared control and communication.',
+            role: 'Research Assistant, University of South Alabama',
+            contribution: 'Engineered a distributed robotics framework integrating leader selection, formation control, sensor streams and multi-agent decision-making; validated the work through physical experiments.',
+            imageAlt: 'Illustration of a yellow quadcopter viewed from the front.',
+            evidence: [{ label: 'Resume: Research Assistant experience (PDF, page 1)', href: '/files/Kolitha_AI_Engineer.pdf#page=1' }]
+        },
+        {
+            id: 'codex-autocomplete',
+            projectId: 'codex-autocomplete',
+            problem: 'Inline code completion needs context from the cursor and responsive handling of streamed suggestions.',
+            role: 'Extension developer',
+            contribution: 'Built a VS Code extension with cursor-aware completions, streaming responses, cancellation and authentication.',
+            imageAlt: 'Glowing blue text cursor and blue and purple completion lines on a dark background.',
+            evidence: [
+                { label: 'Resume: Selected AI / ML Projects (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
+                { label: 'Project repository', href: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete' }
+            ]
+        },
+        {
+            id: 'mockable-express',
+            projectId: 'mockable-express',
+            problem: 'Developers need configurable mock services while building and testing applications.',
+            role: 'Software developer',
+            contribution: 'Developed an open-source in-memory mock API service to support testing and application development.',
+            imageAlt: 'Mockable Express wordmark with large black M and pale purple E letters.',
+            evidence: [
+                { label: 'Resume: Software Engineer experience (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
+                { label: 'Project repository', href: 'https://github.com/kwar0715/mockableExpress' }
+            ]
+        }
+    ],
     projects: [
-        [
-            {
-                src: 'https://raven-os-ai-os.github.io/Web/',
-                title: 'Ravan OS',
-                heading: 'Raven OS is a community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
-                image: '/images/raven-logo.png',
-            },
-            {
-                src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
-                title: 'Codex AutoComplete VSCode Plugin',
-                heading: 'Complete VS Code extension that generates inline code suggestions as ghost text. It signs in with your ChatGPT account through the Codex OAuth PKCE flow by default, with OpenAI API-key authentication available as a fallback.',
-                image: '/images/autocomplete-codex-thumbnail.png',
-            },
-            {
-                src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
-                title: 'Swarm X',
-                heading: 'SwarmX is the java based natural inspired optimization library.',
-                image: '/images/swarmx.png',
-            },
-            {
-                src: '',
-                title: 'Multi-Het UAV Library',
-                heading: 'ROS framework for adaptable control of heterogenious UAS',
-                image: '/images/drone.png',
-            },
-            {
-                src: "https://shop.sysco.com/",
-                title: "Sysco Shop",
-                heading: "The CRM tool for the Sysco customers, Associated with SyscoLabs Technologies",
-                image: "/images/syscoshop.png"
-            }
-        ],
-        [
-
-            {
-                src: "https://github.com/kwar0715/mockableExpress",
-                title: "MockableExpress",
-                heading: "An open source inmemory mock api management tool",
-                image: "/images/me.png"
-            },
-            {
-                src: "https://minearc.com/serviceapp/",
-                title: "MineArc Service App",
-                heading: "Service Application for MineArc Systems Customers, Associated with Techila Softwares",
-                image: "/images/minearc.jpeg"
-            },
-            {
-                src: "https://4onse.org/",
-                title: "4ONSE",
-                heading: "Developing non-conventional, sustainable and effective climate monitoring system",
-                image: "/images/4onse.jpg"
-            },
-            {
-                src: "",
-                title: "LIS Middleware",
-                heading: "Developed a cooperative communication middleware between Hitachi 911, 912 and LIS systems",
-                image: "/images/defproject.png"
-            },
-            {
-                src: "",
-                title: "LIS Middleware",
-                heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
-                image: "/images/defproject.png"
-            }
-        ],
-        [
-            {
-                src: "https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/",
-                title: "Virtual Expo",
-                heading: "Virtual Exhibition is giving a marvelous experience rather than traditional exhibition experiance",
-                image: "/images/defproject.png"
-            }
-        ]
-    ],
-    gallery: [
-        [
-            "p44.jpg",
-            "p55.jpg",
-            "p1.jpeg",
-        ],
-        [
-            "c1.jpg",
-            "p33.jpg",
-            "p7.jpeg",
-        ],
-        [
-            "p2.jpeg",
-            "t112.jpeg",
-            "p5.jpeg",
-        ],
-        [
-            "vexpo.jpeg",
-            "sci112.jpeg",
-            "cc2.jpeg"
-        ],
-        [
-            "graduation.jpeg",
-            "p11.JPG",
-            "p22.JPG",
-        ]
-    ],
-    blog: [
-            "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
-            "https://www.youtube.com/embed/43GgyUBhTDU?si=dG2Z-QBSYrQIiDmu&amp;controls=0",
-            "https://raven-os-ai-os.github.io/Web/",
-            "https://storage.googleapis.com/research_web_page/index.html"
+        {
+            id: 'cytokine-swarm',
+            src: 'https://storage.googleapis.com/research_web_page/index.html',
+            title: 'Cytokine Swarm',
+            heading: 'An immune system for distributed AI swarms.',
+            image: '/images/CytokineSwarm.png',
+            status: 'Early-stage research program.'
+        },
+        {
+            id: 'raven-os',
+            src: 'https://raven-os-ai-os.github.io/Web/',
+            title: 'Raven OS',
+            heading: 'A community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
+            image: '/images/raven-logo.png',
+            status: 'Pre-alpha community project.'
+        },
+        {
+            id: 'codex-autocomplete',
+            src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
+            title: 'CODEX-Autocomplete',
+            heading: 'A community VS Code extension that generates inline code suggestions with streaming responses and authentication.',
+            image: '/images/autocomplete-codex-thumbnail.png',
+            status: 'Public community extension; repository available.'
+        },
+        {
+            id: 'swarmx',
+            src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
+            title: 'SwarmX',
+            heading: 'An open-source Java framework for swarm intelligence and optimization.',
+            image: '/images/swarmx.png',
+            status: 'Public open-source framework; current maintenance status unconfirmed.'
+        },
+        {
+            id: 'heterogeneous-uav-framework',
+            title: 'Heterogeneous UAV Framework',
+            heading: 'ROS framework for adaptable control of heterogeneous UAS.',
+            image: '/images/drone.png',
+            status: 'Research framework; public release status unconfirmed.'
+        },
+        {
+            id: 'sysco-shop',
+            src: 'https://shop.sysco.com/',
+            title: 'Sysco Shop',
+            heading: 'Customer application associated with SyscoLabs Technologies.',
+            image: '/images/syscoshop.png',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'mockable-express',
+            src: 'https://github.com/kwar0715/mockableExpress',
+            title: 'MockableExpress',
+            heading: 'An open-source in-memory mock API management tool.',
+            image: '/images/me.png',
+            status: 'Public open-source project; current maintenance status unconfirmed.'
+        },
+        {
+            id: 'minearc-service-app',
+            src: 'https://minearc.com/serviceapp/',
+            title: 'MineArc Service App',
+            heading: 'Service application for MineArc Systems customers, associated with Techila Softwares.',
+            image: '/images/minearc.jpeg',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: '4onse',
+            src: 'https://4onse.org/',
+            title: '4ONSE',
+            heading: 'Non-conventional, sustainable climate monitoring system.',
+            image: '/images/4onse.jpg',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'lis-middleware',
+            title: 'LIS Middleware',
+            heading: 'Communication middleware between LIS systems and Hitachi 911/912 and Mythic18/Mythic22 analyzers.',
+            image: '/images/defproject.png',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'virtual-expo',
+            src: 'https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/',
+            title: 'Virtual Expo',
+            heading: 'Virtual exhibition experience.',
+            image: '/images/defproject.png',
+            status: 'Current project status unconfirmed.'
+        }
     ],
     research: "https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
 }

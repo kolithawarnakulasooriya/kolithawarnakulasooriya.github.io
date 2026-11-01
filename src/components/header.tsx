@@ -1,74 +1,88 @@
 'use client';
 
-import { Flex, SmartLink, Heading } from '@/once-ui/components';
-import React from 'react';
+import { Heading, SmartLink } from '@/once-ui/components';
+import React, { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { Configs } from '@/app/config';
+import styles from './header.module.scss';
 
-interface HeaderProps {}
+const routes = [
+    ['/me', 'Who Am I'],
+    ['/resume', 'Resume'],
+    ['/publications', 'Publications'],
+    ['/projects', 'Projects'],
+    ['/gallery', 'Gallery'],
+    ['/blog', 'Blog'],
+];
 
-const Header: React.FC<HeaderProps> = ({}) => {
+const Header: React.FC = () => {
+    const pathname = usePathname().replace(/\/+$/, '') || '/';
+    const [isOpen, setIsOpen] = useState(false);
+    const toggleRef = useRef<HTMLButtonElement>(null);
+
+    useEffect(() => setIsOpen(false), [pathname]);
+
+    useEffect(() => {
+        const desktop = window.matchMedia('(min-width: 1025px)');
+        const resetMenu = () => setIsOpen(false);
+        desktop.addEventListener('change', resetMenu);
+        return () => desktop.removeEventListener('change', resetMenu);
+    }, []);
+
+    useEffect(() => {
+        if (!isOpen) return;
+        const closeOnEscape = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsOpen(false);
+                toggleRef.current?.focus();
+            }
+        };
+        document.addEventListener('keydown', closeOnEscape);
+        return () => document.removeEventListener('keydown', closeOnEscape);
+    }, [isOpen]);
 
     return (
-        <Flex
-            style={{
-                borderBottom: '1px solid var(--neutral-border-medium)'
-            }}
-            as="header"
-            fillWidth
-            paddingX="m"
-            paddingY="xs"
-            alignItems="center"
-            justifyContent='space-between'
-            background="neutral-medium">
-            <Flex>
-                <Link href='/'  style={{textDecoration: 'none'}}>             
-                    <Heading as='h1'>Kolitha Warnakulasooriya</Heading>    
-                </Link>                                                       
-            </Flex>
-            <Flex
-                fillWidth
-                alignItems="right" justifyContent="right">
-                <Flex
-                    hide="s"
-                    textVariant="label-default-s"
-                    gap="4" 
-                    paddingX="l"
-                    alignItems="center">
+        <header className={styles.header}>
+            <Link href="/" className={styles.brand} aria-current={pathname === '/' ? 'page' : undefined}>
+                <Heading as="span" style={{ display: 'block', fontSize: '2em', fontWeight: 'var(--font-weight-bold)' }}>
+                    Kolitha Warnakulasooriya
+                </Heading>
+            </Link>
+            <button
+                ref={toggleRef}
+                type="button"
+                className={styles.toggle}
+                aria-expanded={isOpen}
+                aria-controls="primary-navigation"
+                onClick={() => setIsOpen(value => !value)}
+            >
+                {isOpen ? 'Close menu' : 'Menu'}
+            </button>
+            <nav id="primary-navigation" aria-label="Main navigation" className={`${styles.navigation} ${isOpen ? styles.open : ''}`}>
+                {routes.map(([href, label]) => (
                     <SmartLink
-                        href="/me">
-                        Who Am I
-                    </SmartLink>
-                    <SmartLink
-                        href="/resume">
-                        Resume
-                    </SmartLink>
-                    <SmartLink
-                        href="/publications">
-                        Publications
-                    </SmartLink>
-                    <SmartLink
-                        href="/projects">
-                        Projects
-                    </SmartLink>
-                    <SmartLink
-                        href="/gallery">
-                        Gallery
-                    </SmartLink>
-                    <SmartLink
-                        href="/blog">
-                        Blog
-                    </SmartLink>
-                    <SmartLink
-                        href="https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
-                        target="_blank" 
-                      rel="noopener noreferrer"
-                      suffixIcon="arrowRight"
+                        key={href}
+                        href={href}
+                        aria-current={pathname === href ? 'page' : undefined}
+                        selected={pathname === href}
+                        onClick={() => setIsOpen(false)}
                     >
-                        Research
+                        {label}
                     </SmartLink>
-                </Flex>
-            </Flex>
-        </Flex>
+                ))}
+                <SmartLink
+                    href={Configs.research}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    suffixIcon="arrowUpRight"
+                    aria-label="Research (external site, opens in a new tab)"
+                    onClick={() => setIsOpen(false)}
+                >
+                    Research
+                </SmartLink>
+            </nav>
+        </header>
     );
 };
 

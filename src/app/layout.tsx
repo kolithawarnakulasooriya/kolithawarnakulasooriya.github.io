@@ -3,9 +3,10 @@ import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
 
-import { baseURL, style, schema, social } from "@/once-ui/resources/config"
+import { style } from "@/once-ui/resources/config"
+import { rootMetadata, personSchema } from '@/app/site';
 
-import { Background, Flex } from '@/once-ui/components'
+import { Background } from '@/once-ui/components'
 import { Header } from "@/components/header";
 
 import { Inter } from 'next/font/google'
@@ -37,16 +38,7 @@ const tertiary: FontConfig | undefined = undefined;
 /*
 */
 
-const schemaData = {
-	"@context": "https://schema.org",
-	"@type": schema.type,
-	"url": "https://" + baseURL,
-	"logo": schema.logo,
-	"name": schema.name,
-	"description": schema.description,
-	"email": schema.email,
-	"sameAs": Object.values(social).filter(Boolean)
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
 	children,
@@ -56,46 +48,40 @@ export default function RootLayout({
 {
 	return (
 		<>
-		<Flex as="html" lang="en"
-			fillHeight background="page"
+		<html lang="en"
 			data-neutral={style.neutral} data-brand={style.brand} data-accent={style.accent}
 			data-border={style.border} data-theme={style.theme}
 			data-solid={style.solid} data-solid-style={style.solidStyle}
 			data-surface={style.surface} data-transition={style.transition}
 			data-scaling={style.scaling}
 			className={classNames(
-				primary.variable, code.variable,
+				primary.variable, code.variable, 'site-document',
 				secondary ? secondary.variable : '',
 				tertiary ? tertiary.variable : ''
 			)}>
 			<head>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, '\\u003c') }}
 				/>
 				<meta name="google-site-verification" content="IqZCUyLl-_LBpJpigQ52Uji9R7P6Z-ABkO-T6mlOzmI" />
-				<meta name="title" content="https://kolithawarnakulasooriya.github.io/"/>
-				<meta name="description" content="Kolitha warnakulasooriya, PhD, s personal web site"/>
-				<meta name="keywords" content="kolitha warnakulasooriya,kolitha@warnakulasooriya.outlook.com,kolitha,warnakulasooriya,multi-robot systems,swarm intelligence,drone systems,UAV,artificial intelligence,intelligence robotics"/>
-				<meta name="robots" content="index, follow"/>
-				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-				<meta name="language" content="English"/>
-				<meta name="author" content="Kolitha Warnakulasooriya"/>
 
 			</head>
-			<Flex as="body" fillWidth fillHeight margin="0" padding="0">
+			<body className="site-body">
 				<Background
 					style={{ zIndex: '-1' }}
 					position="fixed"
 					mask="cursor"
+					gradient={{ display: true, opacity: 0.15 }}
 					/>
-				<Flex flex={1} direction="column">
+				<div className="site-shell">
+					<a href="#main-content" className="skip-link">Skip to main content</a>
 					<Header/>
-					{children}
+					<main id="main-content" tabIndex={-1} className="site-main">{children}</main>
 					<Footer/>
-				</Flex>
-			</Flex>
-		</Flex>
+				</div>
+			</body>
+		</html>
 		</>
 	);
 }

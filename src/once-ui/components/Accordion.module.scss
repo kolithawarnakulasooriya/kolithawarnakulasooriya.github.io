@@ -1,11 +1,6 @@
 .accordion {
-    cursor: pointer;
-    transition: var(--transition-micro-medium);
-    background: var(--static-transparent);
-
-    &:hover {
-        background: var(--neutral-alpha-weak);
-    }
+    min-width: 0;
+    width: 100%;
 }
 
 .border {
@@ -16,16 +11,49 @@
     }
 }
 
-.without {
-    border: none
-}
-
-.accordionwithout {
-    cursor: pointer;
-    transition: var(--transition-micro-medium);
+.trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--static-space-16);
+    width: 100%;
+    min-height: max(44px, var(--static-space-48));
+    padding: var(--static-space-16);
+    border: 0;
+    border-radius: var(--radius-s);
+    color: var(--neutral-on-background-strong);
     background: var(--static-transparent);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
 
     &:hover {
-        background: none;
+        background: var(--neutral-alpha-weak);
+    }
+
+    svg {
+        flex-shrink: 0;
+        transition: transform var(--transition-duration-micro-medium) var(--transition-eased);
+    }
+}
+
+.details {
+    width: auto;
+    font-size: var(--font-size-label-s);
+    padding: var(--static-space-8) var(--static-space-12);
+}
+
+.expanded svg {
+    transform: rotate(180deg);
+}
+
+.panel {
+    min-width: 0;
+    padding: var(--static-space-8) var(--static-space-16) var(--static-space-16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .trigger svg {
+        transition: none;
     }
 }

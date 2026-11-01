@@ -1,15 +1,21 @@
-import React from "react";
-import { Flex, RevealFx } from "@/once-ui/components";
-import Image from "next/image";
+import { routeMetadata } from '@/app/site';
+import React from 'react';
+import { Heading, SmartLink } from '@/once-ui/components';
 import { Configs } from '@/app/config';
 
-interface Blog { }
+export const metadata = routeMetadata('/research');
 
-const ResearchPage: React.FC<Blog> = ({ }) => {
-
+export default function ResearchPage() {
     return (
-        <iframe src={`${Configs.research}`} height="1000" width="1000" title="Research"></iframe>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Research</Heading>
+            <div className="embed-source">
+                <SmartLink href={Configs.research} target="_blank" rel="noopener noreferrer"
+                    suffixIcon="arrowUpRight" aria-label="Open Research site (external site, opens in a new tab)">
+                    Open Research site
+                </SmartLink>
+            </div>
+            <iframe src={Configs.research} className="fluid-embed" height="1000" width="1000" title="Research" />
+        </div>
+    );
 }
-
-export default ResearchPage;

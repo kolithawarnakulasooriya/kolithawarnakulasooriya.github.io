@@ -1,0 +1,609 @@
+{
+  "version": 1,
+  "config": {
+    "format": "webp",
+    "quality": 80,
+    "widths": [
+      480,
+      960,
+      1440
+    ],
+    "autoOrient": true,
+    "withoutEnlargement": true
+  },
+  "fingerprint": "0a3ea33696b045defc072c25a3d64c06d4fdeed7460cd14b12dc058b9c4adf5b",
+  "assets": {
+    "/gallery/p44.jpg": {
+      "sourceSha256": "b26c4cba086fad430664a06f025a5c3adbd95f8f76ce3e7c15b33c12103c1a96",
+      "sourceBytes": 1967044,
+      "width": 4032,
+      "height": 3024,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p44-b26c4cba086f-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 16780
+        },
+        {
+          "src": "/gallery/optimized/p44-b26c4cba086f-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 51178
+        },
+        {
+          "src": "/gallery/optimized/p44-b26c4cba086f-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 99230
+        }
+      ]
+    },
+    "/gallery/p55.jpg": {
+      "sourceSha256": "67f3517735b89566909ab5ca844d9a1a6cd5bbd0fc3922f3508bc21b2afcae65",
+      "sourceBytes": 5579604,
+      "width": 3024,
+      "height": 4032,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p55-67f3517735b8-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 83222
+        },
+        {
+          "src": "/gallery/optimized/p55-67f3517735b8-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 342570
+        },
+        {
+          "src": "/gallery/optimized/p55-67f3517735b8-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 769460
+        }
+      ]
+    },
+    "/gallery/p1.jpeg": {
+      "sourceSha256": "bd74d735ccdfd647b2fda807e8bfccb4f2f059934cc936edd965768b09fd8933",
+      "sourceBytes": 90206,
+      "width": 960,
+      "height": 1280,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p1-bd74d735ccdf-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 23408
+        },
+        {
+          "src": "/gallery/optimized/p1-bd74d735ccdf-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 59568
+        }
+      ]
+    },
+    "/gallery/c1.jpg": {
+      "sourceSha256": "2d51b8ac5bfdd47678e549eceafbcf12cb9413e5f7c90595e4dbae5c3901ca28",
+      "sourceBytes": 181939,
+      "width": 1200,
+      "height": 1200,
+      "variants": [
+        {
+          "src": "/gallery/optimized/c1-2d51b8ac5bfd-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 28162
+        },
+        {
+          "src": "/gallery/optimized/c1-2d51b8ac5bfd-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 82090
+        },
+        {
+          "src": "/gallery/optimized/c1-2d51b8ac5bfd-1200.webp",
+          "width": 1200,
+          "height": 1200,
+          "bytes": 119592
+        }
+      ]
+    },
+    "/gallery/p33.jpg": {
+      "sourceSha256": "d1709093d142b92288a773daefa1674a400435f8fe9399042ab11a9ad9ac2e0b",
+      "sourceBytes": 3488416,
+      "width": 3024,
+      "height": 4032,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p33-d1709093d142-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 50896
+        },
+        {
+          "src": "/gallery/optimized/p33-d1709093d142-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 165934
+        },
+        {
+          "src": "/gallery/optimized/p33-d1709093d142-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 333174
+        }
+      ]
+    },
+    "/gallery/p7.jpeg": {
+      "sourceSha256": "d76cecce4702fb2afb55877f6f9809c4397bc2905d93cbc6605018afba723708",
+      "sourceBytes": 80508,
+      "width": 800,
+      "height": 533,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p7-d76cecce4702-480.webp",
+          "width": 480,
+          "height": 320,
+          "bytes": 29928
+        },
+        {
+          "src": "/gallery/optimized/p7-d76cecce4702-800.webp",
+          "width": 800,
+          "height": 533,
+          "bytes": 83332
+        }
+      ]
+    },
+    "/gallery/p2.jpeg": {
+      "sourceSha256": "514eb0702bdd166286c3ec33882d87cc3db5c7d8f3efe5efe42e0dbf4a7ddc2a",
+      "sourceBytes": 49164,
+      "width": 600,
+      "height": 336,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p2-514eb0702bdd-480.webp",
+          "width": 480,
+          "height": 269,
+          "bytes": 33262
+        },
+        {
+          "src": "/gallery/optimized/p2-514eb0702bdd-600.webp",
+          "width": 600,
+          "height": 336,
+          "bytes": 49214
+        }
+      ]
+    },
+    "/gallery/t112.jpeg": {
+      "sourceSha256": "bf3b961344fb07be2de1ecdebb2addf0086eb471719c09c939e9d07d72e1c48d",
+      "sourceBytes": 2157441,
+      "width": 3120,
+      "height": 4160,
+      "variants": [
+        {
+          "src": "/gallery/optimized/t112-bf3b961344fb-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 26948
+        },
+        {
+          "src": "/gallery/optimized/t112-bf3b961344fb-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 92816
+        },
+        {
+          "src": "/gallery/optimized/t112-bf3b961344fb-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 188308
+        }
+      ]
+    },
+    "/gallery/p5.jpeg": {
+      "sourceSha256": "d3133e4c3d77b517b29ab73b9e28ea3cbac3b6fc6cd85dec49f70033a46e2874",
+      "sourceBytes": 38810,
+      "width": 600,
+      "height": 600,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p5-d3133e4c3d77-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 20246
+        },
+        {
+          "src": "/gallery/optimized/p5-d3133e4c3d77-600.webp",
+          "width": 600,
+          "height": 600,
+          "bytes": 26342
+        }
+      ]
+    },
+    "/gallery/vexpo.jpeg": {
+      "sourceSha256": "774b175207f1478c4629ed35e3be2d5ce38bac9dfc5b8b1bdc82dd6f595072f0",
+      "sourceBytes": 1367522,
+      "width": 3264,
+      "height": 2448,
+      "variants": [
+        {
+          "src": "/gallery/optimized/vexpo-774b175207f1-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 36648
+        },
+        {
+          "src": "/gallery/optimized/vexpo-774b175207f1-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 104118
+        },
+        {
+          "src": "/gallery/optimized/vexpo-774b175207f1-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 213730
+        }
+      ]
+    },
+    "/gallery/sci112.jpeg": {
+      "sourceSha256": "539247804111ed8068e9d953ed2e1a4a927e6fc5fc0f0368e8500365d8d6318f",
+      "sourceBytes": 404531,
+      "width": 1600,
+      "height": 1200,
+      "variants": [
+        {
+          "src": "/gallery/optimized/sci112-539247804111-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 26390
+        },
+        {
+          "src": "/gallery/optimized/sci112-539247804111-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 83028
+        },
+        {
+          "src": "/gallery/optimized/sci112-539247804111-1440.webp",
+          "width": 1440,
+          "height": 1080,
+          "bytes": 190374
+        }
+      ]
+    },
+    "/gallery/cc2.jpeg": {
+      "sourceSha256": "424b04cb714706337ca4ae2713290fe4455f736a8c5bc8eae22cb853f00842fb",
+      "sourceBytes": 117538,
+      "width": 960,
+      "height": 720,
+      "variants": [
+        {
+          "src": "/gallery/optimized/cc2-424b04cb7147-480.webp",
+          "width": 480,
+          "height": 360,
+          "bytes": 29290
+        },
+        {
+          "src": "/gallery/optimized/cc2-424b04cb7147-960.webp",
+          "width": 960,
+          "height": 720,
+          "bytes": 92226
+        }
+      ]
+    },
+    "/gallery/graduation.jpeg": {
+      "sourceSha256": "7a44673257f8bf7ac47a160b820f9edb2dd86530b95ae486c19c4e812a9ae3d6",
+      "sourceBytes": 207245,
+      "width": 2448,
+      "height": 3264,
+      "variants": [
+        {
+          "src": "/gallery/optimized/graduation-7a44673257f8-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 14932
+        },
+        {
+          "src": "/gallery/optimized/graduation-7a44673257f8-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 32740
+        },
+        {
+          "src": "/gallery/optimized/graduation-7a44673257f8-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 54714
+        }
+      ]
+    },
+    "/gallery/p11.JPG": {
+      "sourceSha256": "b44b9ea2e175f1050fdcf53140ce1593252c51a7b8428dbeb42f3797c03d8321",
+      "sourceBytes": 381935,
+      "width": 1500,
+      "height": 2000,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p11-b44b9ea2e175-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 35960
+        },
+        {
+          "src": "/gallery/optimized/p11-b44b9ea2e175-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 89724
+        },
+        {
+          "src": "/gallery/optimized/p11-b44b9ea2e175-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 154114
+        }
+      ]
+    },
+    "/gallery/p22.JPG": {
+      "sourceSha256": "965ed973f8692c1f03fb0d32485e2803701f334bc17b93618676b29988be8172",
+      "sourceBytes": 379442,
+      "width": 1500,
+      "height": 2000,
+      "variants": [
+        {
+          "src": "/gallery/optimized/p22-965ed973f869-480.webp",
+          "width": 480,
+          "height": 640,
+          "bytes": 36710
+        },
+        {
+          "src": "/gallery/optimized/p22-965ed973f869-960.webp",
+          "width": 960,
+          "height": 1280,
+          "bytes": 88536
+        },
+        {
+          "src": "/gallery/optimized/p22-965ed973f869-1440.webp",
+          "width": 1440,
+          "height": 1920,
+          "bytes": 152994
+        }
+      ]
+    },
+    "/images/drone.png": {
+      "sourceSha256": "3758ace36f64fee0c67a42685cd6ab47aede8b98e8b2bf9b387627a7292a9c1c",
+      "sourceBytes": 41751,
+      "width": 800,
+      "height": 800,
+      "variants": [
+        {
+          "src": "/images/optimized/drone-3758ace36f64-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 6860
+        },
+        {
+          "src": "/images/optimized/drone-3758ace36f64-800.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 12106
+        }
+      ]
+    },
+    "/images/autocomplete-codex-thumbnail.png": {
+      "sourceSha256": "2d3818d0339e90005f0edcda267abfc03538e2a66ebd17700cfa93780582c4b4",
+      "sourceBytes": 16211,
+      "width": 128,
+      "height": 128,
+      "variants": [
+        {
+          "src": "/images/optimized/autocomplete-codex-thumbnail-2d3818d0339e-128.webp",
+          "width": 128,
+          "height": 128,
+          "bytes": 1034
+        }
+      ]
+    },
+    "/images/me.png": {
+      "sourceSha256": "bc461cbc4c02436e3bc43c440cc6561d1dfe58173959751dabf9fa6fe15b6e43",
+      "sourceBytes": 51105,
+      "width": 792,
+      "height": 506,
+      "variants": [
+        {
+          "src": "/images/optimized/me-bc461cbc4c02-480.webp",
+          "width": 480,
+          "height": 307,
+          "bytes": 8016
+        },
+        {
+          "src": "/images/optimized/me-bc461cbc4c02-792.webp",
+          "width": 792,
+          "height": 506,
+          "bytes": 12746
+        }
+      ]
+    },
+    "/images/CytokineSwarm.png": {
+      "sourceSha256": "349e1c4d3213c1b5b4ec88318112b0dc40328f9fa989213d41c06034165947f9",
+      "sourceBytes": 888592,
+      "width": 1024,
+      "height": 774,
+      "variants": [
+        {
+          "src": "/images/optimized/CytokineSwarm-349e1c4d3213-480.webp",
+          "width": 480,
+          "height": 363,
+          "bytes": 8162
+        },
+        {
+          "src": "/images/optimized/CytokineSwarm-349e1c4d3213-960.webp",
+          "width": 960,
+          "height": 726,
+          "bytes": 18660
+        },
+        {
+          "src": "/images/optimized/CytokineSwarm-349e1c4d3213-1024.webp",
+          "width": 1024,
+          "height": 774,
+          "bytes": 20158
+        }
+      ]
+    },
+    "/images/raven-logo.png": {
+      "sourceSha256": "ba8f35e17a1458ef22318ea728f2aee20d805e303bacec5d794acaa6ec2097ce",
+      "sourceBytes": 589172,
+      "width": 1024,
+      "height": 1024,
+      "variants": [
+        {
+          "src": "/images/optimized/raven-logo-ba8f35e17a14-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 31982
+        },
+        {
+          "src": "/images/optimized/raven-logo-ba8f35e17a14-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 79716
+        },
+        {
+          "src": "/images/optimized/raven-logo-ba8f35e17a14-1024.webp",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 84958
+        }
+      ]
+    },
+    "/images/swarmx.png": {
+      "sourceSha256": "a953713d333a67edf40cd0badd8f95de37ad337a2dbb985b1160289bb4c0fca3",
+      "sourceBytes": 307577,
+      "width": 1040,
+      "height": 1088,
+      "variants": [
+        {
+          "src": "/images/optimized/swarmx-a953713d333a-480.webp",
+          "width": 480,
+          "height": 502,
+          "bytes": 40978
+        },
+        {
+          "src": "/images/optimized/swarmx-a953713d333a-960.webp",
+          "width": 960,
+          "height": 1004,
+          "bytes": 82668
+        },
+        {
+          "src": "/images/optimized/swarmx-a953713d333a-1040.webp",
+          "width": 1040,
+          "height": 1088,
+          "bytes": 49304
+        }
+      ]
+    },
+    "/images/syscoshop.png": {
+      "sourceSha256": "99c6fbdc683dd747bd64617bc59fcb0b13b7c1a03c3404ad7e01828527b1c088",
+      "sourceBytes": 14880,
+      "width": 606,
+      "height": 400,
+      "variants": [
+        {
+          "src": "/images/optimized/syscoshop-99c6fbdc683d-480.webp",
+          "width": 480,
+          "height": 317,
+          "bytes": 5264
+        },
+        {
+          "src": "/images/optimized/syscoshop-99c6fbdc683d-606.webp",
+          "width": 606,
+          "height": 400,
+          "bytes": 7144
+        }
+      ]
+    },
+    "/images/minearc.jpeg": {
+      "sourceSha256": "f9aab1d00f19ca7acd0dd717222888d92e82325578b52d8ecb403aceff33617f",
+      "sourceBytes": 5302,
+      "width": 225,
+      "height": 225,
+      "variants": [
+        {
+          "src": "/images/optimized/minearc-f9aab1d00f19-225.webp",
+          "width": 225,
+          "height": 225,
+          "bytes": 3756
+        }
+      ]
+    },
+    "/images/4onse.jpg": {
+      "sourceSha256": "9c91015167b11d75cbc7947ea42ec4d887cd848579648ff049fc397e390a5981",
+      "sourceBytes": 16385,
+      "width": 300,
+      "height": 300,
+      "variants": [
+        {
+          "src": "/images/optimized/4onse-9c91015167b1-300.webp",
+          "width": 300,
+          "height": 300,
+          "bytes": 7490
+        }
+      ]
+    },
+    "/images/defproject.png": {
+      "sourceSha256": "c89369472a30b279c8c50d40f78ba552eec41bae362216ee2b3674e98d1af895",
+      "sourceBytes": 127593,
+      "width": 1024,
+      "height": 1024,
+      "variants": [
+        {
+          "src": "/images/optimized/defproject-c89369472a30-480.webp",
+          "width": 480,
+          "height": 480,
+          "bytes": 19488
+        },
+        {
+          "src": "/images/optimized/defproject-c89369472a30-960.webp",
+          "width": 960,
+          "height": 960,
+          "bytes": 41182
+        },
+        {
+          "src": "/images/optimized/defproject-c89369472a30-1024.webp",
+          "width": 1024,
+          "height": 1024,
+          "bytes": 45994
+        }
+      ]
+    },
+    "/images/avatar.jpg": {
+      "sourceSha256": "b25623b19bdc2524f735e0dab55552349c09f6dd62fcf98c14a7736f3957b11e",
+      "sourceBytes": 304957,
+      "width": 993,
+      "height": 955,
+      "variants": [
+        {
+          "src": "/images/optimized/avatar-b25623b19bdc-480.webp",
+          "width": 480,
+          "height": 462,
+          "bytes": 20296
+        },
+        {
+          "src": "/images/optimized/avatar-b25623b19bdc-960.webp",
+          "width": 960,
+          "height": 923,
+          "bytes": 76924
+        },
+        {
+          "src": "/images/optimized/avatar-b25623b19bdc-993.webp",
+          "width": 993,
+          "height": 955,
+          "bytes": 87258
+        }
+      ]
+    }
+  }
+}

@@ -3,6 +3,8 @@
 import React, { CSSProperties, useState, useRef, useEffect } from 'react';
 import Image, { ImageProps } from 'next/image';
 import classNames from 'classnames';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+import mediaManifest from '@/app/media-manifest.json';
 
 import { Flex, Skeleton } from '@/once-ui/components';
 
@@ -144,15 +146,14 @@ const SmartImage: React.FC<SmartImageProps> = ({
                     />
                 )}
                 {!isLoading && !isVideo && !isYouTube && (
-                    <Image
-                        {...props}
+                    Object.prototype.hasOwnProperty.call(mediaManifest.assets, src) ? <ResponsiveImage
                         src={src}
                         alt={alt}
-                        fill
-                        style={{ 
-                            objectFit: isEnlarged ? 'contain' : objectFit,
-                        }}
-                    />
+                        sizes={props.sizes}
+                        priority={props.priority}
+                        loading={props.loading}
+                        style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: isEnlarged ? 'contain' : objectFit }}
+                    /> : <Image {...props} src={src} alt={alt} fill style={{ objectFit: isEnlarged ? 'contain' : objectFit }} />
                 )}
             </Flex>
 

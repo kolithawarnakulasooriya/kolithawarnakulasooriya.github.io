@@ -1,129 +1,93 @@
 'use client';
 
 import React, { useState, useRef, useCallback, useEffect, forwardRef, ReactNode } from 'react';
-import classNames from 'classnames';
 
 const defaultAllowedCharacters = ['X', '$', '@', 'a', 'H', 'z', 'o', '0', 'y', '#', '?', '*', '0', '1', '+'];
-
-function getRandomCharacter(charset: string[]): string {
-	const randomIndex = Math.floor(Math.random() * charset.length);
-	return charset[randomIndex];
-}
-
-function createEventHandler(
-	originalText: string,
-	setText: React.Dispatch<React.SetStateAction<string>>,
-	inProgress: boolean,
-	setInProgress: React.Dispatch<React.SetStateAction<boolean>>,
-	speed: 'fast' | 'medium' | 'slow',
-	charset: string[],
-	setHasAnimated?: React.Dispatch<React.SetStateAction<boolean>>
-) {
-	const speedSettings = {
-		fast: { BASE_DELAY: 10, REVEAL_DELAY: 10, INITIAL_RANDOM_DURATION: 100 },
-		medium: { BASE_DELAY: 30, REVEAL_DELAY: 30, INITIAL_RANDOM_DURATION: 300 },
-		slow: { BASE_DELAY: 60, REVEAL_DELAY: 60, INITIAL_RANDOM_DURATION: 600 }
-	};
-
-	const { BASE_DELAY, REVEAL_DELAY, INITIAL_RANDOM_DURATION } = speedSettings[speed];
-
-	const generateRandomText = () =>
-		originalText
-		.split('')
-		.map((char) => (char === ' ' ? ' ' : getRandomCharacter(charset)))
-		.join('');
-
-	return async () => {
-		if (inProgress) return;
-
-		setInProgress(true);
-
-		let randomizedText = generateRandomText();
-		const endTime = Date.now() + INITIAL_RANDOM_DURATION;
-
-		while (Date.now() < endTime) {
-			setText(randomizedText);
-			await new Promise((resolve) => setTimeout(resolve, BASE_DELAY));
-			randomizedText = generateRandomText();
-		}
-
-		for (let i = 0; i < originalText.length; i++) {
-			await new Promise((resolve) => setTimeout(resolve, REVEAL_DELAY));
-			setText(
-				`${originalText.substring(0, i + 1)}${randomizedText.substring(i + 1)}`
-			);
-		}
-
-		setInProgress(false);
-		if (setHasAnimated) {
-			setHasAnimated(true);
-		}
-	};
-}
-
-type LetterFxProps = {
-	children: ReactNode;
-	trigger?: 'hover' | 'instant' | 'custom';
-	speed?: 'fast' | 'medium' | 'slow';
-	charset?: string[];
-	onTrigger?: (triggerFn: () => void) => void;
-	className?: string;
-	style?: React.CSSProperties;
+const timings = {
+    fast: { delay: 10, initial: 100 },
+    medium: { delay: 30, initial: 300 },
+    slow: { delay: 60, initial: 600 },
 };
 
-const LetterFx = forwardRef<HTMLSpanElement, LetterFxProps>(({
-	children,
-	trigger = 'hover',
-	speed = 'medium',
-	charset = defaultAllowedCharacters,
-	onTrigger,
-	className,
-	style,
-}, ref) => {
-	const [text, setText] = useState<string>(typeof children === 'string' ? children : '');
-	const [inProgress, setInProgress] = useState<boolean>(false);
-	const [hasAnimated, setHasAnimated] = useState<boolean>(false);
-	const originalText = useRef<string>(typeof children === 'string' ? children : '');
+type LetterFxProps = {
+    children: ReactNode;
+    trigger?: 'hover' | 'instant' | 'custom';
+    speed?: 'fast' | 'medium' | 'slow';
+    charset?: string[];
+    onTrigger?: (triggerFn: () => void) => void;
+    className?: string;
+    style?: React.CSSProperties;
+};
 
-	const eventHandler = useCallback(createEventHandler(
-		originalText.current,
-		setText,
-		inProgress,
-		setInProgress,
-		speed,
-		charset,
-		trigger === 'instant' ? setHasAnimated : undefined
-	), [inProgress, trigger, speed, charset]);
+const LetterFx = forwardRef<HTMLSpanElement, LetterFxProps>(({ children, trigger = 'hover', speed = 'medium', charset = defaultAllowedCharacters, onTrigger, className, style }, ref) => {
+    const original = typeof children === 'string' ? children : '';
+    const [text, setText] = useState(original);
+    const timer = useRef<ReturnType<typeof setTimeout>>();
+    const running = useRef(false);
+    const reduced = useRef(true);
+    const mounted = useRef(false);
 
-	useEffect(() => {
-		if (typeof children === 'string') {
-			setText(children);
-			originalText.current = children;
+    const cancel = useCallback(() => {
+        clearTimeout(timer.current);
+        running.current = false;
+    }, []);
 
-			if (trigger === 'instant' && !hasAnimated) {
-				eventHandler();
-			}
-		}
-	}, [children, trigger, eventHandler, hasAnimated]);
+    const animate = useCallback(() => {
+        if (!mounted.current || running.current || reduced.current || !original) return;
+        running.current = true;
+        const { delay, initial } = timings[speed];
+        const characters = charset.length ? charset : defaultAllowedCharacters;
+        const randomText = () => original.split('').map(char => char === ' ' ? char : characters[Math.floor(Math.random() * characters.length)]).join('');
+        const started = Date.now();
+        let randomized = randomText();
+        let revealed = 0;
+        const tick = () => {
+            if (!mounted.current || reduced.current) return;
+            if (Date.now() - started < initial) {
+                setText(randomized);
+                randomized = randomText();
+            } else {
+                revealed += 1;
+                setText(original.slice(0, revealed) + randomized.slice(revealed));
+                if (revealed >= original.length) {
+                    running.current = false;
+                    return;
+                }
+            }
+            timer.current = setTimeout(tick, delay);
+        };
+        tick();
+    }, [original, speed, charset]);
 
-	useEffect(() => {
-		if (trigger === 'custom' && onTrigger) {
-			onTrigger(eventHandler);
-		}
-	}, [trigger, onTrigger, eventHandler]);
+    useEffect(() => {
+        mounted.current = true;
+        setText(original);
+        const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const updatePreference = () => {
+            reduced.current = preference.matches;
+            cancel();
+            setText(original);
+            if (!reduced.current && trigger === 'instant') animate();
+        };
+        updatePreference();
+        preference.addEventListener('change', updatePreference);
+        return () => {
+            mounted.current = false;
+            cancel();
+            preference.removeEventListener('change', updatePreference);
+        };
+    }, [original, trigger, animate, cancel]);
 
-	return (
-		<span
-			ref={ref}
-			className={classNames(className)}
-			style={style}
-			onMouseOver={trigger === 'hover' ? eventHandler : undefined}
-		>
-			{text}
-		</span>
-	);
+    useEffect(() => {
+        if (trigger === 'custom' && onTrigger) onTrigger(animate);
+    }, [trigger, onTrigger, animate]);
+
+    return (
+        <span ref={ref} className={className} style={style} onMouseEnter={trigger === 'hover' ? animate : undefined}>
+            {typeof children === 'string' ? <><span className="visually-hidden">{original}</span><span aria-hidden="true">{text}</span></> : children}
+        </span>
+    );
 });
 
 LetterFx.displayName = 'LetterFx';
-
 export { LetterFx };

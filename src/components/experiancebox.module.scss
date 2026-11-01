@@ -1,14 +1,13 @@
+.experience { min-width: 0; margin-bottom: var(--static-space-24); line-height: 1.6; overflow-wrap: anywhere; }
+.header { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--static-space-16); }
+.identity { flex: 1 1 12rem; min-width: 0; }
+.subtext { font-size: 0.875rem; margin-top: var(--static-space-8); }
 .durationbox {
-    max-width: max-content;
-    min-width: fit-content;
-    height: 24px;
-    font-size: 12px;
-    text-align: 'center'
+    max-width: 100%;
+    padding: var(--static-space-4) var(--static-space-8);
+    border: 1px solid var(--neutral-border-medium);
+    border-radius: var(--radius-m);
+    font-size: 0.875rem;
 }
-
-.listbox {
-    margin-left: 64px;
-    font-size: 14px;
-    margin-top: 12px;
-    margin-right: 6px
-}
+.listbox { margin-top: var(--static-space-8); padding-inline-start: var(--static-space-20); line-height: 1.7; }
+.listbox li + li { margin-top: var(--static-space-8); }

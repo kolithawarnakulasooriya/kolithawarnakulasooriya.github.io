@@ -1,104 +1,24 @@
 'use client';
-import { Flex, RevealFx, Text, Heading, Badge } from "@/once-ui/components";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react"
+import { RevealFx, Heading, SmartLink } from "@/once-ui/components";
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+import type { ProjectObject } from '@/app/config';
+import styles from './projectbox.module.scss';
 
-interface ProjectBoxProps {
-    key?: number
-    src: string
-    heading: string
-    image: string
-    title: string
-}
-
-const ProjectBox: React.FC<ProjectBoxProps> = ({
-    key,
-    src,
-    heading,
-    image,
-    title
-}) => {
-
-    const Discription = () => {
-        if (src == '') {
-            return (
-                <Text style={{
-                    textAlign: 'center',
-                    fontSize: 14,
-                    marginTop: 12
-                }}>
-                    {heading}
-                </Text>
-            )
-        } else {
-            return (<Link href={src}>
-                <Text style={{
-                    textAlign: 'center',
-                    fontSize: 14,
-                    marginTop: 12
-                }}>
-                    {heading}
-                </Text>
-            </Link>
-            )
-        }
-    }
-
+export function ProjectBox({ id, src, heading, image, title, status }: ProjectObject) {
     return (
-        <Flex key={key} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={20}>
-
-            <RevealFx
-                speed="medium"
-                delay={0}
-                translateY={0}
-            >
-                <Flex
-                    direction="column"
-                    justifyContent="center"
-                    alignItems="center"
-                    maxWidth={17}
-                >
-                    <Heading as="h2" marginBottom="12">
-                        {title}
-                    </Heading>
-                    <Image
-                        src={image}
-                        alt=""
-                        width={350}
-                        height={160}
-                        style={{
-                            width: "-webkit - fill - available",
-                            objectFit: "scale-down"
-                        }}
-
-                    />
-                    {
-                        Discription()
-                    }
-
-                </Flex>
-            </RevealFx >
-            {
-                src == '' && <div
-                    style={{
-                        marginTop: -20,
-                        marginLeft: -20,
-                        backgroundColor: '#FFF',
-                        maxHeight: 'fit-content',
-                        color: 'red',
-                        borderRadius: 15,
-                        padding: 4,
-                        fontWeight: 600
-                    }}
-                >
-                    Private
+        <article className={styles.card} data-project-id={id}>
+            <RevealFx speed="medium" delay={0} translateY={0}>
+                <div className={styles.content}>
+                    <Heading as="h3" variant="heading-strong-s">{title}</Heading>
+                    <ResponsiveImage className={styles.image} src={image} alt="" width={350} height={160}
+                        sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1100px) 45vw, 350px" />
+                    <p>{heading}</p>
+                    <p className={styles.status}><strong>Status:</strong> {status}</p>
+                    {src ? <SmartLink href={src} target="_blank" rel="noopener noreferrer" suffixIcon="arrowUpRight"
+                        aria-label={`View ${title} (external site, opens in a new tab)`}>View project</SmartLink>
+                        : <span className={styles.status}>No public link supplied</span>}
                 </div>
-            }
-        </Flex >
-    )
+            </RevealFx>
+        </article>
+    );
 }
-
-ProjectBox.displayName = 'ProjectBox';
-
-export { ProjectBox };

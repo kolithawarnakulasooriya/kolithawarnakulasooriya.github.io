@@ -1,30 +1,21 @@
-'use client';
-import { Flex, Avatar, Heading, Text, Accordion } from "@/once-ui/components"
-import Link from "next/link";
-import React from "react"
+import { Heading } from "@/once-ui/components";
+import type { Publication } from '@/app/publications/data';
+import styles from './publicationbox.module.scss';
 
-interface PublicationBoxProps {
-    key?: number
-    href: string,
-    title: string,
-    authors: string,
-    publisher: string,
-}
-
-const PublicationBox: React.FC<PublicationBoxProps> = ({
-    key, href, title, authors, publisher
-}) => {
+export function PublicationBox({ id, href, title, authors, venue, year, verification }: Publication) {
     return (
-        <Flex key={key} fillWidth direction="column" padding="20">
-            <Link href={href}>
-                <Text style={{fontSize: 22, color: 'var(--brand-on-background-weak)'}}> {title} </Text>
-            </Link>
-            <Text style={{fontSize: 14}}> {authors} </Text>
-            <Text style={{fontSize: 14}}> {publisher} </Text>
-        </Flex>
-    )
+        <article className={styles.publication} data-publication-id={id}>
+            <Heading as="h2" variant="heading-default-m">
+                {href ? <a href={href} target="_blank" rel="noopener noreferrer"
+                    aria-label={`${title} (external source, opens in a new tab)`}>{title}</a> : title}
+            </Heading>
+            <p data-citation-authors>{authors.join(', ')}</p>
+            <p data-citation-venue>
+                {venue || 'Venue awaiting verification'}
+                {year && <> · <time dateTime={String(year)}>{year}</time></>}
+            </p>
+            {verification.state !== 'verified' && <p className={styles.status}>Citation details awaiting verification</p>}
+            {!href && <p className={styles.status}>Source link awaiting verification</p>}
+        </article>
+    );
 }
-
-PublicationBox.displayName = 'PublicationBox';
-
-export { PublicationBox };

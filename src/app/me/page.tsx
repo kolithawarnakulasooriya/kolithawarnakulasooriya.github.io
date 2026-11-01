@@ -1,58 +1,28 @@
-import React from "react";
-import { Flex, Grid, Text, Accordion } from "@/once-ui/components";
-import { Configs, SkillCategory, SkillObject } from '@/app/config';
+import { routeMetadata } from '@/app/site';
+import { Accordion, Heading } from "@/once-ui/components";
+import { Configs } from '@/app/config';
 import { IconBox } from "@/components/iconbox";
+import styles from './page.module.scss';
 
-interface MeProps { }
+export const metadata = routeMetadata('/me');
 
-const Me: React.FC<MeProps> = ({ }) => {
-
+export default function Me() {
     return (
-        <Flex fillHeight className="window3q">
-            <Grid
-                columns="repeat(1, 2fr)"
-                fillHeight
-                fillWidth
-                padding="12"
-            >
-                <Grid
-                    columns="repeat(1, 2)"
-                    fillWidth
-                >
-                    
-                    <Text
-                        variant="body-default-s"
-                        align="justify"
-                        paddingTop="12"
-                        paddingLeft="64"
-                        paddingRight="64"
-                    >
-                        {Configs.summary}
-                    </Text>
-                </Grid>
-                <Flex direction="column" fillWidth overflowY="auto">
-                    {
-                        Configs.skills.map((skillcategory: SkillCategory, index) => (
-                            <Accordion
-                                key={index}
-                                title={skillcategory.titile}
-                                open={skillcategory.isOpen}
-                            >
-                                <Flex
-                                    fillWidth
-                                    justifyContent="center"
-                                >
-                                    {
-                                        skillcategory.items.map((skill: SkillObject, index1) => (<IconBox key={index1} src={skill.src} size="m" />))
-                                    }
-                                </Flex>
-                            </Accordion>
-                        ))
-                    }
-                </Flex>
-            </Grid>
-        </Flex>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Who Am I</Heading>
+            <div className={styles.biography}>
+                {Configs.biographyParagraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+            </div>
+            <section aria-labelledby="skills-heading" className={styles.skills}>
+                <Heading as="h2" id="skills-heading" variant="heading-strong-m" marginBottom="16">Skills</Heading>
+                {Configs.skills.map(category => (
+                    <Accordion key={category.titile} title={category.titile} open={category.isOpen}>
+                        <div className={styles.skillList}>
+                            {category.items.map(skill => <IconBox key={skill.src} src={skill.src} name={skill.name} size="m" />)}
+                        </div>
+                    </Accordion>
+                ))}
+            </section>
+        </div>
+    );
 }
-
-export default Me;

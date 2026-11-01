@@ -1,50 +1,26 @@
-import React from "react";
-import { Flex, RevealFx } from "@/once-ui/components";
-import Image from "next/image";
-import { Configs } from '@/app/config';
+import React from 'react';
+import { RevealFx, Heading } from '@/once-ui/components';
+import { ResponsiveImage } from '@/components/ResponsiveImage';
+import mediaSources from '@/app/media-sources.json';
+import { routeMetadata } from '@/app/site';
 
-interface ProjectProps { }
+// Descriptions cover visible subjects; exact event, date and role captions remain unverified.
+export const metadata = routeMetadata('/gallery');
 
-const Projects: React.FC<ProjectProps> = ({ }) => {
-
+export default function Gallery() {
     return (
-        <Flex fillHeight className="window3q1" direction="column" overflowY="auto" alignItems="center">
-            {Configs.gallery.map((row, i)=>(
-                <Flex key={i}>
-                    {
-                        row.map((data: string, j)=>  
-                         <Flex key={i+j} padding="12" margin="12" borderStyle="solid-1" radius="l-8" maxWidth={25}>
-
-                        <RevealFx
-                            speed="medium"
-                            delay={0}
-                            translateY={0}
-                        >
-                            <Flex
-                                direction="column"
-                                justifyContent="center"
-                                alignItems="center"
-                                maxWidth={50}
-                            >
-                                <Image
-                                    src={`/gallery/${data}`}
-                                    alt=""
-                                    width={1020}
-                                    height={320}
-                                    style={{
-                                        width: "-webkit - fill - available",
-                                        objectFit: "scale-down",
-                                    }}
-            
-                                />
-                            </Flex>
-                        </RevealFx >
-                    </Flex >)
-                    }
-                </Flex>
-            ))}
-        </Flex>
-    )
+        <div className="page-content">
+            <Heading as="h1" variant="heading-strong-l" className="page-title">Gallery</Heading>
+            <div className="gallery-grid">
+                {mediaSources.gallery.map(image => (
+                    <figure className="gallery-item" key={image.src}>
+                        <RevealFx speed="medium" delay={0} translateY={0}>
+                            <ResponsiveImage src={image.src} alt={image.alt} className="gallery-image"
+                                sizes="(max-width: 767px) calc(100vw - 4rem), (max-width: 1100px) 45vw, 400px" />
+                        </RevealFx>
+                    </figure>
+                ))}
+            </div>
+        </div>
+    );
 }
-
-export default Projects;

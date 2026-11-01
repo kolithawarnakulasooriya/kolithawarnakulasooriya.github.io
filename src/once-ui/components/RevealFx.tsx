@@ -28,20 +28,34 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(({
 	...rest
 }, ref) => {
 	const [isRevealed, setIsRevealed] = useState(revealedByDefault);
+    const [reducedMotion, setReducedMotion] = useState(false);
+
+    useEffect(() => {
+        const preference = window.matchMedia('(prefers-reduced-motion: reduce)');
+        const update = () => setReducedMotion(preference.matches);
+        update();
+        preference.addEventListener('change', update);
+        return () => preference.removeEventListener('change', update);
+    }, []);
 
 	useEffect(() => {
+		if (reducedMotion) {
+            setIsRevealed(true);
+            return;
+        }
+
 		const timer = setTimeout(() => {
 			setIsRevealed(true);
 		}, delay * 1000);
 
 		return () => clearTimeout(timer);
-	}, [delay]);
+	}, [delay, reducedMotion]);
 
 	useEffect(() => {
-		if (trigger !== undefined) {
+		if (trigger !== undefined && !reducedMotion) {
 			setIsRevealed(trigger);
 		}
-	}, [trigger]);
+	}, [trigger, reducedMotion]);
 
 	const getSpeedDuration = () => {
 		switch (speed) {
@@ -62,16 +76,16 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(({
 		} else if (typeof translateY === 'string') {
 			return `var(--static-space-${translateY})`;
 		}
-		return undefined;
+		return '0rem';
 	};
 
 	const translateValue = getTranslateYValue();
 
-	const combinedClassName = `${styles.revealFx} ${isRevealed ? styles.revealed : styles.hidden} ${className || ''}`;
+	const combinedClassName = `${styles.revealFx} ${isRevealed || reducedMotion ? styles.revealed : styles.hidden} ${className || ''}`;
 
 	const revealStyle: React.CSSProperties = {
 		transitionDuration: getSpeedDuration(),
-		transform: isRevealed ? 'translateY(0)' : `translateY(${translateValue})`,
+		transform: isRevealed || reducedMotion ? 'translateY(0)' : `translateY(${translateValue})`,
 		...style,
 	};
 
@@ -80,10 +94,13 @@ const RevealFx = forwardRef<HTMLDivElement, RevealFxProps>(({
 			fillWidth
 			justifyContent="center"
 			ref={ref}
-			aria-hidden="true"
 			style={revealStyle}
 			className={combinedClassName}
-			{...rest}>
+			{...rest}
+            onFocusCapture={(event) => {
+                setIsRevealed(true);
+                rest.onFocusCapture?.(event);
+            }}>
 			{children}
 		</Flex>
 	);

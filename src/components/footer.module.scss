@@ -1,0 +1,44 @@
+.footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--static-space-24);
+    padding: var(--static-space-24) var(--responsive-space-l);
+    width: 100%;
+    margin-top: auto;
+
+    a {
+        min-height: max(44px, var(--static-space-40));
+    }
+}
+
+.social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--static-space-12);
+    min-width: 0;
+
+    a {
+        min-width: max(44px, var(--static-space-40));
+    }
+}
+
+.credit {
+    text-align: center;
+    letter-spacing: 0.05rem;
+}
+
+@media (max-width: 600px) {
+    .footer {
+        justify-content: center;
+    }
+
+    .social {
+        justify-content: center;
+    }
+
+    .credit {
+        flex-basis: 100%;
+    }
+}

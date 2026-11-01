@@ -1,0 +1,5 @@
+.publication { min-width: 0; padding-block: var(--static-space-20); line-height: 1.6; overflow-wrap: anywhere; }
+.publication + .publication { border-top: 1px solid var(--neutral-border-medium); }
+.publication h2 { margin-bottom: var(--static-space-8); }
+.publication p { font-size: 0.875rem; }
+.status { color: var(--neutral-on-background-medium); margin-top: var(--static-space-8); }
