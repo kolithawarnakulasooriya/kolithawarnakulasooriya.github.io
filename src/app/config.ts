@@ -50,7 +50,7 @@ export interface SelectedWorkObject {
     evidence: Array<{ label: string; href: string }>
 }
 export interface ConfigProps {
-    summary: string,
+    biographyParagraphs: string[],
     name: string,
     resume: string,
     skills: Array<SkillCategory>,
@@ -63,8 +63,15 @@ export interface ConfigProps {
 }
 
 
+export const biographyParagraphs = [
+    'I completed my Ph.D. in Computing at the University of South Alabama in May 2025. I am a Visiting Assistant Professor at the University of South Alabama, an appointment I began in August 2025.',
+    'My research focuses on multi-agent UAV systems, including distributed leader selection, formation control, sensor streams and multi-agent decision-making. I developed a framework for heterogeneous UAVs and validated the work through physical experiments.',
+    'My software engineering experience includes web and mobile applications, RESTful and GraphQL APIs, and services built with React, React Native, Spring Boot and Node.js. My work has included testing, production monitoring and incident response, and mentoring engineers.',
+    'Outside work, I enjoy tennis, working out, long-distance driving, spending time with friends, and learning about science, nature and finance.',
+];
+
 export const Configs: ConfigProps = {
-    summary: "As a professional software engineer and doctoral candidate in artificial intelligence, I am driven by the intersection of advanced algorithms, machine learning, deep learning, and collective intelligence. Over the past 3+ years, I have mastered my technical skills in cutting-edge frameworks such as Pytorch in artificial intelligence technologies. I have developed cutting-edge solutions to complex challenges, from designing intelligent aerial robotic systems to implementing scalable software architectures that enable innovation. My doctoral research focused on solving the distributed leader selection problem in large-scale heterogeneous multi-UAV systems based on the collective behavior of biological entities, which proactively support the aerial robotics industry. This led to six first-authored articles published in AAAI and Evolutionary Intelligence and an open-source framework in swarm intelligence for Java developers. Outside, I have enjoyed my time with the SAE team by developing the Formula 1 automotive for the SAE formula competitions.As a Software Engineer with 3.5+ years of experience, I am passionate about designing and delivering robust, scalable, and innovative software solutions that empower businesses to thrive in a fast-paced, tech-driven world. My expertise spans React and React Native, Javascript, and Typescript frameworks with Node JS and Java Springboot back-end from 3-tier to microservices architectures. Further, my technical skills include SQL NoSQL, memory, time series databases, and AWS and Azure cloud services. As an excellent team player and manager, I championed agile development practices to improve team efficiency, product quality, and timely deliverables. Outside of techs, I am an intense knowledge seeker in techs and finance, spirituality, nature, and science. Socrates once said, \"The only true wisdom is knowing you know nothing\". Besides that, I am a tennis player and mostly workout every day. I like long-distance driving, enjoying the company of friends, and being pleasant to everybody.",
+    biographyParagraphs,
     name: "Kolitha Warnakulasooriya",
     resume: '/files/Kolitha_AI_Engineer.pdf',
     skills: [
@@ -173,100 +180,96 @@ export const Configs: ConfigProps = {
             company: "College of Engineering, University of South Alabama, United States",
             duration: "Aug 2025 – Present",
             items: [
-                "Conducting research related to intelligent UAV systems, safety measurements from a UAV threat, and teaching related to computer engineering subjects. Collaborating with research teams from other faculties.",
-                "Teaching, Digital Computer Architecture, Digital Logic Design, Introduction to Robotics, Microprocessor System Interfacing.",
+                "Conduct research on intelligent UAV systems, autonomous systems and robotic perception, and collaborate with researchers across faculties.",
+                "Teach Digital Computer Architecture, Digital Logic Design, Introduction to Robotics, and Microprocessor System Interfacing.",
             ]
         },
         {
             src: "/images/usa.png",
-            title: "Graduate Research Assistant",
+            title: "Research Assistant",
             company: "School of Computing, University of South Alabama, United States",
             duration: "Jan 2022 – May 2025",
             items: [
-                "Pursue research to introduce a dynamic leader election algorithm for an autonomous aerial vehicle system based on cognitive intelligence.",
-                "Published three research articles in top-ranked artificial intelligence conferences and journals (AAAI-2023, ICIPRoB, Evolutionary Intelligence)",
-                "Engaged as a lead researcher in Drone Systems and AI Laboratory by leading and administrating three core UAV-related research and developed a ROS-based adaptable Python flight framework to operate heterogeneous commercial UAVs such as Tello, Anafi, and Bebop, which can handle a maximum of 15 agents in the cluster."
-
+                "Developed a distributed robotics framework for heterogeneous UAVs, integrating leader selection, formation control, real-time sensor streams, communications and multi-agent decision-making.",
+                "Validated research through simulation, algorithm implementation, physical experiments and field testing.",
+                "Built reproducible experimentation and analysis workflows using Python, MLflow and ZenML.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
-            title: "Lead Software Engineer",
+            title: "Lead Engineer (Associate)",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
-            duration: "Aug 2021 – Jan 2022",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
+            duration: "Aug 2021 – Dec 2021",
             items: [
-                "Appointed as an assistant engineering manager to one of the core development teams of the Sysco Shop e-commerce platform",
-                "Worked in an agile/scrum environment, planned sprints, conducted daily standups, and retrospective meetings, and kept meeting minutes",
-                "Overlooked team progress in SDLC, feature development process, component testing process, deployment process, feature delivery process, and documentation",
-                "Represented the team to the higher management and inter-development team meetings, demonstrated the sprint progress, and status of the feature development process"
+                "Led system design, sprint planning, code reviews and engineering-quality practices.",
+                "Coordinated feature development, testing, deployment and documentation with cross-functional teams.",
+                "Represented the team in management and cross-team meetings, and communicated sprint progress.",
+                "Contributed to production incident diagnosis, troubleshooting and recovery with other engineering teams.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
             title: "Senior Software Engineer",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
             duration: "Dec 2019 – Aug 2021",
             items: [
-                "Promoted as a senior software engineer to one of the Sysco Shop e-commerce platform and Sysco Delivery mobile application",
-                "Utilized software engineering expertise to design and develop Sysco Shop e-commerce web application and Sysco Delivery mobile application",
-                "Managed, maintained, and overlooked the overall front-end software components, BFF, relevant microservices, and databases in production and nonproduction environments that are responsible to the team",
-                "Proficiently troubleshoot simple and complex issues and contributed as an on-call representative for production incidents and zero production incidents were reported related to the responsible components",
-                "Enhanced the application component features by accurate development plans, using best software engineering practices, ensuring the testability and the quality of the functionality through unit tests, component tests, integration tests, regression tests, E2E testing, and sea trials, fixing bugs, and improving overall performance and efficiency",
-                "Enhanced and assured system reliability by actively monitoring the overall system using Dynatrace and Datadog platforms",
-                "Provided guidance and mentorships for junior engineers, provided technical, and cultural support to new engineers in the onboarding process to the organization"
-
+                "Designed and developed the Sysco Shop web application and Sysco Delivery mobile application.",
+                "Developed and maintained front-end components, BFF services, microservices and databases in production and non-production environments.",
+                "Investigated production issues and participated in on-call incident response.",
+                "Improved testability and software quality through unit, component, integration, regression and end-to-end testing.",
+                "Monitored application behavior using Dynatrace and Datadog.",
+                "Mentored junior engineers and supported onboarding.",
             ]
         },
         {
             src: "/images/Sysco_LABS_Logo.avif",
             title: "Software Engineer",
             company: "SyscoLabs Technologies, Colombo, Sri Lanka",
-            subtitle: "Innovation office - Sysco Corporation (NYSE: SYY), United States",
+            subtitle: "Innovation Office — Sysco Corporation (NYSE: SYY), United States",
             duration: "Jul 2018 – Nov 2019",
             items: [
-                "Utilized software engineering procedures to develop new features for the Sysco Shop web application and Sysco Delivery mobile application",
-                "Implemented readable, well-crafted, maintainable new React and React-Native components with proper state management using Redux and Recoil frameworks according to test driven development.",
-                "Implemented RESTful and GraphQL APIs in microservice-based architecture using Spring boot and Node Express frameworks ",
-                "Ensured the testability of all the software components using unit testing, component testing, integration testing, E2E testing, and sea trials",
-                "Collaboratively introduced a machine learning approach to enhance the customer experience of the application and developed a high-performance mockup API generator, which removes expenditure for third-party mock services"
-
+                "Developed features for the Sysco Shop web application and Sysco Delivery mobile application.",
+                "Built React and React Native components with Redux and Recoil state management using test-driven development.",
+                "Implemented RESTful and GraphQL APIs using Spring Boot and Express in a microservices architecture.",
+                "Tested software through unit, component, integration and end-to-end tests.",
+                "Developed an open-source in-memory mock API service for testing and application development.",
             ]
         },
         {
             src: "/images/99x.png",
             title: "Associate Software Engineer (Intern)",
             company: "99X Technology, Colombo, Sri Lanka",
-            duration: "Dec 2016 - Jul 2017",
+            duration: "Dec 2016 – Jul 2017",
             items: [
-                "Modified, implemented, tested, and deployed  ASP.net booking web application "
+                "Modified, implemented, tested and deployed an ASP.NET booking web application.",
             ]
         },
         {
             src: "/images/4onse.jpg",
-            title: "Volunteer Research Assistant",
-            company: "University of Moratuwa, Colombo, Sri Lanka",
-            duration: "Dec 2016 - Jul 2017",
+            title: "Research Assistant",
+            company: "4ONSE — University of Moratuwa / SUPSI",
+            duration: "Oct 2016 – Jan 2018",
             items: [
-                "Modified, implemented, tested, and deployed  ASP.net booking web application "
+                "Contributed to embedded systems research for environmental monitoring in the 4ONSE project.",
             ]
         }
     ],
     education: [
         {
             src: "/images/usa.png",
-            title: "PhD in Computing",
+            title: "Ph.D. in Computing",
             subtitle: "Cooperative Intelligence in Robotics",
             institute: "School of Computing, University of South Alabama, United States",
-            duration: "2025 May",
+            duration: "May 2025",
         },
         {
             src: "/images/uom.jpg",
-            title: "B.sc (hons) in Information Technology",
-            subtitle: "3.55 Second Upper Devision, Dean's List (Senior Year)",
+            title: "B.Sc. (Hons.) in Information Technology",
+            subtitle: "GPA 3.55; Second Class Upper Division; Dean's List (Senior Year)",
             institute: "University of Moratuwa",
-            duration: "2018 Jul",
+            duration: "July 2018",
         }
     ],
     publications: [

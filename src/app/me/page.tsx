@@ -7,13 +7,11 @@ import styles from './page.module.scss';
 export const metadata = routeMetadata('/me');
 
 export default function Me() {
-    // Reflow existing copy without changing its professional claims.
-    const paragraphs = Configs.summary.split(/(?<=\.)\s*(?=My doctoral|As a Software Engineer|As an excellent|Outside of techs)/);
     return (
         <div className="page-content">
             <Heading as="h1" variant="heading-strong-l" className="page-title">Who Am I</Heading>
             <div className={styles.biography}>
-                {paragraphs.map(paragraph => <p key={paragraph.slice(0, 100)}>{paragraph}</p>)}
+                {Configs.biographyParagraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
             </div>
             <section aria-labelledby="skills-heading" className={styles.skills}>
                 <Heading as="h2" id="skills-heading" variant="heading-strong-m" marginBottom="16">Skills</Heading>

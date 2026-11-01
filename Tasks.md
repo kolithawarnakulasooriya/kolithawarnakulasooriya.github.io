@@ -15,8 +15,6 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 
 ### First visit — both roles
 
-- [ ] **C05 — CV access.** Supplied PDF is retained and its bytes were verified. Keep persistent Academic CV, Research and Contact actions in the restored design; remove the timed CV prompt. Recheck one-click access.
-- [ ] **C06 — Role and specialty.** Keep a stable Visiting Assistant Professor / University of South Alabama line and a concise CV-supported specialty without replacing the animated identity.
 - [ ] **C07 — Biography.** Retain concise paragraphs and supported contributions. Verify removal of unsupported publication/incident claims and correct WOMAPF workshop attribution.
 - [ ] **C08 — Proofreading.** Retain corrected labels and consistent Raven/SwarmX terminology; remove or explain ambiguous country flags. Recheck visible copy across routes.
 
@@ -40,13 +38,6 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 - [x] **C18 — Skills and controls.** Added readable names to existing grouped skills; verified named native controls, visible focus and minimum 44px action targets.
 - [ ] **C19 — Destinations.** Partial: corrected two mismatched paper destinations and the expiring Bhumi URL using publisher evidence. Remaining access-restricted destinations stay explicitly unverified; see [destination ledger](docs/C09-C20-destinations.md).
 - [ ] **C20 — Keyboard and touch.** Partial: navigation/menu, CV/contact, cards, skip link, landmarks, focus order and browser-emulated touch verified. Actual screen-reader and physical-touch coverage remain pending; browser zoom shortcut had no effect. See [validation report](docs/C09-C20-validation.md).
-
-### CV-supported additions — Senior HR reviewer
-
-- [ ] **C21 — Impact highlights.** Retain precise attribution: 21 algorithms compared, contribution to 34 stations, more than 10 engineers supervised. Place highlights unobtrusively in the original design and link to evidence.
-- [ ] **C22 — Teaching and mentoring.** Retain supported courses, PrintSense advising and committee service. Do not invent teaching-term years or outcomes.
-- [ ] **C23 — Support, awards and service.** Retain explicit distinctions between research credits, awarded support and pending proposals. Recheck amounts, roles and award labels against CV.
-- [ ] **C24 — Publication statuses.** Partial: fields and CV records added. Preserve both 2027 papers and Vision Compass 2026 as status-unconfirmed until evidence is supplied; keep “Are We Safe?” under review.
 
 ### Reliability and supporting pages — both roles
 

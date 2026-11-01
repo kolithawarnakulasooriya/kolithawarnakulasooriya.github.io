@@ -1,21 +1,20 @@
 import { Heading } from "@/once-ui/components";
+import type { Publication } from '@/app/publications/data';
 import styles from './publicationbox.module.scss';
 
-interface PublicationBoxProps {
-    href: string;
-    title: string;
-    authors: string;
-    publisher: string;
-}
-export function PublicationBox({ href, title, authors, publisher }: PublicationBoxProps) {
+export function PublicationBox({ id, href, title, authors, venue, year, verification }: Publication) {
     return (
-        <article className={styles.publication}>
+        <article className={styles.publication} data-publication-id={id}>
             <Heading as="h2" variant="heading-default-m">
                 {href ? <a href={href} target="_blank" rel="noopener noreferrer"
                     aria-label={`${title} (external source, opens in a new tab)`}>{title}</a> : title}
             </Heading>
-            <p>{authors}</p>
-            <p>{publisher}</p>
+            <p data-citation-authors>{authors.join(', ')}</p>
+            <p data-citation-venue>
+                {venue || 'Venue awaiting verification'}
+                {year && <> · <time dateTime={String(year)}>{year}</time></>}
+            </p>
+            {verification.state !== 'verified' && <p className={styles.status}>Citation details awaiting verification</p>}
             {!href && <p className={styles.status}>Source link awaiting verification</p>}
         </article>
     );

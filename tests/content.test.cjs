@@ -112,7 +112,7 @@ for (const [route, title] of Object.entries(routes)) {
   }
   if (!route) {
     assert(!html.includes("Haven&#x27;t you found my resume yet?"));
-    assert.match(html, />Download CV</); assert.match(html, />Contact</);
+    assert.match(html, />Download CV \(PDF\)</); assert.match(html, />Contact</);
     for (const identity of ['Curious Scientist', 'Motivated Researcher', 'Results Driven Software Engineer', 'AI &amp; Robotics Lover']) assert(html.includes(identity));
   }
   if (route === 'projects') {

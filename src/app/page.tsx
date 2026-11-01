@@ -19,7 +19,7 @@ export default function Home() {
                     <InfoBox text="AI & Robotics Lover" fontSize={40} />
                 </div>
                 <Flex className={styles.actions} gap="12">
-                    <Button variant="tertiary" href={Configs.resume}>Download CV</Button>
+                    <Button variant="tertiary" href={Configs.resume}>Download CV (PDF)</Button>
                     <Button variant="tertiary" href={Configs.research} target="_blank" rel="noopener noreferrer" suffixIcon="arrowUpRight" aria-label="Research (external site, opens in a new tab)">Research</Button>
                     <Button variant="tertiary" href="mailto:kolitha.warnakulasooriya@outlook.com">Contact</Button>
                 </Flex>

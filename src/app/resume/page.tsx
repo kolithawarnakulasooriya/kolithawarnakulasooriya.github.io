@@ -27,7 +27,7 @@ export default function Resume() {
                 </section>
             </div>
             <div className="resume-actions">
-                <Button href={Configs.resume}>Download Academic CV</Button>
+                <Button href={Configs.resume} style={{ minWidth: 0, maxWidth: '100%', whiteSpace: 'normal', overflowWrap: 'anywhere' }}>Download CV (PDF)</Button>
             </div>
         </div>
     );

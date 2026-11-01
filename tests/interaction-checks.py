@@ -84,7 +84,7 @@ def main():
         for _ in range(6):
             page.keyboard.press('Tab')
             focus.append(page.evaluate('document.activeElement.textContent.trim()'))
-        assert focus == ['Skip to main content','Kolitha Warnakulasooriya','Menu','Download CV','Research','Contact'], focus
+        assert focus == ['Skip to main content','Kolitha Warnakulasooriya','Menu','Download CV (PDF)','Research','Contact'], focus
         assert page.locator(':focus-visible').count() == 1
         outline = page.locator(':focus-visible').evaluate('e => getComputedStyle(e).outlineStyle')
         assert outline != 'none'
@@ -157,11 +157,11 @@ def main():
         tp.wait_for_url('**/projects/')
         assert not tp.get_by_role('navigation',name='Main navigation').is_visible()
         tp.locator('header a[href="/"]').tap()
-        tp.get_by_role('link',name='Download CV',exact=True).wait_for(state='visible')
+        tp.get_by_role('link',name='Download CV (PDF)',exact=True).wait_for(state='visible')
         sizes = tp.locator('section[aria-label="Introduction"] a').evaluate_all('els => els.map(e => ({text:e.textContent.trim(),height:e.getBoundingClientRect().height,width:e.getBoundingClientRect().width}))')
         assert len(sizes)==3 and all(item['height']>=44 and item['width']>=44 for item in sizes), sizes
         with tp.expect_request('**/Kolitha_AI_Engineer.pdf'):
-            tp.get_by_role('link',name='Download CV',exact=True).tap(no_wait_after=True)
+            tp.get_by_role('link',name='Download CV (PDF)',exact=True).tap(no_wait_after=True)
         results['touchEmulation'] = {'menuNavigation':'passed','singleTapCVRequest':'passed','heroTargetSizes':sizes}
         page.set_viewport_size({'width':1440,'height':1000})
         page.goto(args.url,wait_until='domcontentloaded')
