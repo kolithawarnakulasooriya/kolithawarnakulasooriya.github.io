@@ -3,6 +3,7 @@
 import { Flex, SmartLink, Heading } from '@/once-ui/components';
 import React from 'react';
 import Link from 'next/link';
+import { Configs } from '@/app/config';
 
 interface HeaderProps {}
 
@@ -22,7 +23,7 @@ const Header: React.FC<HeaderProps> = ({}) => {
             background="neutral-medium">
             <Flex>
                 <Link href='/'  style={{textDecoration: 'none'}}>             
-                    <Heading as='h1'>Kolitha Warnakulasooriya</Heading>    
+                    <Heading as='span' style={{ display: 'block', fontSize: '2em', fontWeight: 'var(--font-weight-bold)' }}>Kolitha Warnakulasooriya</Heading>
                 </Link>                                                       
             </Flex>
             <Flex
@@ -59,10 +60,11 @@ const Header: React.FC<HeaderProps> = ({}) => {
                         Blog
                     </SmartLink>
                     <SmartLink
-                        href="https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
-                        target="_blank" 
-                      rel="noopener noreferrer"
-                      suffixIcon="arrowRight"
+                        href={Configs.research}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        suffixIcon="arrowUpRight"
+                        aria-label="Research (external site, opens in a new tab)"
                     >
                         Research
                     </SmartLink>

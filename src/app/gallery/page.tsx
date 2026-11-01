@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, RevealFx } from "@/once-ui/components";
+import { Flex, RevealFx, Heading } from "@/once-ui/components";
 import Image from "next/image";
 import { Configs } from '@/app/config';
 
@@ -9,6 +9,7 @@ const Projects: React.FC<ProjectProps> = ({ }) => {
 
     return (
         <Flex fillHeight className="window3q1" direction="column" overflowY="auto" alignItems="center">
+            <Heading as="h1" variant="heading-strong-l" paddingX="32" paddingTop="24" marginBottom="24">Gallery</Heading>
             {Configs.gallery.map((row, i)=>(
                 <Flex key={i}>
                     {

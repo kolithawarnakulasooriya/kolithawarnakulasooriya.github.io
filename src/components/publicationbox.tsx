@@ -17,7 +17,7 @@ const PublicationBox: React.FC<PublicationBoxProps> = ({
     return (
         <Flex key={key} fillWidth direction="column" padding="20">
             <Link href={href}>
-                <Text style={{fontSize: 22, color: 'var(--brand-on-background-weak)'}}> {title} </Text>
+                <Text as="h2" style={{fontWeight: 'inherit', fontSize: 22, color: 'var(--brand-on-background-weak)'}}> {title} </Text>
             </Link>
             <Text style={{fontSize: 14}}> {authors} </Text>
             <Text style={{fontSize: 14}}> {publisher} </Text>

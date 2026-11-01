@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Grid, Text, Accordion } from "@/once-ui/components";
+import { Flex, Grid, Text, Accordion, Heading } from "@/once-ui/components";
 import { Configs, SkillCategory, SkillObject } from '@/app/config';
 import { IconBox } from "@/components/iconbox";
 
@@ -8,7 +8,8 @@ interface MeProps { }
 const Me: React.FC<MeProps> = ({ }) => {
 
     return (
-        <Flex fillHeight className="window3q">
+        <Flex fillHeight className="window3q" direction="column">
+            <Heading as="h1" variant="heading-strong-l" paddingX="32" paddingTop="24" marginBottom="24">Who Am I</Heading>
             <Grid
                 columns="repeat(1, 2fr)"
                 fillHeight
@@ -31,6 +32,7 @@ const Me: React.FC<MeProps> = ({ }) => {
                     </Text>
                 </Grid>
                 <Flex direction="column" fillWidth overflowY="auto">
+                    <Heading as="h2" variant="heading-strong-m" marginBottom="16">Skills</Heading>
                     {
                         Configs.skills.map((skillcategory: SkillCategory, index) => (
                             <Accordion

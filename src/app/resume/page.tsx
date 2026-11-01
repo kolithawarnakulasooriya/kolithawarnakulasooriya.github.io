@@ -10,6 +10,7 @@ const Resume: React.FC<ResumeProps> = ({ }) => {
 
     return (
         <Flex fillHeight className="window3q" direction="column">
+            <Heading as="h1" variant="heading-strong-l" paddingX="32" paddingTop="24" marginBottom="24">Resume</Heading>
             <Grid
                 columns="repeat(2, 1fr)"
                 fillHeight

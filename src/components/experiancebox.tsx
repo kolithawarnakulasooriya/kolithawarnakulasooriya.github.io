@@ -35,9 +35,9 @@ const ExperianceBox: React.FC<ExperianceBoxProps> = ({
                     direction="column"
                 >
                     <Heading as="h3"> {heading} </Heading>
-                    <Heading as="h5">
+                    <Text onBackground="neutral-strong" style={{ display: 'block', fontSize: '0.83em', fontWeight: 'var(--font-weight-bold)' }}>
                         {company}
-                    </Heading>
+                    </Text>
                     {subtext && (
                         <Text style={{ fontSize: 12 }}>
                             {subtext}

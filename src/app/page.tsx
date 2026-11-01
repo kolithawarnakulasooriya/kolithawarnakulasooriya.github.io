@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from 'react';
-import { Flex, Avatar, Toaster } from '@/once-ui/components';
+import { Flex, Avatar, Toaster, Heading } from '@/once-ui/components';
 import { InfoBox } from '@/components/infobox';
 import { Configs } from './config';
 
@@ -28,6 +28,7 @@ export default function Home() {
 			fillWidth
 			fillHeight
 		>
+			<Heading as="h1" className="visually-hidden">Kolitha Warnakulasooriya</Heading>
 			<Toaster
 				toasts={data}
 				removeToast={() => {

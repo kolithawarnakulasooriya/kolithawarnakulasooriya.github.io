@@ -110,11 +110,11 @@ const Accordion: React.FC<AccordionProps> = forwardRef(({
                 onClick={toggleAccordion}
                 aria-expanded={isOpen}
                 aria-controls="accordion-content">
-                <Heading
+                {!withoutHeader && <Heading
                     as="h3"
                     variant="heading-strong-s">
                     {title}
-                </Heading>
+                </Heading>}
                 <Icon
                     name="chevronDown"
                     size="m"

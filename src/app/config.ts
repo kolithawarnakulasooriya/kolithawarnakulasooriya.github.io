@@ -55,7 +55,7 @@ export interface ConfigProps {
 export const Configs: ConfigProps = {
     summary: "As a professional software engineer and doctoral candidate in artificial intelligence, I am driven by the intersection of advanced algorithms, machine learning, deep learning, and collective intelligence. Over the past 3+ years, I have mastered my technical skills in cutting-edge frameworks such as Pytorch in artificial intelligence technologies. I have developed cutting-edge solutions to complex challenges, from designing intelligent aerial robotic systems to implementing scalable software architectures that enable innovation. My doctoral research focused on solving the distributed leader selection problem in large-scale heterogeneous multi-UAV systems based on the collective behavior of biological entities, which proactively support the aerial robotics industry. This led to six first-authored articles published in AAAI and Evolutionary Intelligence and an open-source framework in swarm intelligence for Java developers. Outside, I have enjoyed my time with the SAE team by developing the Formula 1 automotive for the SAE formula competitions.As a Software Engineer with 3.5+ years of experience, I am passionate about designing and delivering robust, scalable, and innovative software solutions that empower businesses to thrive in a fast-paced, tech-driven world. My expertise spans React and React Native, Javascript, and Typescript frameworks with Node JS and Java Springboot back-end from 3-tier to microservices architectures. Further, my technical skills include SQL NoSQL, memory, time series databases, and AWS and Azure cloud services. As an excellent team player and manager, I championed agile development practices to improve team efficiency, product quality, and timely deliverables. Outside of techs, I am an intense knowledge seeker in techs and finance, spirituality, nature, and science. Socrates once said, \"The only true wisdom is knowing you know nothing\". Besides that, I am a tennis player and mostly workout every day. I like long-distance driving, enjoying the company of friends, and being pleasant to everybody.",
     name: "Kolitha Warnakulasooriya",
-    resume: '/files/Kolitha%20–%20Resume.pdf',
+    resume: '/files/Kolitha_AI_Engineer.pdf',
     skills: [
         {
             titile: "Languages",
@@ -347,6 +347,12 @@ export const Configs: ConfigProps = {
     projects: [
         [
             {
+                src: 'https://storage.googleapis.com/research_web_page/index.html',
+                title: 'Cytokine Swarm',
+                heading: 'An immune system for distributed ai swarms',
+                image: '/images/CytokineSwarm.png',
+            },
+            {
                 src: 'https://raven-os-ai-os.github.io/Web/',
                 title: 'Ravan OS',
                 heading: 'Raven OS is a community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
@@ -363,22 +369,21 @@ export const Configs: ConfigProps = {
                 title: 'Swarm X',
                 heading: 'SwarmX is the java based natural inspired optimization library.',
                 image: '/images/swarmx.png',
-            },
+            } 
+        ],
+        [
             {
                 src: '',
                 title: 'Multi-Het UAV Library',
                 heading: 'ROS framework for adaptable control of heterogenious UAS',
                 image: '/images/drone.png',
             },
-            {
+             {
                 src: "https://shop.sysco.com/",
                 title: "Sysco Shop",
                 heading: "The CRM tool for the Sysco customers, Associated with SyscoLabs Technologies",
                 image: "/images/syscoshop.png"
-            }
-        ],
-        [
-
+            },
             {
                 src: "https://github.com/kwar0715/mockableExpress",
                 title: "MockableExpress",
@@ -390,7 +395,9 @@ export const Configs: ConfigProps = {
                 title: "MineArc Service App",
                 heading: "Service Application for MineArc Systems Customers, Associated with Techila Softwares",
                 image: "/images/minearc.jpeg"
-            },
+            }
+        ],
+        [
             {
                 src: "https://4onse.org/",
                 title: "4ONSE",
@@ -408,9 +415,7 @@ export const Configs: ConfigProps = {
                 title: "LIS Middleware",
                 heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
                 image: "/images/defproject.png"
-            }
-        ],
-        [
+            },
             {
                 src: "https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/",
                 title: "Virtual Expo",
