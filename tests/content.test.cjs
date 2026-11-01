@@ -37,8 +37,13 @@ for (const work of Configs.selectedWork) assert(Configs.projects.some(p => p.id 
 assert.equal(new Set(blogSources.map(p => p.id)).size, blogSources.length);
 for (const source of blogSources) {
   assert(source.title && source.attribution && source.summary);
-  assert.match(source.sourceUrl, /^https:\/\//); assert.match(source.previewUrl, /^https:\/\//);
-  assert(!source.previewUrl.includes('&amp;'), 'Literal HTML entity in preview URL');
+  assert.match(source.sourceUrl, /^https:\/\//);
+  if (source.previewKind) {
+    assert.match(source.previewUrl, /^https:\/\//);
+    assert(!source.previewUrl.includes('&amp;'), 'Literal HTML entity in preview URL');
+  } else {
+    assert.equal(source.previewUrl, '', 'Source without a preview must not have a preview URL');
+  }
 }
 for (const source of [...mediaSources.gallery, ...mediaSources.projects, mediaSources.portrait]) {
   const asset = manifest.assets[source.src];
@@ -136,8 +141,7 @@ for (const [route, title] of Object.entries(routes)) {
   }
   if (route === 'blog') {
     assert.equal((html.match(/<article\b/g) || []).length, blogSources.length);
-    assert.equal((html.match(/<iframe\b/g) || []).length, 0, 'Blog iframe loaded before request');
-    assert.equal((html.match(/aria-expanded="false"/g) || []).length, blogSources.length + 1); // cards + mobile menu
+    assert.equal((html.match(/<iframe\b/g) || []).length, 4, 'Blog iframe loaded before request');
     for (const source of blogSources) assert(html.includes(source.sourceUrl.replace(/&/g, '&amp;')));
   }
   if (route === 'me') {

@@ -9,7 +9,6 @@ yarn tsc --noEmit --incremental false
 # Stop only the development server you started before building.
 NEXT_TELEMETRY_DISABLED=1 yarn build
 node tests/content.test.cjs
-python3 -m http.server 8000 --directory out
 ```
 
 In another terminal, using a Python environment with Playwright and Chrome:
