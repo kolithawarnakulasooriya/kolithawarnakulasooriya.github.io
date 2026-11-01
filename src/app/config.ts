@@ -33,22 +33,20 @@ export interface PublicationObject {
 }
 
 export interface ProjectObject {
-    src: string,
-    title: string,
-    heading: string,
+    id: string
+    src?: string
+    title: string
+    heading: string
     image: string
+    status: string
 }
 export interface SelectedWorkObject {
     id: string
-    title: string
-    projectTitle: string
+    projectId: string
     problem: string
     role: string
     contribution: string
-    status: string
-    image: string
     imageAlt: string
-    href?: string
     evidence: Array<{ label: string; href: string }>
 }
 export interface ConfigProps {
@@ -59,10 +57,8 @@ export interface ConfigProps {
     experiance: Array<ExperianceItem>,
     education: Array<EducationItem>,
     publications: Array<PublicationObject>,
-    projects: Array<Array<ProjectObject>>,
+    projects: Array<ProjectObject>,
     selectedWork: Array<SelectedWorkObject>,
-    gallery: Array<Array<string>>,
-    blog: Array<string>,
     research: string
 }
 
@@ -362,27 +358,20 @@ export const Configs: ConfigProps = {
     selectedWork: [
         {
             id: 'heterogeneous-uav-framework',
-            title: 'Heterogeneous UAV Framework',
-            projectTitle: 'Multi-Het UAV Library',
+            projectId: 'heterogeneous-uav-framework',
             problem: 'Coordinating autonomous UAVs with different capabilities requires shared control and communication.',
             role: 'Research Assistant, University of South Alabama',
             contribution: 'Engineered a distributed robotics framework integrating leader selection, formation control, sensor streams and multi-agent decision-making; validated the work through physical experiments.',
-            status: 'Research framework; public release status unconfirmed.',
-            image: '/images/drone.png',
             imageAlt: 'Illustration of a yellow quadcopter viewed from the front.',
             evidence: [{ label: 'Resume: Research Assistant experience (PDF, page 1)', href: '/files/Kolitha_AI_Engineer.pdf#page=1' }]
         },
         {
             id: 'codex-autocomplete',
-            title: 'CODEX-Autocomplete',
-            projectTitle: 'Codex AutoComplete VSCode Plugin',
+            projectId: 'codex-autocomplete',
             problem: 'Inline code completion needs context from the cursor and responsive handling of streamed suggestions.',
             role: 'Extension developer',
             contribution: 'Built a VS Code extension with cursor-aware completions, streaming responses, cancellation and authentication.',
-            status: 'Public community extension; repository available.',
-            image: '/images/autocomplete-codex-thumbnail.png',
             imageAlt: 'Glowing blue text cursor and blue and purple completion lines on a dark background.',
-            href: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
             evidence: [
                 { label: 'Resume: Selected AI / ML Projects (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
                 { label: 'Project repository', href: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete' }
@@ -390,15 +379,11 @@ export const Configs: ConfigProps = {
         },
         {
             id: 'mockable-express',
-            title: 'MockableExpress',
-            projectTitle: 'MockableExpress',
+            projectId: 'mockable-express',
             problem: 'Developers need configurable mock services while building and testing applications.',
             role: 'Software developer',
             contribution: 'Developed an open-source in-memory mock API service to support testing and application development.',
-            status: 'Public open-source project; current maintenance status unconfirmed.',
-            image: '/images/me.png',
             imageAlt: 'Mockable Express wordmark with large black M and pale purple E letters.',
-            href: 'https://github.com/kwar0715/mockableExpress',
             evidence: [
                 { label: 'Resume: Software Engineer experience (PDF, page 2)', href: '/files/Kolitha_AI_Engineer.pdf#page=2' },
                 { label: 'Project repository', href: 'https://github.com/kwar0715/mockableExpress' }
@@ -406,117 +391,92 @@ export const Configs: ConfigProps = {
         }
     ],
     projects: [
-        [
-            {
-                src: 'https://storage.googleapis.com/research_web_page/index.html',
-                title: 'Cytokine Swarm',
-                heading: 'An immune system for distributed ai swarms',
-                image: '/images/CytokineSwarm.png',
-            },
-            {
-                src: 'https://raven-os-ai-os.github.io/Web/',
-                title: 'Ravan OS',
-                heading: 'Raven OS is a community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
-                image: '/images/raven-logo.png',
-            },
-            {
-                src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
-                title: 'Codex AutoComplete VSCode Plugin',
-                heading: 'Complete VS Code extension that generates inline code suggestions as ghost text. It signs in with your ChatGPT account through the Codex OAuth PKCE flow by default, with OpenAI API-key authentication available as a fallback.',
-                image: '/images/autocomplete-codex-thumbnail.png',
-            },
-            {
-                src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
-                title: 'Swarm X',
-                heading: 'SwarmX is the java based natural inspired optimization library.',
-                image: '/images/swarmx.png',
-            } 
-        ],
-        [
-            {
-                src: '',
-                title: 'Multi-Het UAV Library',
-                heading: 'ROS framework for adaptable control of heterogenious UAS',
-                image: '/images/drone.png',
-            },
-             {
-                src: "https://shop.sysco.com/",
-                title: "Sysco Shop",
-                heading: "The CRM tool for the Sysco customers, Associated with SyscoLabs Technologies",
-                image: "/images/syscoshop.png"
-            },
-            {
-                src: "https://github.com/kwar0715/mockableExpress",
-                title: "MockableExpress",
-                heading: "An open source inmemory mock api management tool",
-                image: "/images/me.png"
-            },
-            {
-                src: "https://minearc.com/serviceapp/",
-                title: "MineArc Service App",
-                heading: "Service Application for MineArc Systems Customers, Associated with Techila Softwares",
-                image: "/images/minearc.jpeg"
-            }
-        ],
-        [
-            {
-                src: "https://4onse.org/",
-                title: "4ONSE",
-                heading: "Developing non-conventional, sustainable and effective climate monitoring system",
-                image: "/images/4onse.jpg"
-            },
-            {
-                src: "",
-                title: "LIS Middleware",
-                heading: "Developed a cooperative communication middleware between Hitachi 911, 912 and LIS systems",
-                image: "/images/defproject.png"
-            },
-            {
-                src: "",
-                title: "LIS Middleware",
-                heading: "Developed a cooperative communication middleware between Mythic18, Mythic22 and LIS systems",
-                image: "/images/defproject.png"
-            },
-            {
-                src: "https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/",
-                title: "Virtual Expo",
-                heading: "Virtual Exhibition is giving a marvelous experience rather than traditional exhibition experiance",
-                image: "/images/defproject.png"
-            }
-        ]
-    ],
-    gallery: [
-        [
-            "p44.jpg",
-            "p55.jpg",
-            "p1.jpeg",
-        ],
-        [
-            "c1.jpg",
-            "p33.jpg",
-            "p7.jpeg",
-        ],
-        [
-            "p2.jpeg",
-            "t112.jpeg",
-            "p5.jpeg",
-        ],
-        [
-            "vexpo.jpeg",
-            "sci112.jpeg",
-            "cc2.jpeg"
-        ],
-        [
-            "graduation.jpeg",
-            "p11.JPG",
-            "p22.JPG",
-        ]
-    ],
-    blog: [
-            "https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1",
-            "https://www.youtube.com/embed/43GgyUBhTDU?si=dG2Z-QBSYrQIiDmu&amp;controls=0",
-            "https://raven-os-ai-os.github.io/Web/",
-            "https://storage.googleapis.com/research_web_page/index.html"
+        {
+            id: 'cytokine-swarm',
+            src: 'https://storage.googleapis.com/research_web_page/index.html',
+            title: 'Cytokine Swarm',
+            heading: 'An immune system for distributed AI swarms.',
+            image: '/images/CytokineSwarm.png',
+            status: 'Early-stage research program.'
+        },
+        {
+            id: 'raven-os',
+            src: 'https://raven-os-ai-os.github.io/Web/',
+            title: 'Raven OS',
+            heading: 'A community-driven, Debian-family Linux distribution being built for people who create intelligent machines.',
+            image: '/images/raven-logo.png',
+            status: 'Pre-alpha community project.'
+        },
+        {
+            id: 'codex-autocomplete',
+            src: 'https://github.com/kolithawarnakulasooriya/CODEX-Autocomplete',
+            title: 'CODEX-Autocomplete',
+            heading: 'A community VS Code extension that generates inline code suggestions with streaming responses and authentication.',
+            image: '/images/autocomplete-codex-thumbnail.png',
+            status: 'Public community extension; repository available.'
+        },
+        {
+            id: 'swarmx',
+            src: 'https://github.com/kolithawarnakulasooriya/SwarmX',
+            title: 'SwarmX',
+            heading: 'An open-source Java framework for swarm intelligence and optimization.',
+            image: '/images/swarmx.png',
+            status: 'Public open-source framework; current maintenance status unconfirmed.'
+        },
+        {
+            id: 'heterogeneous-uav-framework',
+            title: 'Heterogeneous UAV Framework',
+            heading: 'ROS framework for adaptable control of heterogeneous UAS.',
+            image: '/images/drone.png',
+            status: 'Research framework; public release status unconfirmed.'
+        },
+        {
+            id: 'sysco-shop',
+            src: 'https://shop.sysco.com/',
+            title: 'Sysco Shop',
+            heading: 'Customer application associated with SyscoLabs Technologies.',
+            image: '/images/syscoshop.png',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'mockable-express',
+            src: 'https://github.com/kwar0715/mockableExpress',
+            title: 'MockableExpress',
+            heading: 'An open-source in-memory mock API management tool.',
+            image: '/images/me.png',
+            status: 'Public open-source project; current maintenance status unconfirmed.'
+        },
+        {
+            id: 'minearc-service-app',
+            src: 'https://minearc.com/serviceapp/',
+            title: 'MineArc Service App',
+            heading: 'Service application for MineArc Systems customers, associated with Techila Softwares.',
+            image: '/images/minearc.jpeg',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: '4onse',
+            src: 'https://4onse.org/',
+            title: '4ONSE',
+            heading: 'Non-conventional, sustainable climate monitoring system.',
+            image: '/images/4onse.jpg',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'lis-middleware',
+            title: 'LIS Middleware',
+            heading: 'Communication middleware between LIS systems and Hitachi 911/912 and Mythic18/Mythic22 analyzers.',
+            image: '/images/defproject.png',
+            status: 'Current project status unconfirmed.'
+        },
+        {
+            id: 'virtual-expo',
+            src: 'https://www.linkedin.com/in/kolitha-warnakulasooriya/details/projects/',
+            title: 'Virtual Expo',
+            heading: 'Virtual exhibition experience.',
+            image: '/images/defproject.png',
+            status: 'Current project status unconfirmed.'
+        }
     ],
     research: "https://kolitha-warnakulasooriya.kwarnakulasooriya.chatgpt.site"
 }

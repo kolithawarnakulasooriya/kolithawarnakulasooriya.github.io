@@ -105,6 +105,14 @@ def main():
                 console.clear(); errors.clear()
                 response = page.goto(args.url + route, wait_until='domcontentloaded')
                 page.wait_for_timeout(2300)
+                # Audit the settled visual state, including finite reveal effects.
+                # Infinite decorative animations must not block the test runner.
+                page.evaluate("""async () => {
+                    await document.fonts.ready;
+                    await Promise.all(document.getAnimations()
+                        .filter(animation => animation.effect?.getComputedTiming().iterations !== Infinity)
+                        .map(animation => animation.finished.catch(() => {})));
+                }""")
                 data = metrics(page)
                 results.append(dict(route=route, width=width, height=height, status=response.status, errors=list(errors), **data))
                 if not args.baseline:

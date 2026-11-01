@@ -3,7 +3,8 @@ import "@/once-ui/tokens/index.scss";
 
 import classNames from 'classnames';
 
-import { baseURL, style, schema, social } from "@/once-ui/resources/config"
+import { style } from "@/once-ui/resources/config"
+import { rootMetadata, personSchema } from '@/app/site';
 
 import { Background } from '@/once-ui/components'
 import { Header } from "@/components/header";
@@ -37,23 +38,7 @@ const tertiary: FontConfig | undefined = undefined;
 /*
 */
 
-const schemaData = {
-	"@context": "https://schema.org",
-	"@type": schema.type,
-	"url": "https://" + baseURL,
-	"logo": schema.logo,
-	"name": schema.name,
-	"description": schema.description,
-	"email": schema.email,
-	"sameAs": Object.values(social).filter(Boolean)
-};
-
-export const metadata = {
-	title: {
-		default: 'Kolitha Warnakulasooriya',
-		template: '%s | Kolitha Warnakulasooriya',
-	},
-};
+export const metadata = rootMetadata;
 
 export default function RootLayout({
 	children,
@@ -77,16 +62,9 @@ export default function RootLayout({
 			<head>
 				<script
 					type="application/ld+json"
-					dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+					dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema).replace(/</g, '\\u003c') }}
 				/>
 				<meta name="google-site-verification" content="IqZCUyLl-_LBpJpigQ52Uji9R7P6Z-ABkO-T6mlOzmI" />
-				<meta name="title" content="https://kolithawarnakulasooriya.github.io/"/>
-				<meta name="description" content="Kolitha warnakulasooriya, PhD, s personal web site"/>
-				<meta name="keywords" content="kolitha warnakulasooriya,kolitha@warnakulasooriya.outlook.com,kolitha,warnakulasooriya,multi-robot systems,swarm intelligence,drone systems,UAV,artificial intelligence,intelligence robotics"/>
-				<meta name="robots" content="index, follow"/>
-				<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-				<meta name="language" content="English"/>
-				<meta name="author" content="Kolitha Warnakulasooriya"/>
 
 			</head>
 			<body className="site-body">

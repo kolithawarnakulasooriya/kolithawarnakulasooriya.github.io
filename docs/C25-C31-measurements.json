@@ -1,0 +1,266 @@
+{
+  "date": "2026-11-01",
+  "conditions": {
+    "cpuRate": 4,
+    "latencyMs": 40,
+    "downloadBytesPerSecond": 500000,
+    "uploadBytesPerSecond": 250000,
+    "repeats": 3
+  },
+  "imageByteBasis": "Image response Content-Length values; excludes HTTP headers. Original files remain in the export.",
+  "mediaFingerprint": "0a3ea33696b045defc072c25a3d64c06d4fdeed7460cd14b12dc058b9c4adf5b",
+  "galleryOriginalBytes": 16491345,
+  "galleryLargestVariantBytes": 2586372,
+  "comparisons": [
+    {
+      "width": 375,
+      "route": "/gallery/",
+      "before": {
+        "width": 375,
+        "route": "/gallery/",
+        "initialLocalImageBytes": 11436881,
+        "allLocalImageBytes": 16491345,
+        "initialRequests": 28,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 88,
+        "observedLayoutShiftSum": 0
+      },
+      "after": {
+        "width": 375,
+        "route": "/gallery/",
+        "initialLocalImageBytes": 265658,
+        "allLocalImageBytes": 492782,
+        "initialRequests": 27,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 86,
+        "observedLayoutShiftSum": 0
+      }
+    },
+    {
+      "width": 375,
+      "route": "/blog/",
+      "before": {
+        "width": 375,
+        "route": "/blog/",
+        "initialLocalImageBytes": 0,
+        "allLocalImageBytes": 0,
+        "initialRequests": 88,
+        "initialThirdPartyRequests": 67,
+        "longTaskTotalMs": 111,
+        "observedLayoutShiftSum": 0
+      },
+      "after": {
+        "width": 375,
+        "route": "/blog/",
+        "initialLocalImageBytes": 0,
+        "allLocalImageBytes": 0,
+        "initialRequests": 20,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 101,
+        "observedLayoutShiftSum": 0
+      }
+    },
+    {
+      "width": 375,
+      "route": "/",
+      "before": {
+        "width": 375,
+        "route": "/",
+        "initialLocalImageBytes": 304957,
+        "allLocalImageBytes": 304957,
+        "initialRequests": 21,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 82,
+        "observedLayoutShiftSum": 0
+      },
+      "after": {
+        "width": 375,
+        "route": "/",
+        "initialLocalImageBytes": 20296,
+        "allLocalImageBytes": 20296,
+        "initialRequests": 20,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 104,
+        "observedLayoutShiftSum": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/gallery/",
+      "before": {
+        "width": 1440,
+        "route": "/gallery/",
+        "initialLocalImageBytes": 15405185,
+        "allLocalImageBytes": 16491345,
+        "initialRequests": 30,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 83,
+        "observedLayoutShiftSum": 0
+      },
+      "after": {
+        "width": 1440,
+        "route": "/gallery/",
+        "initialLocalImageBytes": 492782,
+        "allLocalImageBytes": 492782,
+        "initialRequests": 47,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 93,
+        "observedLayoutShiftSum": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/blog/",
+      "before": {
+        "width": 1440,
+        "route": "/blog/",
+        "initialLocalImageBytes": 0,
+        "allLocalImageBytes": 0,
+        "initialRequests": 99,
+        "initialThirdPartyRequests": 67,
+        "longTaskTotalMs": 99,
+        "observedLayoutShiftSum": 0
+      },
+      "after": {
+        "width": 1440,
+        "route": "/blog/",
+        "initialLocalImageBytes": 0,
+        "allLocalImageBytes": 0,
+        "initialRequests": 32,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 95,
+        "observedLayoutShiftSum": 0
+      }
+    },
+    {
+      "width": 1440,
+      "route": "/",
+      "before": {
+        "width": 1440,
+        "route": "/",
+        "initialLocalImageBytes": 304957,
+        "allLocalImageBytes": 304957,
+        "initialRequests": 34,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 82,
+        "observedLayoutShiftSum": 0.039198055932315776
+      },
+      "after": {
+        "width": 1440,
+        "route": "/",
+        "initialLocalImageBytes": 20296,
+        "allLocalImageBytes": 20296,
+        "initialRequests": 34,
+        "initialThirdPartyRequests": 0,
+        "longTaskTotalMs": 86,
+        "observedLayoutShiftSum": 0.04801289261429398
+      }
+    }
+  ],
+  "motionBefore": [
+    {
+      "preference": "no-preference",
+      "repeat": 1,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 71,
+      "settledCursorWindowLongTaskCount": 1,
+      "settledCursorWindowLongTaskTotalMs": 63
+    },
+    {
+      "preference": "no-preference",
+      "repeat": 2,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 67,
+      "settledCursorWindowLongTaskCount": 1,
+      "settledCursorWindowLongTaskTotalMs": 53
+    },
+    {
+      "preference": "no-preference",
+      "repeat": 3,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 69,
+      "settledCursorWindowLongTaskCount": 1,
+      "settledCursorWindowLongTaskTotalMs": 54
+    },
+    {
+      "preference": "reduce",
+      "repeat": 1,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 67,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "reduce",
+      "repeat": 2,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 69,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "reduce",
+      "repeat": 3,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 69,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    }
+  ],
+  "motionAfter": [
+    {
+      "preference": "no-preference",
+      "repeat": 1,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 75,
+      "settledCursorWindowLongTaskCount": 1,
+      "settledCursorWindowLongTaskTotalMs": 64
+    },
+    {
+      "preference": "no-preference",
+      "repeat": 2,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 91,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "no-preference",
+      "repeat": 3,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 73,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "reduce",
+      "repeat": 1,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 93,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "reduce",
+      "repeat": 2,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 87,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    },
+    {
+      "preference": "reduce",
+      "repeat": 3,
+      "initialLongTaskCount": 1,
+      "initialLongTaskTotalMs": 69,
+      "settledCursorWindowLongTaskCount": 0,
+      "settledCursorWindowLongTaskTotalMs": 0
+    }
+  ],
+  "limits": [
+    "Three local Chrome runs per viewport/route under CDP throttling; not Lighthouse scores or production guarantees.",
+    "Gallery full-scroll duration varies; do not interpret total long-task duration as a fixed-window speed score.",
+    "Observed non-input layout-shift sums are recorded rather than asserted to be a standardized CLS score.",
+    "Normal-motion long tasks and home layout shifts remain observable; no animation speed improvement is claimed."
+  ]
+}

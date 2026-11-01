@@ -1,26 +1,17 @@
-import React from 'react';
-import { Heading, SmartLink } from '@/once-ui/components';
-import { Configs } from '@/app/config';
+import { Heading } from '@/once-ui/components';
+import { routeMetadata } from '@/app/site';
+import { blogSources } from './sources';
+import { SourceCard } from './SourceCard';
+import styles from './page.module.scss';
 
-export const metadata = { title: 'Blog' };
+export const metadata = routeMetadata('/blog');
 
 export default function Blog() {
     return (
         <div className="page-content">
             <Heading as="h1" variant="heading-strong-l" className="page-title">Blog</Heading>
-            <div className="embed-list">
-                {Configs.blog.map((source, index) => (
-                    <div key={source}>
-                        <div className="embed-source">
-                            <SmartLink href={source} suffixIcon="arrowUpRight" target="_blank" rel="noopener noreferrer"
-                                aria-label={`Open blog source ${index + 1} (external site, opens in a new tab)`}>
-                                Open blog source {index + 1}
-                            </SmartLink>
-                        </div>
-                        <iframe src={source} className="fluid-embed" height="1000" width="1000"
-                            loading="lazy" title={`Blog source ${index + 1}`} />
-                    </div>
-                ))}
+            <div className={styles.grid}>
+                {blogSources.map(source => <SourceCard key={source.id} source={source} />)}
             </div>
         </div>
     );

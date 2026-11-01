@@ -1,8 +1,9 @@
+import { routeMetadata } from '@/app/site';
 import React from 'react';
 import { Heading, SmartLink } from '@/once-ui/components';
 import { Configs } from '@/app/config';
 
-export const metadata = { title: 'Research' };
+export const metadata = routeMetadata('/research');
 
 export default function ResearchPage() {
     return (

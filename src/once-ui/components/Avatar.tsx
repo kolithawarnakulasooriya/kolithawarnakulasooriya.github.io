@@ -10,6 +10,8 @@ interface AvatarProps {
     value?: string;
     src?: string;
     alt?: string;
+    priority?: boolean;
+    sizes?: string;
     loading?: boolean;
     empty?: boolean;
     statusIndicator?: {
@@ -40,6 +42,8 @@ const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
     value,
     src,
     alt = 'Avatar',
+    priority = false,
+    sizes,
     loading,
     empty,
     statusIndicator,
@@ -82,7 +86,8 @@ const Avatar: React.FC<AvatarProps> = forwardRef<HTMLDivElement, AvatarProps>(({
                     src={src}
                     fill
                     alt={alt}
-                    sizes={`${sizeMapping[size]}px`}
+                    sizes={sizes ?? `${sizeMapping[size]}px`}
+                    priority={priority}
                     className={styles.image}/>
             );
         }

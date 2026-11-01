@@ -1,9 +1,10 @@
+import { routeMetadata } from '@/app/site';
 import React from 'react';
 import { Heading, Button } from '@/once-ui/components';
 import { ExperianceBox } from '@/components/experiancebox';
 import { Configs } from '@/app/config';
 
-export const metadata = { title: 'Resume' };
+export const metadata = routeMetadata('/resume');
 
 export default function Resume() {
     return (

@@ -1,9 +1,10 @@
+import { routeMetadata } from '@/app/site';
 import React from 'react';
 import { Heading } from '@/once-ui/components';
 import { Configs } from '@/app/config';
 import { PublicationBox } from '@/components/publicationbox';
 
-export const metadata = { title: 'Publications' };
+export const metadata = routeMetadata('/publications');
 
 export default function Publications() {
     return (

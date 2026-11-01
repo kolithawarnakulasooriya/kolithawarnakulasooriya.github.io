@@ -1,0 +1,99 @@
+{
+  "gallery": [
+    {
+      "src": "/gallery/p44.jpg",
+      "alt": "Two men in suits standing beneath a projected presentation slide."
+    },
+    {
+      "src": "/gallery/p55.jpg",
+      "alt": "A man seated on a carpeted floor with several quadcopter drones arranged around him."
+    },
+    {
+      "src": "/gallery/p1.jpeg",
+      "alt": "A man standing beside a technical poster on an easel."
+    },
+    {
+      "src": "/gallery/c1.jpg",
+      "alt": "A presenter beside two projected screens in a classroom."
+    },
+    {
+      "src": "/gallery/p33.jpg",
+      "alt": "Two men standing together in front of a glass display cabinet."
+    },
+    {
+      "src": "/gallery/p7.jpeg",
+      "alt": "A driver seated in a red open-wheel race car on pavement."
+    },
+    {
+      "src": "/gallery/p2.jpeg",
+      "alt": "A group of people standing outside a building near palm trees."
+    },
+    {
+      "src": "/gallery/t112.jpeg",
+      "alt": "A man standing on a raised outdoor platform beside an American flag."
+    },
+    {
+      "src": "/gallery/p5.jpeg",
+      "alt": "Orange graphic showing four men and the text “Disrupt 2.0 - FutureX Top 30” and “ExplorAR”."
+    },
+    {
+      "src": "/gallery/vexpo.jpeg",
+      "alt": "An exhibition booth with illuminated displays and people seated at a table."
+    },
+    {
+      "src": "/gallery/sci112.jpeg",
+      "alt": "A man inside a greenhouse with rows of leafy plants."
+    },
+    {
+      "src": "/gallery/cc2.jpeg",
+      "alt": "Two people holding certificates in front of a projection screen."
+    },
+    {
+      "src": "/gallery/graduation.jpeg",
+      "alt": "A man wearing a gown and medal standing beside two flags."
+    },
+    {
+      "src": "/gallery/p11.JPG",
+      "alt": "Three people posing together in an indoor corridor."
+    },
+    {
+      "src": "/gallery/p22.JPG",
+      "alt": "Two people standing together beside a wood-framed glass display."
+    }
+  ],
+  "projects": [
+    {
+      "src": "/images/drone.png"
+    },
+    {
+      "src": "/images/autocomplete-codex-thumbnail.png"
+    },
+    {
+      "src": "/images/me.png"
+    },
+    {
+      "src": "/images/CytokineSwarm.png"
+    },
+    {
+      "src": "/images/raven-logo.png"
+    },
+    {
+      "src": "/images/swarmx.png"
+    },
+    {
+      "src": "/images/syscoshop.png"
+    },
+    {
+      "src": "/images/minearc.jpeg"
+    },
+    {
+      "src": "/images/4onse.jpg"
+    },
+    {
+      "src": "/images/defproject.png"
+    }
+  ],
+  "portrait": {
+    "src": "/images/avatar.jpg"
+  }
+}

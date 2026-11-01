@@ -50,13 +50,13 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 
 ### Reliability and supporting pages — both roles
 
-- [ ] **C25 — Metadata.** Retain factual titles, descriptions, canonical URLs, social metadata and Person structured data. Recheck rendered metadata after restoring the original layout/fonts.
-- [ ] **C26 — Project data.** Retain consistent naming, merged LIS variants and explicit statuses. Verify no unexplained duplicates or empty-link actions.
-- [ ] **C27 — Loading.** Retain reserved image space, lazy below-fold media and optimized derivatives. Gallery bytes previously fell by 90%; profile the restored animation and record measurements without claiming an unmeasured before/after score.
-- [ ] **C28 — Regression checks.** Retain meaningful content/browser tests; adjust design-specific assertions to the restored website. Run build/export and affected route checks before completion.
-- [ ] **C29 — Accordions.** Retain native buttons, unique IDs and correct expanded/panel relationships. Recheck Enter, Space and focus visibility with original styles.
-- [ ] **C30 — Blog.** Retain responsive cards, unique iframe titles, source links and optional lazy embeds. Richer article summaries/dates remain pending source verification.
-- [ ] **C31 — Gallery.** Retain optimized images, reserved dimensions and descriptive alt. Exact event/date/role captions remain pending verification; do not guess them from filenames or photographs.
+- [x] **C25 — Metadata.** Verified personal titles/descriptions, trailing-slash canonicals, Open Graph/Twitter fields and factual Person JSON-LD on all eight exports. Removed demo identity; preserved fonts/theme and Google verification.
+- [x] **C26 — Project data.** Verified eleven canonical IDs/statuses, consistent names, one merged LIS record and selected-work references by ID. Each project renders once; unavailable URLs produce no active action.
+- [x] **C27 — Loading.** Verified static responsive WebP derivatives, oriented intrinsic dimensions, reserved frames, lazy below-fold media and eager portrait. Measured full-Gallery image body bytes fell from 16,491,345 to 492,782 at tested 1× views; motion observations recorded without a Lighthouse/speed-score claim.
+- [x] **C28 — Regression checks.** Node 20 frozen install, media freshness, lint, types, build/export, content, 56 browser scenarios and supporting-page checks pass. CI static gates precede artifact upload; no workflow/deployment triggered. See [validation report](docs/C25-C31-validation.md).
+- [x] **C29 — Accordions.** Existing native triggers retained; verified unique IDs/relationships, initial states, Enter/Space, visible focus and collapsed-content exclusion from Tab navigation.
+- [x] **C30 — Blog.** Verified responsive source-backed cards, unique titled click-to-load/hide previews, source links, keyboard focus and blocked-provider fallback. Supported summaries/attributions added; exact dates remain omitted pending evidence.
+- [x] **C31 — Gallery.** Verified fifteen ordered, optimized responsive images, true oriented dimensions, reserved contain frames and descriptive alt. Ninety width/density selections decode correctly; exact event/date/role captions remain absent pending evidence.
 - [x] **C32 — Headings and icons.** Verified route-specific semantic headings, valid Research arrows and external/new-tab cues on all eight routes. Node 20 build/export, content checks and 48 browser viewport checks passed; eight enlarged-text observations recorded. No missing-icon warnings. See [validation and remaining limitations](docs/C32-validation.md).
 
 ## Validation and handoff

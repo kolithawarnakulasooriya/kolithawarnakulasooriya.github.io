@@ -9,7 +9,7 @@ export default function Home() {
     return (
         <section className={styles.hero} aria-label="Introduction">
             <Heading as="h1" className="visually-hidden">Kolitha Warnakulasooriya</Heading>
-            <Avatar className={styles.portrait} size="xl" src="/images/avatar.jpg" alt="Kolitha Warnakulasooriya" />
+            <Avatar className={styles.portrait} size="xl" src="/images/avatar.jpg" alt="Kolitha Warnakulasooriya" priority sizes="(max-width: 440px) 75vw, 330px" />
             <div className={styles.identity}>
                 <InfoBox text="I am a," fontSize={30} />
                 <div className={styles.lines}>
