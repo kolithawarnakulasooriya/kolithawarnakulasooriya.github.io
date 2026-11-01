@@ -580,28 +580,22 @@
       ]
     },
     "/images/avatar.jpg": {
-      "sourceSha256": "b25623b19bdc2524f735e0dab55552349c09f6dd62fcf98c14a7736f3957b11e",
-      "sourceBytes": 304957,
-      "width": 993,
-      "height": 955,
+      "sourceSha256": "248580d3987402f6594e0c40d0f1c1237f30c14dcf95af84282faaaa842f77be",
+      "sourceBytes": 653721,
+      "width": 800,
+      "height": 800,
       "variants": [
         {
-          "src": "/images/optimized/avatar-b25623b19bdc-480.webp",
+          "src": "/images/optimized/avatar-248580d39874-480.webp",
           "width": 480,
-          "height": 462,
-          "bytes": 20296
+          "height": 480,
+          "bytes": 13966
         },
         {
-          "src": "/images/optimized/avatar-b25623b19bdc-960.webp",
-          "width": 960,
-          "height": 923,
-          "bytes": 76924
-        },
-        {
-          "src": "/images/optimized/avatar-b25623b19bdc-993.webp",
-          "width": 993,
-          "height": 955,
-          "bytes": 87258
+          "src": "/images/optimized/avatar-248580d39874-800.webp",
+          "width": 800,
+          "height": 800,
+          "bytes": 27980
         }
       ]
     }
