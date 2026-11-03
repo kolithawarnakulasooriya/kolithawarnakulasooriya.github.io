@@ -8,6 +8,7 @@ import { rootMetadata, personSchema } from '@/app/site';
 
 import { Background } from '@/once-ui/components'
 import { Header } from "@/components/header";
+import GoogleAnalytics from '@/components/GoogleAnalytics';
 
 import { Inter } from 'next/font/google'
 import { Roboto_Mono } from 'next/font/google';
@@ -68,6 +69,7 @@ export default function RootLayout({
 
 			</head>
 			<body className="site-body">
+				<GoogleAnalytics />
 				<Background
 					style={{ zIndex: '-1' }}
 					position="fixed"
