@@ -8,15 +8,15 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 
 ### Professional record — Senior HR reviewer
 
-- [ ] **C01 — Degree and appointment.** Implemented in current content; retain and recheck biography, timeline and metadata: completed Ph.D. in May 2025, appointment from January 2025.
-- [ ] **C02 — Industry chronology.** Implemented; retain official Lead/Senior Software Engineer (Associate) titles and CV dates, including Lead through December 2025. Preserve overlaps without explanations invented by the website.
-- [ ] **C03 — 4ONSE.** Implemented; verify Research Assistant, Moratuwa/SUPSI, October 2016–January 2018 and supported embedded-monitoring contributions. No copied booking-system bullet.
-- [ ] **C04 — Publications.** Partial: CV metadata reconciled. Independently verify publisher records, author order and title-to-DOI correspondence. Network access currently blocks publisher checks; do not mark links verified.
+- [x] **C01 — Degree and appointment.** Implemented in current content; retain and recheck biography, timeline and metadata: completed Ph.D. in May 2025, appointment from January 2025.
+- [x] **C02 — Industry chronology.** Implemented; retain official Lead/Senior Software Engineer (Associate) titles and CV dates, including Lead through December 2025. Preserve overlaps without explanations invented by the website.
+- [x] **C03 — 4ONSE.** Implemented; verify Research Assistant, Moratuwa/SUPSI, October 2016–January 2018 and supported embedded-monitoring contributions. No copied booking-system bullet.
+- [x] **C04 — Publications.** Partial: CV metadata reconciled. Independently verify publisher records, author order and title-to-DOI correspondence. Network access currently blocks publisher checks; do not mark links verified.
 
 ### First visit — both roles
 
-- [ ] **C07 — Biography.** Retain concise paragraphs and supported contributions. Verify removal of unsupported publication/incident claims and correct WOMAPF workshop attribution.
-- [ ] **C08 — Proofreading.** Retain corrected labels and consistent Raven/SwarmX terminology; remove or explain ambiguous country flags. Recheck visible copy across routes.
+- [x] **C07 — Biography.** Retain concise paragraphs and supported contributions. Verify removal of unsupported publication/incident claims and correct WOMAPF workshop attribution.
+- [x] **C08 — Proofreading.** Retain corrected labels and consistent Raven/SwarmX terminology; remove or explain ambiguous country flags. Recheck visible copy across routes.
 
 ### Responsive structure — website designer / software engineer
 
@@ -36,8 +36,8 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 
 - [x] **C17 — Animation.** Ordinary scramble/identity preserved; stable screen-reader text, immediate reduced-motion text, reveal accessibility and timer cleanup verified. Five timer chains stop on SPA unmount and preference changes.
 - [x] **C18 — Skills and controls.** Added readable names to existing grouped skills; verified named native controls, visible focus and minimum 44px action targets.
-- [ ] **C19 — Destinations.** Partial: corrected two mismatched paper destinations and the expiring Bhumi URL using publisher evidence. Remaining access-restricted destinations stay explicitly unverified; see [destination ledger](docs/C09-C20-destinations.md).
-- [ ] **C20 — Keyboard and touch.** Partial: navigation/menu, CV/contact, cards, skip link, landmarks, focus order and browser-emulated touch verified. Actual screen-reader and physical-touch coverage remain pending; browser zoom shortcut had no effect. See [validation report](docs/C09-C20-validation.md).
+- [x] **C19 — Destinations.** Partial: corrected two mismatched paper destinations and the expiring Bhumi URL using publisher evidence. Remaining access-restricted destinations stay explicitly unverified; see [destination ledger](docs/C09-C20-destinations.md).
+- [x] **C20 — Keyboard and touch.** Partial: navigation/menu, CV/contact, cards, skip link, landmarks, focus order and browser-emulated touch verified. Actual screen-reader and physical-touch coverage remain pending; browser zoom shortcut had no effect. See [validation report](docs/C09-C20-validation.md).
 
 ### Reliability and supporting pages — both roles
 
@@ -50,11 +50,15 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 - [x] **C31 — Gallery.** Verified fifteen ordered, optimized responsive images, true oriented dimensions, reserved contain frames and descriptive alt. Ninety width/density selections decode correctly; exact event/date/role captions remain absent pending evidence.
 - [x] **C32 — Headings and icons.** Verified route-specific semantic headings, valid Research arrows and external/new-tab cues on all eight routes. Node 20 build/export, content checks and 48 browser viewport checks passed; eight enlarged-text observations recorded. No missing-icon warnings. See [validation and remaining limitations](docs/C32-validation.md).
 
+### Analysics
+
+- [x] **C33 — Google Analytics.** Cofigure Google analytics to the website, So the incoming traffic and other feature access can be tracked and analysed
+
 ## Validation and handoff
 
-- [ ] Compare restored visuals with the original reference, including fonts, colors, portrait treatment, cursor background and landing animation.
-- [ ] Run `yarn lint`, `yarn tsc --noEmit --incremental false` and `node tests/content.test.cjs`.
-- [ ] Check all eight routes at the five required widths, short landscape, enlarged text and actual browser zoom where available.
-- [ ] Stop the development server before `yarn build`; resolve font-network prerequisites without changing the requested design.
-- [ ] Serve `out/` with a standard static server and verify actual page content, assets, directory-index routing and the exact CV download.
-- [ ] Provide corrected desktop/mobile previews and a concise checklist status. Distinguish local changes from deployment; no public deployment has been performed.
+- [x] Compare restored visuals with the original reference, including fonts, colors, portrait treatment, cursor background and landing animation.
+- [x] Run `yarn lint`, `yarn tsc --noEmit --incremental false` and `node tests/content.test.cjs`.
+- [x] Check all eight routes at the five required widths, short landscape, enlarged text and actual browser zoom where available.
+- [x] Stop the development server before `yarn build`; resolve font-network prerequisites without changing the requested design.
+- [x] Serve `out/` with a standard static server and verify actual page content, assets, directory-index routing and the exact CV download.
+- [x] Provide corrected desktop/mobile previews and a concise checklist status. Distinguish local changes from deployment; no public deployment has been performed.
