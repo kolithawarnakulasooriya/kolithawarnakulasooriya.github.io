@@ -64,10 +64,10 @@ export interface ConfigProps {
 
 
 export const biographyParagraphs = [
-    'I completed my Ph.D. in Computing at the University of South Alabama in May 2025. I am a Visiting Assistant Professor at the University of South Alabama, an appointment I began in August 2025.',
-    'My research focuses on multi-agent UAV systems, including distributed leader selection, formation control, sensor streams and multi-agent decision-making. I developed a framework for heterogeneous UAVs and validated the work through physical experiments.',
-    'My software engineering experience includes web and mobile applications, RESTful and GraphQL APIs, and services built with React, React Native, Spring Boot and Node.js. My work has included testing, production monitoring and incident response, and mentoring engineers.',
-    'Outside work, I enjoy tennis, working out, long-distance driving, spending time with friends, and learning about science, nature and finance.',
+    'I specialize in artificial intelligence, robotics, and software engineering, with a focus on designing and developing intelligent, autonomous, and reliable software systems. My work combines machine learning, agentic AI, multi-agent architectures, and distributed computing to address complex engineering challenges.',
+    'My expertise spans AI-driven software development, autonomous systems, intelligent agents, robotics, embedded systems, and cloud-based applications. I am particularly interested in building AI-powered systems that can reason, collaborate, make decisions, and adapt to changing environments while maintaining reliability, security, and performance.'
+    'I work across the software development lifecycle, from system architecture and algorithm design to implementation, integration, testing, and deployment. My projects involve multi-agent orchestration, swarm intelligence, autonomous navigation, AI security, and open-source software development, connecting advanced AI methods with practical engineering applications.'
+    'I am passionate about developing intelligent software solutions that bridge artificial intelligence and real-world systems, with an emphasis on trustworthy autonomy, efficient software architectures, and industry-oriented engineering practices.',
 ];
 
 export const Configs: ConfigProps = {
