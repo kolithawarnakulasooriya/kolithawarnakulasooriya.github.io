@@ -65,9 +65,9 @@ export interface ConfigProps {
 
 export const biographyParagraphs = [
     'I specialize in artificial intelligence, robotics, and software engineering, with a focus on designing and developing intelligent, autonomous, and reliable software systems. My work combines machine learning, agentic AI, multi-agent architectures, and distributed computing to address complex engineering challenges.',
-    'My expertise spans AI-driven software development, autonomous systems, intelligent agents, robotics, embedded systems, and cloud-based applications. I am particularly interested in building AI-powered systems that can reason, collaborate, make decisions, and adapt to changing environments while maintaining reliability, security, and performance.'
-    'I work across the software development lifecycle, from system architecture and algorithm design to implementation, integration, testing, and deployment. My projects involve multi-agent orchestration, swarm intelligence, autonomous navigation, AI security, and open-source software development, connecting advanced AI methods with practical engineering applications.'
-    'I am passionate about developing intelligent software solutions that bridge artificial intelligence and real-world systems, with an emphasis on trustworthy autonomy, efficient software architectures, and industry-oriented engineering practices.',
+    'My expertise spans AI-driven software development, autonomous systems, intelligent agents, robotics, embedded systems, and cloud-based applications. I am particularly interested in building AI-powered systems that can reason, collaborate, make decisions, and adapt to changing environments while maintaining reliability, security, and performance.',
+    'I work across the software development lifecycle, from system architecture and algorithm design to implementation, integration, testing, and deployment. My projects involve multi-agent orchestration, swarm intelligence, autonomous navigation, AI security, and open-source software development, connecting advanced AI methods with practical engineering applications.',
+    'I am passionate about developing intelligent software solutions that bridge artificial intelligence and real-world systems, with an emphasis on trustworthy autonomy, efficient software architectures, and industry-oriented engineering practices.'
 ];
 
 export const Configs: ConfigProps = {
