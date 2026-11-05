@@ -62,3 +62,7 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 - [x] Stop the development server before `yarn build`; resolve font-network prerequisites without changing the requested design.
 - [x] Serve `out/` with a standard static server and verify actual page content, assets, directory-index routing and the exact CV download.
 - [x] Provide corrected desktop/mobile previews and a concise checklist status. Distinguish local changes from deployment; no public deployment has been performed.
+
+### Branch Update
+
+- [x] **C34 — Run Tests Each branch update.** When a branch is updated or created, then each time a branch push happened, tests should be run.
