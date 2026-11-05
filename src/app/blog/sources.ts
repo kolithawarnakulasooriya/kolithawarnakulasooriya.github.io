@@ -11,9 +11,18 @@ export interface BlogSource {
 
 export const blogSources: readonly BlogSource[] = [
     {
+        id: 'Next Generation of AI Wave',
+        title: 'Next Generation of AI Wave: Beyond Next Token Prediction',
+        attribution: 'LinkedIn',
+        summary: 'What if the next major breakthrough in generative AI isn\'t about building larger language models, but fundamentally changing how they generate information?',
+        sourceUrl: 'https://www.linkedin.com/pulse/next-generation-ai-wave-beyond-token-prediction-warnakulasooriya-1rave/',
+        previewUrl: 'https://www.linkedin.com/pulse/next-generation-ai-wave-beyond-token-prediction-warnakulasooriya-1rave/',
+        previewKind: 'page',
+    },
+    {
         id: 'ai-swarming-drones',
         title: 'PhD student uses AI to control swarming drones',
-        attribution: 'University of South Alabama on LinkedIn',
+        attribution: 'University of South Alabama',
         summary: 'University of South Alabama post about AI and mathematical models for autonomous drone swarms.',
         sourceUrl: 'https://www.linkedin.com/feed/update/urn:li:activity:7316119387797639168',
         previewUrl: 'https://www.linkedin.com/embed/feed/update/urn:li:share:7316119386677805060?collapsed=1',
