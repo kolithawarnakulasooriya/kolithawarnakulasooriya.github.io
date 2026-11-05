@@ -6,7 +6,7 @@ export interface BlogSource {
     summary: string;
     sourceUrl: string;
     previewUrl: string;
-    previewKind: 'video' | 'page' | undefined;
+    previewKind: 'video' | 'page' | 'picture' | undefined;
 }
 
 export const blogSources: readonly BlogSource[] = [
@@ -16,8 +16,8 @@ export const blogSources: readonly BlogSource[] = [
         attribution: 'LinkedIn',
         summary: 'What if the next major breakthrough in generative AI isn\'t about building larger language models, but fundamentally changing how they generate information?',
         sourceUrl: 'https://www.linkedin.com/pulse/next-generation-ai-wave-beyond-token-prediction-warnakulasooriya-1rave/',
-        previewUrl: 'https://www.linkedin.com/pulse/next-generation-ai-wave-beyond-token-prediction-warnakulasooriya-1rave/',
-        previewKind: 'page',
+        previewUrl: '',
+        previewKind: undefined,
     },
     {
         id: 'ai-swarming-drones',

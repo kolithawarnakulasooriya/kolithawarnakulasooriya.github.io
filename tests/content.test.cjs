@@ -141,7 +141,8 @@ for (const [route, title] of Object.entries(routes)) {
   }
   if (route === 'blog') {
     assert.equal((html.match(/<article\b/g) || []).length, blogSources.length);
-    assert.equal((html.match(/<iframe\b/g) || []).length, 5, 'Blog iframe loaded before request');
+    const iframeSources = blogSources.filter(source => source.previewKind && source.previewKind !== 'picture');
+    assert.equal((html.match(/<iframe\b/g) || []).length, iframeSources.length, 'Blog iframe loaded before request');
     for (const source of blogSources) assert(html.includes(source.sourceUrl.replace(/&/g, '&amp;')));
   }
   if (route === 'me') {

@@ -31,6 +31,8 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 - [x] **C14 — Colors and contrast.** Existing Once UI palette/tokens retained; approved subtle cursor gradient restored. Contrast, focus visibility and reduced-motion background behavior verified.
 - [x] **C15 — Hierarchy.** Retained C32 heading hierarchy, standardized spacing and added descriptive browser titles. All routes pass heading and accessibility checks.
 - [x] **C16 — Selected work.** Added three CV-supported stories on Projects only: heterogeneous UAV research, CODEX-Autocomplete and MockableExpress, with inspected assets, precise contributions, status limits and evidence links.
+- [x] **C35 — Show a picture for the block post previewKind** Allow a feature to show a picture as the preview for source card. if previewKind is a picture, then preview card should show the picture stored at previewUrl.
+
 
 ### Accessibility and interaction — website designer / software engineer
 
@@ -62,3 +64,7 @@ Status meanings: **Implemented** means code exists; **Pending** means work remai
 - [x] Stop the development server before `yarn build`; resolve font-network prerequisites without changing the requested design.
 - [x] Serve `out/` with a standard static server and verify actual page content, assets, directory-index routing and the exact CV download.
 - [x] Provide corrected desktop/mobile previews and a concise checklist status. Distinguish local changes from deployment; no public deployment has been performed.
+
+### Branch Update
+
+- [x] **C34 — Run Tests Each branch update.** When a branch is updated or created, then each time a branch push happened, tests should be run.

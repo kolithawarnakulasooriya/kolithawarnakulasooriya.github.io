@@ -17,7 +17,8 @@
 .attribution { color: var(--neutral-on-background-medium); font-size: 0.875rem; }
 .actions { display: flex; flex-wrap: wrap; align-items: center; gap: var(--static-space-12); margin-top: auto; }
 .actions a, .actions .toggle { min-height: 44px; }
-.preview, .video { display: block; width: 100%; border: 1px solid var(--neutral-border-medium); background: var(--static-transparent); }
+.preview, .video, .picture { display: block; width: 100%; border: 1px solid var(--neutral-border-medium); background: var(--static-transparent); }
 .preview { height: clamp(24rem, 65vh, 50rem); }
+.picture { height: clamp(20rem, 45vh, 30rem); object-fit: cover; }
 .video { aspect-ratio: 16 / 9; height: auto; }
 @media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
