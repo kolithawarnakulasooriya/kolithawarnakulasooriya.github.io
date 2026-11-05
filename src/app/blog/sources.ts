@@ -6,7 +6,7 @@ export interface BlogSource {
     summary: string;
     sourceUrl: string;
     previewUrl: string;
-    previewKind: 'video' | 'page' | undefined;
+    previewKind: 'video' | 'page' | 'picture' | undefined;
 }
 
 export const blogSources: readonly BlogSource[] = [
